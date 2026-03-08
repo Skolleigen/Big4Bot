@@ -1,6 +1,5 @@
 # Roadmap Insights & Future Alignments
 
-During the Stage 2 and Stage 2.5 expansion phases, comprehensive audits identified several critical methodology gaps that represent future opportunities for Big4Bot. 
 
 While the current 46-skill library provides a robust end-to-end diagnostic graph, the consulting landscape is expansive. The following areas map out potential future additions (a theoretical "v0.3" update) to the framework to increase vertical penetration into operational and IT execution sectors.
 

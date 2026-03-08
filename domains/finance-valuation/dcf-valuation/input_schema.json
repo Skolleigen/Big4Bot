@@ -45,7 +45,7 @@
       "description": "Current net debt position (debt minus cash) to bridge from enterprise value to equity value"
     },
     "segment": {
-      "type": "number",
+      "type": "string",
       "description": "Segment-level revenue and margin projections (for multi-segment businesses)"
     },
     "management_guidance_analyst": {
