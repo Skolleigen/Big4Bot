@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Visioning and Reverse Engineering Output",
+  "description": "Structured output schema for the Visioning and Reverse Engineering consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "visioning-and-reverse-engineering",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "planning_horizon": {
+          "type": "string",
+          "description": "planning horizon"
+        },
+        "future_state_vision": {
+          "type": "object",
+          "properties": {
+            "market_position": {
+              "type": "string",
+              "description": "market position"
+            },
+            "financial_performance": {
+              "type": "string",
+              "description": "financial performance"
+            },
+            "organizational_capabilities": {
+              "type": "string",
+              "description": "organizational capabilities"
+            },
+            "culture_and_operating_model": {
+              "type": "string",
+              "description": "culture and operating model"
+            },
+            "product_portfolio": {
+              "type": "string",
+              "description": "product portfolio"
+            }
+          },
+          "required": [
+            "market_position",
+            "financial_performance",
+            "organizational_capabilities",
+            "culture_and_operating_model",
+            "product_portfolio"
+          ]
+        },
+        "current_state_baseline": {
+          "type": "object",
+          "properties": {
+            "market_position": {
+              "type": "string",
+              "description": "market position"
+            },
+            "financial_performance": {
+              "type": "string",
+              "description": "financial performance"
+            },
+            "organizational_capabilities": {
+              "type": "string",
+              "description": "organizational capabilities"
+            },
+            "culture_and_operating_model": {
+              "type": "string",
+              "description": "culture and operating model"
+            },
+            "product_portfolio": {
+              "type": "string",
+              "description": "product portfolio"
+            }
+          },
+          "required": [
+            "market_position",
+            "financial_performance",
+            "organizational_capabilities",
+            "culture_and_operating_model",
+            "product_portfolio"
+          ]
+        },
+        "gap_analysis": {
+          "type": "array",
+          "description": "gap analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dimension": {
+                "type": "string",
+                "description": "dimension"
+              },
+              "current_state": {
+                "type": "string",
+                "description": "current state"
+              },
+              "future_state": {
+                "type": "string",
+                "description": "future state"
+              },
+              "gap_magnitude": {
+                "type": "string",
+                "description": "gap magnitude"
+              },
+              "strategic_theme": {
+                "type": "string",
+                "description": "strategic theme"
+              }
+            },
+            "required": [
+              "dimension",
+              "current_state",
+              "future_state",
+              "gap_magnitude",
+              "strategic_theme"
+            ]
+          }
+        },
+        "milestone_sequence": {
+          "type": "array",
+          "description": "milestone sequence",
+          "items": {
+            "type": "object",
+            "properties": {
+              "milestone_year": {
+                "type": "string",
+                "description": "milestone year"
+              },
+              "milestone_description": {
+                "type": "string",
+                "description": "milestone description"
+              },
+              "required_capabilities": {
+                "type": "array",
+                "description": "required capabilities",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "required_initiatives": {
+                "type": "array",
+                "description": "required initiatives",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "accountability_owner": {
+                "type": "string",
+                "description": "accountability owner"
+              }
+            },
+            "required": [
+              "milestone_year",
+              "milestone_description",
+              "required_capabilities",
+              "required_initiatives",
+              "accountability_owner"
+            ]
+          }
+        },
+        "strategic_themes": {
+          "type": "array",
+          "description": "strategic themes",
+          "items": {
+            "type": "object",
+            "properties": {
+              "theme": {
+                "type": "string",
+                "description": "theme"
+              },
+              "description": {
+                "type": "string",
+                "description": "description"
+              },
+              "gap_dimensions_addressed": {
+                "type": "array",
+                "description": "gap dimensions addressed",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "theme",
+              "description",
+              "gap_dimensions_addressed"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "planning_horizon",
+        "future_state_vision",
+        "current_state_baseline",
+        "gap_analysis",
+        "milestone_sequence",
+        "strategic_themes",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

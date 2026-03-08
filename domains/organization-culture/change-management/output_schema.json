@@ -1,0 +1,311 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Change Management Output",
+  "description": "Structured output schema for the Change Management consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "change-management",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "change_scope": {
+          "type": "object",
+          "properties": {
+            "change_description": {
+              "type": "string",
+              "description": "change description"
+            },
+            "affected_populations": {
+              "type": "array",
+              "description": "affected populations",
+              "items": {
+                "type": "string"
+              }
+            },
+            "magnitude_of_change": {
+              "type": "string",
+              "description": "magnitude of change"
+            },
+            "timeline": {
+              "type": "string",
+              "description": "timeline"
+            }
+          },
+          "required": [
+            "change_description",
+            "affected_populations",
+            "magnitude_of_change",
+            "timeline"
+          ]
+        },
+        "stakeholder_analysis": {
+          "type": "array",
+          "description": "stakeholder analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stakeholder_group": {
+                "type": "string",
+                "description": "stakeholder group"
+              },
+              "impact_level": {
+                "type": "string",
+                "description": "impact level"
+              },
+              "current_disposition": {
+                "type": "string",
+                "description": "current disposition"
+              },
+              "influence_level": {
+                "type": "string",
+                "description": "influence level"
+              },
+              "engagement_strategy": {
+                "type": "string",
+                "description": "engagement strategy"
+              }
+            },
+            "required": [
+              "stakeholder_group",
+              "impact_level",
+              "current_disposition",
+              "influence_level",
+              "engagement_strategy"
+            ]
+          }
+        },
+        "readiness_assessment": {
+          "type": "object",
+          "properties": {
+            "overall_readiness_score": {
+              "type": "string",
+              "description": "overall readiness score"
+            },
+            "readiness_by_dimension": {
+              "type": "object",
+              "properties": {
+                "leadership_alignment": {
+                  "type": "string",
+                  "description": "leadership alignment"
+                },
+                "organizational_capacity": {
+                  "type": "string",
+                  "description": "organizational capacity"
+                },
+                "employee_willingness": {
+                  "type": "string",
+                  "description": "employee willingness"
+                },
+                "infrastructure_support": {
+                  "type": "string",
+                  "description": "infrastructure support"
+                }
+              },
+              "required": [
+                "leadership_alignment",
+                "organizational_capacity",
+                "employee_willingness",
+                "infrastructure_support"
+              ]
+            },
+            "readiness_gaps": {
+              "type": "array",
+              "description": "readiness gaps",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "overall_readiness_score",
+            "readiness_by_dimension",
+            "readiness_gaps"
+          ]
+        },
+        "communication_plan": {
+          "type": "array",
+          "description": "communication plan",
+          "items": {
+            "type": "object",
+            "properties": {
+              "audience": {
+                "type": "string",
+                "description": "audience"
+              },
+              "message": {
+                "type": "string",
+                "description": "message"
+              },
+              "channel": {
+                "type": "string",
+                "description": "channel"
+              },
+              "timing": {
+                "type": "string",
+                "description": "timing"
+              },
+              "sender": {
+                "type": "string",
+                "description": "sender"
+              },
+              "feedback_mechanism": {
+                "type": "string",
+                "description": "feedback mechanism"
+              }
+            },
+            "required": [
+              "audience",
+              "message",
+              "channel",
+              "timing",
+              "sender",
+              "feedback_mechanism"
+            ]
+          }
+        },
+        "training_plan": {
+          "type": "array",
+          "description": "training plan",
+          "items": {
+            "type": "object",
+            "properties": {
+              "audience": {
+                "type": "string",
+                "description": "audience"
+              },
+              "skill_gap": {
+                "type": "string",
+                "description": "skill gap"
+              },
+              "training_format": {
+                "type": "string",
+                "description": "training format"
+              },
+              "timeline": {
+                "type": "string",
+                "description": "timeline"
+              },
+              "success_measure": {
+                "type": "string",
+                "description": "success measure"
+              }
+            },
+            "required": [
+              "audience",
+              "skill_gap",
+              "training_format",
+              "timeline",
+              "success_measure"
+            ]
+          }
+        },
+        "resistance_mitigation": {
+          "type": "array",
+          "description": "resistance mitigation",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resistance_source": {
+                "type": "string",
+                "description": "resistance source"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              },
+              "mitigation_action": {
+                "type": "string",
+                "description": "mitigation action"
+              },
+              "owner": {
+                "type": "string",
+                "description": "owner"
+              }
+            },
+            "required": [
+              "resistance_source",
+              "root_cause",
+              "mitigation_action",
+              "owner"
+            ]
+          }
+        },
+        "adoption_metrics": {
+          "type": "array",
+          "description": "adoption metrics",
+          "items": {
+            "type": "object",
+            "properties": {
+              "metric": {
+                "type": "string",
+                "description": "metric"
+              },
+              "baseline": {
+                "type": "string",
+                "description": "baseline"
+              },
+              "target": {
+                "type": "string",
+                "description": "target"
+              },
+              "measurement_method": {
+                "type": "string",
+                "description": "measurement method"
+              },
+              "measurement_frequency": {
+                "type": "string",
+                "description": "measurement frequency"
+              }
+            },
+            "required": [
+              "metric",
+              "baseline",
+              "target",
+              "measurement_method",
+              "measurement_frequency"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "change_scope",
+        "stakeholder_analysis",
+        "readiness_assessment",
+        "communication_plan",
+        "training_plan",
+        "resistance_mitigation",
+        "adoption_metrics",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

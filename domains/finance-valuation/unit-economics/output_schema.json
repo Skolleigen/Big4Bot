@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit Economics Output",
+  "description": "Structured output schema for the Unit Economics consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "unit-economics",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "unit_definition": {
+          "type": "string",
+          "description": "unit definition"
+        },
+        "customer_acquisition_cost": {
+          "type": "object",
+          "properties": {
+            "blended_cac": {
+              "type": "string",
+              "description": "blended cac"
+            },
+            "paid_cac": {
+              "type": "string",
+              "description": "paid cac"
+            },
+            "organic_cac": {
+              "type": "string",
+              "description": "organic cac"
+            },
+            "components": {
+              "type": "object",
+              "properties": {
+                "sales_expense": {
+                  "type": "string",
+                  "description": "sales expense"
+                },
+                "marketing_expense": {
+                  "type": "string",
+                  "description": "marketing expense"
+                },
+                "new_customers_acquired": {
+                  "type": "string",
+                  "description": "new customers acquired"
+                }
+              },
+              "required": [
+                "sales_expense",
+                "marketing_expense",
+                "new_customers_acquired"
+              ]
+            },
+            "trend": {
+              "type": "array",
+              "description": "trend",
+              "items": {
+                "type": "string"
+              }
+            },
+            "benchmark": {
+              "type": "string",
+              "description": "benchmark"
+            }
+          },
+          "required": [
+            "blended_cac",
+            "paid_cac",
+            "organic_cac",
+            "components",
+            "trend",
+            "benchmark"
+          ]
+        },
+        "average_revenue_per_unit": {
+          "type": "object",
+          "properties": {
+            "arpu": {
+              "type": "string",
+              "description": "arpu"
+            },
+            "mrr_per_customer": {
+              "type": "string",
+              "description": "mrr per customer"
+            },
+            "trend": {
+              "type": "array",
+              "description": "trend",
+              "items": {
+                "type": "string"
+              }
+            },
+            "benchmark": {
+              "type": "string",
+              "description": "benchmark"
+            }
+          },
+          "required": [
+            "arpu",
+            "mrr_per_customer",
+            "trend",
+            "benchmark"
+          ]
+        },
+        "direct_variable_costs_per_unit": {
+          "type": "object",
+          "properties": {
+            "cogs_per_unit": {
+              "type": "string",
+              "description": "cogs per unit"
+            },
+            "support_cost_per_unit": {
+              "type": "string",
+              "description": "support cost per unit"
+            },
+            "hosting_per_unit": {
+              "type": "string",
+              "description": "hosting per unit"
+            },
+            "payment_processing_per_unit": {
+              "type": "string",
+              "description": "payment processing per unit"
+            },
+            "total_variable_cost_per_unit": {
+              "type": "string",
+              "description": "total variable cost per unit"
+            }
+          },
+          "required": [
+            "cogs_per_unit",
+            "support_cost_per_unit",
+            "hosting_per_unit",
+            "payment_processing_per_unit",
+            "total_variable_cost_per_unit"
+          ]
+        },
+        "gross_margin_per_unit": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "string",
+              "description": "amount"
+            },
+            "percentage": {
+              "type": "string",
+              "description": "percentage"
+            },
+            "benchmark": {
+              "type": "string",
+              "description": "benchmark"
+            }
+          },
+          "required": [
+            "amount",
+            "percentage",
+            "benchmark"
+          ]
+        },
+        "customer_lifetime_value": {
+          "type": "object",
+          "properties": {
+            "ltv": {
+              "type": "string",
+              "description": "ltv"
+            },
+            "calculation_method": {
+              "type": "string",
+              "description": "calculation method"
+            },
+            "churn_rate": {
+              "type": "string",
+              "description": "churn rate"
+            },
+            "average_customer_lifespan": {
+              "type": "string",
+              "description": "average customer lifespan"
+            },
+            "expansion_revenue_rate": {
+              "type": "string",
+              "description": "expansion revenue rate"
+            }
+          },
+          "required": [
+            "ltv",
+            "calculation_method",
+            "churn_rate",
+            "average_customer_lifespan",
+            "expansion_revenue_rate"
+          ]
+        },
+        "unit_economics_ratios": {
+          "type": "object",
+          "properties": {
+            "ltv_to_cac_ratio": {
+              "type": "number",
+              "description": "ltv to cac ratio"
+            },
+            "ltv_to_cac_benchmark": {
+              "type": "string",
+              "description": "ltv to cac benchmark"
+            },
+            "cac_payback_period_months": {
+              "type": "number",
+              "description": "cac payback period months"
+            },
+            "cac_payback_benchmark": {
+              "type": "string",
+              "description": "cac payback benchmark"
+            }
+          },
+          "required": [
+            "ltv_to_cac_ratio",
+            "ltv_to_cac_benchmark",
+            "cac_payback_period_months",
+            "cac_payback_benchmark"
+          ]
+        },
+        "cohort_analysis": {
+          "type": "array",
+          "description": "cohort analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cohort": {
+                "type": "string",
+                "description": "cohort"
+              },
+              "cac": {
+                "type": "string",
+                "description": "cac"
+              },
+              "ltv": {
+                "type": "string",
+                "description": "ltv"
+              },
+              "ltv_cac_ratio": {
+                "type": "number",
+                "description": "ltv cac ratio"
+              },
+              "payback_months": {
+                "type": "number",
+                "description": "payback months"
+              }
+            },
+            "required": [
+              "cohort",
+              "cac",
+              "ltv",
+              "ltv_cac_ratio",
+              "payback_months"
+            ]
+          }
+        },
+        "improvement_levers": {
+          "type": "array",
+          "description": "improvement levers",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lever": {
+                "type": "string",
+                "description": "lever"
+              },
+              "current_value": {
+                "type": "string",
+                "description": "current value"
+              },
+              "target_value": {
+                "type": "string",
+                "description": "target value"
+              },
+              "ltv_cac_impact": {
+                "type": "string",
+                "description": "ltv cac impact"
+              }
+            },
+            "required": [
+              "lever",
+              "current_value",
+              "target_value",
+              "ltv_cac_impact"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "unit_definition",
+        "customer_acquisition_cost",
+        "average_revenue_per_unit",
+        "direct_variable_costs_per_unit",
+        "gross_margin_per_unit",
+        "customer_lifetime_value",
+        "unit_economics_ratios",
+        "cohort_analysis",
+        "improvement_levers",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

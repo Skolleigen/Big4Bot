@@ -1,0 +1,386 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Balanced Scorecard Output",
+  "description": "Structured output schema for the Balanced Scorecard consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "balanced-scorecard",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "perspectives": {
+          "type": "object",
+          "properties": {
+            "financial": {
+              "type": "object",
+              "properties": {
+                "objectives": {
+                  "type": "array",
+                  "description": "objectives",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "objective": {
+                        "type": "string",
+                        "description": "objective"
+                      },
+                      "kpis": {
+                        "type": "array",
+                        "description": "kpis",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metric": {
+                              "type": "string",
+                              "description": "metric"
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "baseline": {
+                              "type": "string",
+                              "description": "baseline"
+                            },
+                            "target": {
+                              "type": "string",
+                              "description": "target"
+                            }
+                          },
+                          "required": [
+                            "metric",
+                            "type",
+                            "baseline",
+                            "target"
+                          ]
+                        }
+                      },
+                      "initiatives": {
+                        "type": "array",
+                        "description": "initiatives",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "objective",
+                      "kpis",
+                      "initiatives"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "objectives"
+              ]
+            },
+            "customer": {
+              "type": "object",
+              "properties": {
+                "objectives": {
+                  "type": "array",
+                  "description": "objectives",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "objective": {
+                        "type": "string",
+                        "description": "objective"
+                      },
+                      "kpis": {
+                        "type": "array",
+                        "description": "kpis",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metric": {
+                              "type": "string",
+                              "description": "metric"
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "baseline": {
+                              "type": "string",
+                              "description": "baseline"
+                            },
+                            "target": {
+                              "type": "string",
+                              "description": "target"
+                            }
+                          },
+                          "required": [
+                            "metric",
+                            "type",
+                            "baseline",
+                            "target"
+                          ]
+                        }
+                      },
+                      "initiatives": {
+                        "type": "array",
+                        "description": "initiatives",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "objective",
+                      "kpis",
+                      "initiatives"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "objectives"
+              ]
+            },
+            "internal_processes": {
+              "type": "object",
+              "properties": {
+                "objectives": {
+                  "type": "array",
+                  "description": "objectives",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "objective": {
+                        "type": "string",
+                        "description": "objective"
+                      },
+                      "kpis": {
+                        "type": "array",
+                        "description": "kpis",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metric": {
+                              "type": "string",
+                              "description": "metric"
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "baseline": {
+                              "type": "string",
+                              "description": "baseline"
+                            },
+                            "target": {
+                              "type": "string",
+                              "description": "target"
+                            }
+                          },
+                          "required": [
+                            "metric",
+                            "type",
+                            "baseline",
+                            "target"
+                          ]
+                        }
+                      },
+                      "initiatives": {
+                        "type": "array",
+                        "description": "initiatives",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "objective",
+                      "kpis",
+                      "initiatives"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "objectives"
+              ]
+            },
+            "learning_and_growth": {
+              "type": "object",
+              "properties": {
+                "objectives": {
+                  "type": "array",
+                  "description": "objectives",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "objective": {
+                        "type": "string",
+                        "description": "objective"
+                      },
+                      "kpis": {
+                        "type": "array",
+                        "description": "kpis",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "metric": {
+                              "type": "string",
+                              "description": "metric"
+                            },
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "baseline": {
+                              "type": "string",
+                              "description": "baseline"
+                            },
+                            "target": {
+                              "type": "string",
+                              "description": "target"
+                            }
+                          },
+                          "required": [
+                            "metric",
+                            "type",
+                            "baseline",
+                            "target"
+                          ]
+                        }
+                      },
+                      "initiatives": {
+                        "type": "array",
+                        "description": "initiatives",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "objective",
+                      "kpis",
+                      "initiatives"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "objectives"
+              ]
+            }
+          },
+          "required": [
+            "financial",
+            "customer",
+            "internal_processes",
+            "learning_and_growth"
+          ]
+        },
+        "strategy_map": {
+          "type": "object",
+          "properties": {
+            "causal_linkages": {
+              "type": "array",
+              "description": "causal linkages",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "from_perspective": {
+                    "type": "string",
+                    "description": "from perspective"
+                  },
+                  "from_objective": {
+                    "type": "string",
+                    "description": "from objective"
+                  },
+                  "to_perspective": {
+                    "type": "string",
+                    "description": "to perspective"
+                  },
+                  "to_objective": {
+                    "type": "string",
+                    "description": "to objective"
+                  },
+                  "linkage_rationale": {
+                    "type": "string",
+                    "description": "linkage rationale"
+                  }
+                },
+                "required": [
+                  "from_perspective",
+                  "from_objective",
+                  "to_perspective",
+                  "to_objective",
+                  "linkage_rationale"
+                ]
+              }
+            }
+          },
+          "required": [
+            "causal_linkages"
+          ]
+        },
+        "ownership_assignments": {
+          "type": "array",
+          "description": "ownership assignments",
+          "items": {
+            "type": "object",
+            "properties": {
+              "objective": {
+                "type": "string",
+                "description": "objective"
+              },
+              "owner": {
+                "type": "string",
+                "description": "owner"
+              },
+              "review_cadence": {
+                "type": "string",
+                "description": "review cadence"
+              }
+            },
+            "required": [
+              "objective",
+              "owner",
+              "review_cadence"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "perspectives",
+        "strategy_map",
+        "ownership_assignments",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

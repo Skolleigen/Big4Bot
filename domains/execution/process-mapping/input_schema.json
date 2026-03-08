@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Process Mapping Input",
+  "description": "Required and optional inputs for executing the Process Mapping skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "process_scope_definition": {
+      "type": "string",
+      "description": "Process scope definition: the start event, the end event, and the explicit boundaries of what is in and out of scope"
+    },
+    "list_process_participants": {
+      "type": "array",
+      "description": "List of process participants and roles involved across all steps and handoffs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "existing_process_documentation": {
+      "type": "string",
+      "description": "Existing process documentation, standard operating procedures or system workflows (if any exist)"
+    },
+    "process_performance_metrics": {
+      "type": "array",
+      "description": "Process performance metrics: cycle time, error rate, rework frequency and transaction volume",
+      "items": {
+        "type": "string"
+      }
+    },
+    "technology_systems_platforms": {
+      "type": "string",
+      "description": "Technology systems and platforms involved at each process step"
+    },
+    "regulatory_compliance_contractual": {
+      "type": "string",
+      "description": "Regulatory, compliance or contractual requirements governing the process"
+    },
+    "customer_service_level": {
+      "type": "string",
+      "description": "Customer service level agreements or turnaround time commitments"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "process_scope_definition",
+    "list_process_participants",
+    "existing_process_documentation",
+    "process_performance_metrics"
+  ]
+}

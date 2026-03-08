@@ -1,0 +1,273 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Competitive Positioning Output",
+  "description": "Structured output schema for the Competitive Positioning consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "competitive-positioning",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "market-customer",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "competitive_landscape": {
+          "type": "object",
+          "properties": {
+            "direct_competitors": {
+              "type": "array",
+              "description": "direct competitors",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "competitor": {
+                    "type": "string",
+                    "description": "competitor"
+                  },
+                  "primary_offering": {
+                    "type": "string",
+                    "description": "primary offering"
+                  },
+                  "target_segment": {
+                    "type": "string",
+                    "description": "target segment"
+                  },
+                  "stated_value_proposition": {
+                    "type": "string",
+                    "description": "stated value proposition"
+                  },
+                  "market_share_estimate": {
+                    "type": "string",
+                    "description": "market share estimate"
+                  }
+                },
+                "required": [
+                  "competitor",
+                  "primary_offering",
+                  "target_segment",
+                  "stated_value_proposition",
+                  "market_share_estimate"
+                ]
+              }
+            },
+            "indirect_competitors": {
+              "type": "array",
+              "description": "indirect competitors",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "competitor": {
+                    "type": "string",
+                    "description": "competitor"
+                  },
+                  "alternative_solution": {
+                    "type": "string",
+                    "description": "alternative solution"
+                  },
+                  "overlap_area": {
+                    "type": "string",
+                    "description": "overlap area"
+                  }
+                },
+                "required": [
+                  "competitor",
+                  "alternative_solution",
+                  "overlap_area"
+                ]
+              }
+            }
+          },
+          "required": [
+            "direct_competitors",
+            "indirect_competitors"
+          ]
+        },
+        "positioning_dimensions": {
+          "type": "array",
+          "description": "positioning dimensions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dimension": {
+                "type": "string",
+                "description": "dimension"
+              },
+              "relevance_to_buyer": {
+                "type": "string",
+                "description": "relevance to buyer"
+              }
+            },
+            "required": [
+              "dimension",
+              "relevance_to_buyer"
+            ]
+          }
+        },
+        "positioning_matrix": {
+          "type": "object",
+          "properties": {
+            "x_axis_dimension": {
+              "type": "string",
+              "description": "x axis dimension"
+            },
+            "y_axis_dimension": {
+              "type": "string",
+              "description": "y axis dimension"
+            },
+            "competitor_positions": {
+              "type": "array",
+              "description": "competitor positions",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "entity": {
+                    "type": "string",
+                    "description": "entity"
+                  },
+                  "x_score": {
+                    "type": "number",
+                    "description": "x score"
+                  },
+                  "y_score": {
+                    "type": "number",
+                    "description": "y score"
+                  }
+                },
+                "required": [
+                  "entity",
+                  "x_score",
+                  "y_score"
+                ]
+              }
+            },
+            "white_space_opportunities": {
+              "type": "array",
+              "description": "white space opportunities",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "x_axis_dimension",
+            "y_axis_dimension",
+            "competitor_positions",
+            "white_space_opportunities"
+          ]
+        },
+        "current_position_assessment": {
+          "type": "object",
+          "properties": {
+            "perceived_position": {
+              "type": "string",
+              "description": "perceived position"
+            },
+            "claimed_position": {
+              "type": "string",
+              "description": "claimed position"
+            },
+            "alignment_gap": {
+              "type": "string",
+              "description": "alignment gap"
+            },
+            "strengths": {
+              "type": "array",
+              "description": "strengths",
+              "items": {
+                "type": "string"
+              }
+            },
+            "vulnerabilities": {
+              "type": "array",
+              "description": "vulnerabilities",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "perceived_position",
+            "claimed_position",
+            "alignment_gap",
+            "strengths",
+            "vulnerabilities"
+          ]
+        },
+        "positioning_statement": {
+          "type": "object",
+          "properties": {
+            "target_segment": {
+              "type": "string",
+              "description": "target segment"
+            },
+            "brand_or_product": {
+              "type": "string",
+              "description": "brand or product"
+            },
+            "category": {
+              "type": "string",
+              "description": "category"
+            },
+            "primary_differentiation": {
+              "type": "string",
+              "description": "primary differentiation"
+            },
+            "proof_point": {
+              "type": "string",
+              "description": "proof point"
+            }
+          },
+          "required": [
+            "target_segment",
+            "brand_or_product",
+            "category",
+            "primary_differentiation",
+            "proof_point"
+          ]
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "competitive_landscape",
+        "positioning_dimensions",
+        "positioning_matrix",
+        "current_position_assessment",
+        "positioning_statement",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

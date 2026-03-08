@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio Governance Input",
+  "description": "Required and optional inputs for executing the Portfolio Governance skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "active_initiative_inventory": {
+      "type": "array",
+      "description": "Active initiative inventory with current status, budget consumption, schedule variance and strategic objective alignment",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resource_capacity_plan": {
+      "type": "string",
+      "description": "Resource capacity plan showing supply and demand for shared resources (technology, data, program staff, executive sponsorship)"
+    },
+    "risk_issue_logs": {
+      "type": "string",
+      "description": "Risk and issue logs for each active initiative"
+    },
+    "strategic_objectives_alignment": {
+      "type": "number",
+      "description": "Strategic objectives and the alignment mapping between each initiative and those objectives"
+    },
+    "benefit_realization_tracking": {
+      "type": "array",
+      "description": "Benefit realization tracking data showing actual versus forecast benefits for completed or in-flight initiatives",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stage": {
+      "type": "string",
+      "description": "Stage-gate criteria defining the governance decision points for each initiative lifecycle stage"
+    },
+    "benefit_dependency_networks": {
+      "type": "number",
+      "description": "Benefit dependency networks showing how initiative outputs combine to produce strategic outcomes"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "active_initiative_inventory",
+    "resource_capacity_plan",
+    "risk_issue_logs",
+    "strategic_objectives_alignment"
+  ]
+}

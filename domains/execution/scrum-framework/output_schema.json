@@ -1,0 +1,302 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scrum Framework Output",
+  "description": "Structured output schema for the Scrum Framework consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "scrum-framework",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "product_vision": {
+          "type": "string",
+          "description": "product vision"
+        },
+        "team_structure": {
+          "type": "object",
+          "properties": {
+            "product_owner": {
+              "type": "string",
+              "description": "product owner"
+            },
+            "scrum_master": {
+              "type": "string",
+              "description": "scrum master"
+            },
+            "development_team": {
+              "type": "array",
+              "description": "development team",
+              "items": {
+                "type": "string"
+              }
+            },
+            "team_capacity": {
+              "type": "string",
+              "description": "team capacity"
+            }
+          },
+          "required": [
+            "product_owner",
+            "scrum_master",
+            "development_team",
+            "team_capacity"
+          ]
+        },
+        "sprint_configuration": {
+          "type": "object",
+          "properties": {
+            "sprint_duration": {
+              "type": "string",
+              "description": "sprint duration"
+            },
+            "definition_of_done": {
+              "type": "array",
+              "description": "definition of done",
+              "items": {
+                "type": "string"
+              }
+            },
+            "working_agreements": {
+              "type": "array",
+              "description": "working agreements",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "sprint_duration",
+            "definition_of_done",
+            "working_agreements"
+          ]
+        },
+        "product_backlog": {
+          "type": "array",
+          "description": "product backlog",
+          "items": {
+            "type": "object",
+            "properties": {
+              "story_id": {
+                "type": "string",
+                "description": "story id"
+              },
+              "user_story": {
+                "type": "string",
+                "description": "user story"
+              },
+              "acceptance_criteria": {
+                "type": "array",
+                "description": "acceptance criteria",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "story_points": {
+                "type": "number",
+                "description": "story points"
+              },
+              "priority": {
+                "type": "number",
+                "description": "priority"
+              }
+            },
+            "required": [
+              "story_id",
+              "user_story",
+              "acceptance_criteria",
+              "story_points",
+              "priority"
+            ]
+          }
+        },
+        "sprint_plan": {
+          "type": "object",
+          "properties": {
+            "sprint_goal": {
+              "type": "string",
+              "description": "sprint goal"
+            },
+            "sprint_backlog": {
+              "type": "array",
+              "description": "sprint backlog",
+              "items": {
+                "type": "string"
+              }
+            },
+            "committed_velocity": {
+              "type": "number",
+              "description": "committed velocity"
+            }
+          },
+          "required": [
+            "sprint_goal",
+            "sprint_backlog",
+            "committed_velocity"
+          ]
+        },
+        "ceremonies": {
+          "type": "array",
+          "description": "ceremonies",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ceremony": {
+                "type": "string",
+                "description": "ceremony"
+              },
+              "frequency": {
+                "type": "string",
+                "description": "frequency"
+              },
+              "duration": {
+                "type": "string",
+                "description": "duration"
+              },
+              "participants": {
+                "type": "array",
+                "description": "participants",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "key_outputs": {
+                "type": "array",
+                "description": "key outputs",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "ceremony",
+              "frequency",
+              "duration",
+              "participants",
+              "key_outputs"
+            ]
+          }
+        },
+        "sprint_results": {
+          "type": "object",
+          "properties": {
+            "stories_completed": {
+              "type": "array",
+              "description": "stories completed",
+              "items": {
+                "type": "string"
+              }
+            },
+            "stories_incomplete": {
+              "type": "array",
+              "description": "stories incomplete",
+              "items": {
+                "type": "string"
+              }
+            },
+            "actual_velocity": {
+              "type": "number",
+              "description": "actual velocity"
+            },
+            "impediments_encountered": {
+              "type": "array",
+              "description": "impediments encountered",
+              "items": {
+                "type": "string"
+              }
+            },
+            "stakeholder_feedback": {
+              "type": "array",
+              "description": "stakeholder feedback",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "stories_completed",
+            "stories_incomplete",
+            "actual_velocity",
+            "impediments_encountered",
+            "stakeholder_feedback"
+          ]
+        },
+        "retrospective": {
+          "type": "object",
+          "properties": {
+            "what_went_well": {
+              "type": "array",
+              "description": "what went well",
+              "items": {
+                "type": "string"
+              }
+            },
+            "what_did_not_go_well": {
+              "type": "array",
+              "description": "what did not go well",
+              "items": {
+                "type": "string"
+              }
+            },
+            "improvement_commitment": {
+              "type": "string",
+              "description": "improvement commitment"
+            }
+          },
+          "required": [
+            "what_went_well",
+            "what_did_not_go_well",
+            "improvement_commitment"
+          ]
+        },
+        "velocity_trend": {
+          "type": "array",
+          "description": "velocity trend",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "product_vision",
+        "team_structure",
+        "sprint_configuration",
+        "product_backlog",
+        "sprint_plan",
+        "ceremonies",
+        "sprint_results",
+        "retrospective",
+        "velocity_trend",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

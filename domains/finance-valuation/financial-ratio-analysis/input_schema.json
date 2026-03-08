@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Financial Ratio Analysis Input",
+  "description": "Required and optional inputs for executing the Financial Ratio Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "income_statement_current": {
+      "type": "string",
+      "description": "Income statement for the current period and at least two prior periods"
+    },
+    "balance_sheet_as": {
+      "type": "string",
+      "description": "Balance sheet as of the end of the current period and at least two prior periods"
+    },
+    "cash_flow_statement": {
+      "type": "string",
+      "description": "Cash flow statement for the current period and at least two prior periods"
+    },
+    "industry_median_ratio": {
+      "type": "number",
+      "description": "Industry median ratio benchmarks (from Damodaran, IBISWorld, or S&P Capital IQ)"
+    },
+    "segment": {
+      "type": "string",
+      "description": "Segment-level financial data for multi-division companies"
+    },
+    "analyst_consensus_revenue": {
+      "type": "number",
+      "description": "Analyst consensus revenue and earnings forecasts (for forward multiple calculations)"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "income_statement_current",
+    "balance_sheet_as",
+    "cash_flow_statement",
+    "industry_median_ratio"
+  ]
+}

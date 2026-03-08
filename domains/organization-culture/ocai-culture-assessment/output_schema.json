@@ -1,0 +1,439 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OCAI Culture Assessment Output",
+  "description": "Structured output schema for the OCAI Culture Assessment consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "ocai-culture-assessment",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "response_statistics": {
+          "type": "object",
+          "properties": {
+            "total_respondents": {
+              "type": "number",
+              "description": "total respondents"
+            },
+            "response_rate": {
+              "type": "string",
+              "description": "response rate"
+            },
+            "segments_represented": {
+              "type": "array",
+              "description": "segments represented",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "total_respondents",
+            "response_rate",
+            "segments_represented"
+          ]
+        },
+        "current_culture_profile": {
+          "type": "object",
+          "properties": {
+            "overall": {
+              "type": "object",
+              "properties": {
+                "clan": {
+                  "type": "number",
+                  "description": "clan"
+                },
+                "adhocracy": {
+                  "type": "number",
+                  "description": "adhocracy"
+                },
+                "market": {
+                  "type": "number",
+                  "description": "market"
+                },
+                "hierarchy": {
+                  "type": "number",
+                  "description": "hierarchy"
+                }
+              },
+              "required": [
+                "clan",
+                "adhocracy",
+                "market",
+                "hierarchy"
+              ]
+            },
+            "by_dimension": {
+              "type": "object",
+              "properties": {
+                "dominant_characteristics": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                },
+                "organizational_leadership": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                },
+                "management_of_employees": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                },
+                "organizational_glue": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                },
+                "strategic_emphases": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                },
+                "criteria_of_success": {
+                  "type": "object",
+                  "properties": {
+                    "clan": {
+                      "type": "number",
+                      "description": "clan"
+                    },
+                    "adhocracy": {
+                      "type": "number",
+                      "description": "adhocracy"
+                    },
+                    "market": {
+                      "type": "number",
+                      "description": "market"
+                    },
+                    "hierarchy": {
+                      "type": "number",
+                      "description": "hierarchy"
+                    }
+                  },
+                  "required": [
+                    "clan",
+                    "adhocracy",
+                    "market",
+                    "hierarchy"
+                  ]
+                }
+              },
+              "required": [
+                "dominant_characteristics",
+                "organizational_leadership",
+                "management_of_employees",
+                "organizational_glue",
+                "strategic_emphases",
+                "criteria_of_success"
+              ]
+            }
+          },
+          "required": [
+            "overall",
+            "by_dimension"
+          ]
+        },
+        "preferred_culture_profile": {
+          "type": "object",
+          "properties": {
+            "overall": {
+              "type": "object",
+              "properties": {
+                "clan": {
+                  "type": "number",
+                  "description": "clan"
+                },
+                "adhocracy": {
+                  "type": "number",
+                  "description": "adhocracy"
+                },
+                "market": {
+                  "type": "number",
+                  "description": "market"
+                },
+                "hierarchy": {
+                  "type": "number",
+                  "description": "hierarchy"
+                }
+              },
+              "required": [
+                "clan",
+                "adhocracy",
+                "market",
+                "hierarchy"
+              ]
+            }
+          },
+          "required": [
+            "overall"
+          ]
+        },
+        "gap_analysis": {
+          "type": "array",
+          "description": "gap analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quadrant": {
+                "type": "string",
+                "description": "quadrant"
+              },
+              "current": {
+                "type": "number",
+                "description": "current"
+              },
+              "preferred": {
+                "type": "number",
+                "description": "preferred"
+              },
+              "gap": {
+                "type": "number",
+                "description": "gap"
+              },
+              "significance": {
+                "type": "string",
+                "description": "significance"
+              },
+              "driving_dimensions": {
+                "type": "array",
+                "description": "driving dimensions",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "quadrant",
+              "current",
+              "preferred",
+              "gap",
+              "significance",
+              "driving_dimensions"
+            ]
+          }
+        },
+        "dominant_culture_type": {
+          "type": "string",
+          "description": "dominant culture type"
+        },
+        "strategic_implications": {
+          "type": "string",
+          "description": "strategic implications"
+        },
+        "interventions": {
+          "type": "array",
+          "description": "interventions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quadrant_gap": {
+                "type": "string",
+                "description": "quadrant gap"
+              },
+              "intervention": {
+                "type": "string",
+                "description": "intervention"
+              },
+              "priority": {
+                "type": "string",
+                "description": "priority"
+              }
+            },
+            "required": [
+              "quadrant_gap",
+              "intervention",
+              "priority"
+            ]
+          }
+        },
+        "comparative_culture_map": {
+          "type": "array",
+          "description": "comparative culture map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "business_unit": {
+                "type": "string",
+                "description": "business unit"
+              },
+              "clan": {
+                "type": "number",
+                "description": "clan"
+              },
+              "adhocracy": {
+                "type": "number",
+                "description": "adhocracy"
+              },
+              "market": {
+                "type": "number",
+                "description": "market"
+              },
+              "hierarchy": {
+                "type": "number",
+                "description": "hierarchy"
+              }
+            },
+            "required": [
+              "business_unit",
+              "clan",
+              "adhocracy",
+              "market",
+              "hierarchy"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "response_statistics",
+        "current_culture_profile",
+        "preferred_culture_profile",
+        "gap_analysis",
+        "dominant_culture_type",
+        "strategic_implications",
+        "interventions",
+        "comparative_culture_map",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

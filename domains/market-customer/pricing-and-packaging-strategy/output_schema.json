@@ -1,0 +1,319 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pricing and Packaging Strategy Output",
+  "description": "Structured output schema for the Pricing and Packaging Strategy consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "pricing-and-packaging-strategy",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "market-customer",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "cost_structure_analysis": {
+          "type": "object",
+          "properties": {
+            "variable_cost_per_unit": {
+              "type": "string",
+              "description": "variable cost per unit"
+            },
+            "fixed_cost_base": {
+              "type": "string",
+              "description": "fixed cost base"
+            },
+            "current_gross_margin": {
+              "type": "string",
+              "description": "current gross margin"
+            },
+            "price_floor": {
+              "type": "string",
+              "description": "price floor"
+            }
+          },
+          "required": [
+            "variable_cost_per_unit",
+            "fixed_cost_base",
+            "current_gross_margin",
+            "price_floor"
+          ]
+        },
+        "willingness_to_pay": {
+          "type": "object",
+          "properties": {
+            "research_method": {
+              "type": "string",
+              "description": "research method"
+            },
+            "acceptable_price_range": {
+              "type": "object",
+              "properties": {
+                "too_cheap": {
+                  "type": "string",
+                  "description": "too cheap"
+                },
+                "cheap": {
+                  "type": "string",
+                  "description": "cheap"
+                },
+                "optimal": {
+                  "type": "string",
+                  "description": "optimal"
+                },
+                "expensive": {
+                  "type": "string",
+                  "description": "expensive"
+                },
+                "too_expensive": {
+                  "type": "string",
+                  "description": "too expensive"
+                }
+              },
+              "required": [
+                "too_cheap",
+                "cheap",
+                "optimal",
+                "expensive",
+                "too_expensive"
+              ]
+            },
+            "segment_variation": {
+              "type": "array",
+              "description": "segment variation",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "research_method",
+            "acceptable_price_range",
+            "segment_variation"
+          ]
+        },
+        "competitive_pricing_benchmark": {
+          "type": "array",
+          "description": "competitive pricing benchmark",
+          "items": {
+            "type": "object",
+            "properties": {
+              "competitor": {
+                "type": "string",
+                "description": "competitor"
+              },
+              "pricing_model": {
+                "type": "string",
+                "description": "pricing model"
+              },
+              "price_points": {
+                "type": "string",
+                "description": "price points"
+              },
+              "packaging_tiers": {
+                "type": "string",
+                "description": "packaging tiers"
+              }
+            },
+            "required": [
+              "competitor",
+              "pricing_model",
+              "price_points",
+              "packaging_tiers"
+            ]
+          }
+        },
+        "pricing_model_evaluation": {
+          "type": "array",
+          "description": "pricing model evaluation",
+          "items": {
+            "type": "object",
+            "properties": {
+              "model": {
+                "type": "string",
+                "description": "model"
+              },
+              "fit_assessment": {
+                "type": "string",
+                "description": "fit assessment"
+              },
+              "advantages": {
+                "type": "array",
+                "description": "advantages",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "disadvantages": {
+                "type": "array",
+                "description": "disadvantages",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "model",
+              "fit_assessment",
+              "advantages",
+              "disadvantages"
+            ]
+          }
+        },
+        "recommended_packaging": {
+          "type": "object",
+          "properties": {
+            "tiers": {
+              "type": "array",
+              "description": "tiers",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "tier_name": {
+                    "type": "string",
+                    "description": "tier name"
+                  },
+                  "target_segment": {
+                    "type": "string",
+                    "description": "target segment"
+                  },
+                  "included_features": {
+                    "type": "array",
+                    "description": "included features",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "scaling_metric": {
+                    "type": "string",
+                    "description": "scaling metric"
+                  },
+                  "price_point": {
+                    "type": "string",
+                    "description": "price point"
+                  }
+                },
+                "required": [
+                  "tier_name",
+                  "target_segment",
+                  "included_features",
+                  "scaling_metric",
+                  "price_point"
+                ]
+              }
+            },
+            "upsell_triggers": {
+              "type": "array",
+              "description": "upsell triggers",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "tiers",
+            "upsell_triggers"
+          ]
+        },
+        "revenue_projections": {
+          "type": "array",
+          "description": "revenue projections",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scenario": {
+                "type": "string",
+                "description": "scenario"
+              },
+              "projected_revenue": {
+                "type": "string",
+                "description": "projected revenue"
+              },
+              "projected_margin": {
+                "type": "string",
+                "description": "projected margin"
+              },
+              "projected_customer_volume": {
+                "type": "string",
+                "description": "projected customer volume"
+              },
+              "time_horizon": {
+                "type": "string",
+                "description": "time horizon"
+              }
+            },
+            "required": [
+              "scenario",
+              "projected_revenue",
+              "projected_margin",
+              "projected_customer_volume",
+              "time_horizon"
+            ]
+          }
+        },
+        "rollout_plan": {
+          "type": "object",
+          "properties": {
+            "pricing_strategy": {
+              "type": "string",
+              "description": "pricing strategy"
+            },
+            "existing_customer_migration": {
+              "type": "string",
+              "description": "existing customer migration"
+            },
+            "timeline": {
+              "type": "string",
+              "description": "timeline"
+            },
+            "communication_plan": {
+              "type": "string",
+              "description": "communication plan"
+            }
+          },
+          "required": [
+            "pricing_strategy",
+            "existing_customer_migration",
+            "timeline",
+            "communication_plan"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "cost_structure_analysis",
+        "willingness_to_pay",
+        "competitive_pricing_benchmark",
+        "pricing_model_evaluation",
+        "recommended_packaging",
+        "revenue_projections",
+        "rollout_plan",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

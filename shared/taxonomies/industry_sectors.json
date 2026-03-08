@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Global Industry Sectors Taxonomy",
+    "description": "Standardized industry classifications for benchmarking and context mapping across Big4Bot frameworks.",
+    "type": "array",
+    "items": {
+        "type": "string",
+        "enum": [
+            "Technology, Media, & Telecommunications (TMT)",
+            "Financial Services",
+            "Healthcare & Life Sciences",
+            "Consumer & Retail",
+            "Energy & Resources",
+            "Industrial Manufacturing",
+            "Public Sector & Education",
+            "Real Estate & Infrastructure",
+            "Transportation & Logistics",
+            "Professional Services"
+        ]
+    }
+}

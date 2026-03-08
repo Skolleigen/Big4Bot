@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Initiative Prioritization Matrix Input",
+  "description": "Required and optional inputs for executing the Initiative Prioritization Matrix skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "candidate_initiative_list": {
+      "type": "array",
+      "description": "Candidate initiative list with brief descriptions and sponsoring business unit",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strategic_objectives_okrs": {
+      "type": "array",
+      "description": "Strategic objectives or OKRs against which initiatives will be scored for fit",
+      "items": {
+        "type": "string"
+      }
+    },
+    "estimated_effort_cost": {
+      "type": "number",
+      "description": "Estimated effort or cost for each initiative (ranges are acceptable if point estimates are unavailable)"
+    },
+    "risk_assessment_dependency": {
+      "type": "boolean",
+      "description": "Risk assessment or dependency flags for each initiative"
+    },
+    "capacity_data": {
+      "type": "number",
+      "description": "Capacity data (FTE availability, budget envelopes) to apply as a constraint filter after scoring"
+    },
+    "historical_data_on": {
+      "type": "number",
+      "description": "Historical data on initiative delivery performance to calibrate effort estimates"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "candidate_initiative_list",
+    "strategic_objectives_okrs",
+    "estimated_effort_cost",
+    "risk_assessment_dependency"
+  ]
+}

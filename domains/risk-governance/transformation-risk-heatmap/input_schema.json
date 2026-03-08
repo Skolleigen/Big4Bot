@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Transformation Risk Heatmap Input",
+  "description": "Required and optional inputs for executing the Transformation Risk Heatmap skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_transformation_scope": {
+      "type": "string",
+      "description": "Defined transformation scope including the workstreams, systems, processes, and organizational units affected"
+    },
+    "program_plan_milestone": {
+      "type": "array",
+      "description": "Program plan with milestone schedule to enable assessment of risks in the context of timeline and sequencing",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stakeholder_interviews_program": {
+      "type": "string",
+      "description": "Stakeholder interviews with program workstream leads, sponsors, and subject matter experts across impacted functions"
+    },
+    "risk_scoring_scale": {
+      "type": "number",
+      "description": "Risk scoring scale with defined likelihood and impact descriptors calibrated to the specific program context"
+    },
+    "lessons": {
+      "type": "string",
+      "description": "Lessons-learned logs from analogous prior transformations within the organization or from industry benchmarks"
+    },
+    "program_risk_log": {
+      "type": "array",
+      "description": "Program risk log or issue register from an earlier phase of the same transformation to incorporate carry-forward risks",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_transformation_scope",
+    "program_plan_milestone",
+    "stakeholder_interviews_program",
+    "risk_scoring_scale"
+  ]
+}

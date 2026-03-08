@@ -1,0 +1,345 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Inbound Marketing Strategy Output",
+  "description": "Structured output schema for the Inbound Marketing Strategy consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "inbound-marketing-strategy",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "market-customer",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "buyer_personas": {
+          "type": "array",
+          "description": "buyer personas",
+          "items": {
+            "type": "object",
+            "properties": {
+              "persona_name": {
+                "type": "string",
+                "description": "persona name"
+              },
+              "role": {
+                "type": "string",
+                "description": "role"
+              },
+              "industry": {
+                "type": "string",
+                "description": "industry"
+              },
+              "primary_problems": {
+                "type": "array",
+                "description": "primary problems",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "information_seeking_behavior": {
+                "type": "string",
+                "description": "information seeking behavior"
+              },
+              "decision_authority": {
+                "type": "string",
+                "description": "decision authority"
+              }
+            },
+            "required": [
+              "persona_name",
+              "role",
+              "industry",
+              "primary_problems",
+              "information_seeking_behavior",
+              "decision_authority"
+            ]
+          }
+        },
+        "buyer_journey_map": {
+          "type": "array",
+          "description": "buyer journey map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "stage"
+              },
+              "buyer_questions": {
+                "type": "array",
+                "description": "buyer questions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "preferred_content_formats": {
+                "type": "array",
+                "description": "preferred content formats",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "preferred_channels": {
+                "type": "array",
+                "description": "preferred channels",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "stage",
+              "buyer_questions",
+              "preferred_content_formats",
+              "preferred_channels"
+            ]
+          }
+        },
+        "content_audit": {
+          "type": "object",
+          "properties": {
+            "total_assets": {
+              "type": "number",
+              "description": "total assets"
+            },
+            "assets_by_stage": {
+              "type": "object",
+              "properties": {
+                "awareness": {
+                  "type": "number",
+                  "description": "awareness"
+                },
+                "consideration": {
+                  "type": "number",
+                  "description": "consideration"
+                },
+                "decision": {
+                  "type": "number",
+                  "description": "decision"
+                }
+              },
+              "required": [
+                "awareness",
+                "consideration",
+                "decision"
+              ]
+            },
+            "over_served_stages": {
+              "type": "array",
+              "description": "over served stages",
+              "items": {
+                "type": "string"
+              }
+            },
+            "under_served_stages": {
+              "type": "array",
+              "description": "under served stages",
+              "items": {
+                "type": "string"
+              }
+            },
+            "top_performing_assets": {
+              "type": "array",
+              "description": "top performing assets",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "total_assets",
+            "assets_by_stage",
+            "over_served_stages",
+            "under_served_stages",
+            "top_performing_assets"
+          ]
+        },
+        "content_gaps": {
+          "type": "array",
+          "description": "content gaps",
+          "items": {
+            "type": "object",
+            "properties": {
+              "gap": {
+                "type": "string",
+                "description": "gap"
+              },
+              "funnel_stage": {
+                "type": "string",
+                "description": "funnel stage"
+              },
+              "buyer_demand_signal": {
+                "type": "string",
+                "description": "buyer demand signal"
+              },
+              "priority": {
+                "type": "string",
+                "description": "priority"
+              }
+            },
+            "required": [
+              "gap",
+              "funnel_stage",
+              "buyer_demand_signal",
+              "priority"
+            ]
+          }
+        },
+        "content_plan": {
+          "type": "array",
+          "description": "content plan",
+          "items": {
+            "type": "object",
+            "properties": {
+              "topic": {
+                "type": "string",
+                "description": "topic"
+              },
+              "format": {
+                "type": "string",
+                "description": "format"
+              },
+              "funnel_stage": {
+                "type": "string",
+                "description": "funnel stage"
+              },
+              "distribution_channel": {
+                "type": "string",
+                "description": "distribution channel"
+              },
+              "publishing_cadence": {
+                "type": "string",
+                "description": "publishing cadence"
+              },
+              "responsible_owner": {
+                "type": "string",
+                "description": "responsible owner"
+              }
+            },
+            "required": [
+              "topic",
+              "format",
+              "funnel_stage",
+              "distribution_channel",
+              "publishing_cadence",
+              "responsible_owner"
+            ]
+          }
+        },
+        "lead_capture_architecture": {
+          "type": "object",
+          "properties": {
+            "conversion_assets_by_stage": {
+              "type": "array",
+              "description": "conversion assets by stage",
+              "items": {
+                "type": "string"
+              }
+            },
+            "lead_nurture_sequence": {
+              "type": "array",
+              "description": "lead nurture sequence",
+              "items": {
+                "type": "string"
+              }
+            },
+            "marketing_automation_rules": {
+              "type": "array",
+              "description": "marketing automation rules",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sales_handoff_criteria": {
+              "type": "string",
+              "description": "sales handoff criteria"
+            }
+          },
+          "required": [
+            "conversion_assets_by_stage",
+            "lead_nurture_sequence",
+            "marketing_automation_rules",
+            "sales_handoff_criteria"
+          ]
+        },
+        "measurement_framework": {
+          "type": "object",
+          "properties": {
+            "awareness_kpis": {
+              "type": "array",
+              "description": "awareness kpis",
+              "items": {
+                "type": "string"
+              }
+            },
+            "consideration_kpis": {
+              "type": "array",
+              "description": "consideration kpis",
+              "items": {
+                "type": "string"
+              }
+            },
+            "decision_kpis": {
+              "type": "array",
+              "description": "decision kpis",
+              "items": {
+                "type": "string"
+              }
+            },
+            "reporting_cadence": {
+              "type": "string",
+              "description": "reporting cadence"
+            },
+            "attribution_model": {
+              "type": "string",
+              "description": "attribution model"
+            }
+          },
+          "required": [
+            "awareness_kpis",
+            "consideration_kpis",
+            "decision_kpis",
+            "reporting_cadence",
+            "attribution_model"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "buyer_personas",
+        "buyer_journey_map",
+        "content_audit",
+        "content_gaps",
+        "content_plan",
+        "lead_capture_architecture",
+        "measurement_framework",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

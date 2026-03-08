@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scrum Framework Input",
+  "description": "Required and optional inputs for executing the Scrum Framework skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "product_vision_statement": {
+      "type": "string",
+      "description": "Product vision statement and high-level goals defining what the team is building and the problem it solves"
+    },
+    "initial_product_backlog": {
+      "type": "string",
+      "description": "Initial product backlog containing User Stories or equivalent feature descriptions sufficient to fill the first 2\u20133 sprints"
+    },
+    "team_composition_confirming": {
+      "type": "string",
+      "description": "Team composition confirming the Product Owner, Scrum Master and development team members with their capacity"
+    },
+    "sprint_cadence_decision": {
+      "type": "number",
+      "description": "Sprint cadence decision: the Scrum Guide allows sprints of up to one month (four weeks), but 1\u20132 week sprints are the most common industry practice; confirm sprint duration before Sprint 1 begins"
+    },
+    "definition_done_criteria": {
+      "type": "string",
+      "description": "Definition of Done criteria specifying the quality and completeness standards a backlog item must meet to be accepted"
+    },
+    "team_working_agreements": {
+      "type": "string",
+      "description": "Team working agreements covering communication norms, escalation expectations and core hours"
+    },
+    "historical_velocity_data": {
+      "type": "string",
+      "description": "Historical velocity data from prior team Scrum experience to improve Sprint 1 capacity planning"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "product_vision_statement",
+    "initial_product_backlog",
+    "team_composition_confirming",
+    "sprint_cadence_decision"
+  ]
+}

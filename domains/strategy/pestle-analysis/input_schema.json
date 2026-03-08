@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PESTLE Analysis Input",
+  "description": "Required and optional inputs for executing the PESTLE Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "number",
+      "description": "The strategic question or business challenge prompting the macro-environmental analysis."
+    },
+    "company_context": {
+      "type": "number",
+      "description": "Brief overview of the organization's current core business operations and dependencies."
+    },
+    "geographic_market_scope": {
+      "type": "string",
+      "description": "Specific geographic or market scope of the analysis (e.g., 'European EV market')."
+    },
+    "time_horizon": {
+      "type": "number",
+      "description": "Time horizon for the strategic planning cycle (e.g., 3-5 years)."
+    },
+    "initial_leadership_hypotheses": {
+      "type": "array",
+      "description": "Initial leadership hypotheses regarding major external threats or opportunities.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "existing_macro_economic": {
+      "type": "string",
+      "description": "Existing macro-economic data, industry analyst reports, or regulatory briefings."
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "geographic_market_scope",
+    "time_horizon"
+  ]
+}

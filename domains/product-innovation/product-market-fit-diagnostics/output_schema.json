@@ -1,0 +1,253 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Market Fit Diagnostics Output",
+  "description": "Structured output schema for the Product Market Fit Diagnostics consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "product-market-fit-diagnostics",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "target_segment_definition": {
+          "type": "string",
+          "description": "target segment definition"
+        },
+        "fit_level": {
+          "type": "string",
+          "description": "fit level"
+        },
+        "retention_analysis": {
+          "type": "object",
+          "properties": {
+            "cohort_retention_curves": {
+              "type": "array",
+              "description": "cohort retention curves",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "cohort": {
+                    "type": "string",
+                    "description": "cohort"
+                  },
+                  "retention_by_period": {
+                    "type": "array",
+                    "description": "retention by period",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "curve_flattens": {
+                    "type": "number",
+                    "description": "curve flattens"
+                  },
+                  "stabilized_retention_rate": {
+                    "type": "string",
+                    "description": "stabilized retention rate"
+                  }
+                },
+                "required": [
+                  "cohort",
+                  "retention_by_period",
+                  "curve_flattens",
+                  "stabilized_retention_rate"
+                ]
+              }
+            },
+            "retention_assessment": {
+              "type": "string",
+              "description": "retention assessment"
+            }
+          },
+          "required": [
+            "cohort_retention_curves",
+            "retention_assessment"
+          ]
+        },
+        "sean_ellis_survey": {
+          "type": "object",
+          "properties": {
+            "very_disappointed_percentage": {
+              "type": "string",
+              "description": "very disappointed percentage"
+            },
+            "threshold_met": {
+              "type": "number",
+              "description": "threshold met"
+            },
+            "segment_breakdown": {
+              "type": "array",
+              "description": "segment breakdown",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "segment": {
+                    "type": "string",
+                    "description": "segment"
+                  },
+                  "very_disappointed_percentage": {
+                    "type": "string",
+                    "description": "very disappointed percentage"
+                  }
+                },
+                "required": [
+                  "segment",
+                  "very_disappointed_percentage"
+                ]
+              }
+            }
+          },
+          "required": [
+            "very_disappointed_percentage",
+            "threshold_met",
+            "segment_breakdown"
+          ]
+        },
+        "nps_analysis": {
+          "type": "object",
+          "properties": {
+            "nps_score": {
+              "type": "number",
+              "description": "nps score"
+            },
+            "promoter_reasons": {
+              "type": "array",
+              "description": "promoter reasons",
+              "items": {
+                "type": "string"
+              }
+            },
+            "detractor_reasons": {
+              "type": "array",
+              "description": "detractor reasons",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fit_limiting_factors": {
+              "type": "array",
+              "description": "fit limiting factors",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "nps_score",
+            "promoter_reasons",
+            "detractor_reasons",
+            "fit_limiting_factors"
+          ]
+        },
+        "engagement_metrics": {
+          "type": "object",
+          "properties": {
+            "core_feature_usage_frequency": {
+              "type": "string",
+              "description": "core feature usage frequency"
+            },
+            "time_to_value": {
+              "type": "string",
+              "description": "time to value"
+            },
+            "feature_adoption_breadth": {
+              "type": "string",
+              "description": "feature adoption breadth"
+            },
+            "habitual_use_segment_size": {
+              "type": "string",
+              "description": "habitual use segment size"
+            }
+          },
+          "required": [
+            "core_feature_usage_frequency",
+            "time_to_value",
+            "feature_adoption_breadth",
+            "habitual_use_segment_size"
+          ]
+        },
+        "organic_growth_signals": {
+          "type": "object",
+          "properties": {
+            "referral_rate": {
+              "type": "string",
+              "description": "referral rate"
+            },
+            "organic_traffic_growth": {
+              "type": "string",
+              "description": "organic traffic growth"
+            },
+            "word_of_mouth_indicators": {
+              "type": "array",
+              "description": "word of mouth indicators",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "referral_rate",
+            "organic_traffic_growth",
+            "word_of_mouth_indicators"
+          ]
+        },
+        "primary_limiting_factor": {
+          "type": "string",
+          "description": "primary limiting factor"
+        },
+        "recommended_intervention": {
+          "type": "string",
+          "description": "recommended intervention"
+        },
+        "prioritized_actions": {
+          "type": "array",
+          "description": "prioritized actions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "target_segment_definition",
+        "fit_level",
+        "retention_analysis",
+        "sean_ellis_survey",
+        "nps_analysis",
+        "engagement_metrics",
+        "organic_growth_signals",
+        "primary_limiting_factor",
+        "recommended_intervention",
+        "prioritized_actions",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

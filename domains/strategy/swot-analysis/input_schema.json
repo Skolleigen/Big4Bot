@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SWOT Analysis Input",
+  "description": "Required and optional inputs for executing the SWOT Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "internal_performance_data": {
+      "type": "array",
+      "description": "Internal performance data (financial results, operational KPIs, customer metrics)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "organizational_capability_inventory": {
+      "type": "array",
+      "description": "Organizational capability inventory (people, technology, processes, assets)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "external_market_competitive": {
+      "type": "string",
+      "description": "External market and competitive intelligence (industry trends, competitor profiles, regulatory landscape)"
+    },
+    "stakeholder_input_functional": {
+      "type": "string",
+      "description": "Stakeholder input representing multiple functional perspectives (interviews, surveys, or workshop outputs)"
+    },
+    "prior_strategic_plans": {
+      "type": "number",
+      "description": "Prior strategic plans and their performance against targets"
+    },
+    "benchmarking_data": {
+      "type": "array",
+      "description": "Benchmarking data against industry peers or best-in-class operators",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "internal_performance_data",
+    "organizational_capability_inventory",
+    "external_market_competitive",
+    "stakeholder_input_functional"
+  ]
+}

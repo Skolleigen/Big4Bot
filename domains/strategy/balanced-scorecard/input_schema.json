@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Balanced Scorecard Input",
+  "description": "Required and optional inputs for executing the Balanced Scorecard skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "documented_organizational_strategy": {
+      "type": "number",
+      "description": "Documented organizational strategy, mission, and vision statement"
+    },
+    "financial_performance_data": {
+      "type": "array",
+      "description": "Financial performance data and targets (revenue, margin, cost, return metrics)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "customer_performance_data": {
+      "type": "number",
+      "description": "Customer performance data (satisfaction scores, retention rates, market share, NPS)"
+    },
+    "internal_process_performance": {
+      "type": "array",
+      "description": "Internal process performance data (cycle times, quality metrics, throughput rates)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_learning_growth": {
+      "type": "string",
+      "description": "Current learning and growth indicators (employee engagement, capability gaps, technology maturity)"
+    },
+    "benchmarking_data": {
+      "type": "number",
+      "description": "Competitive benchmarking data for target-setting calibration"
+    },
+    "prior_balanced_scorecard": {
+      "type": "number",
+      "description": "Prior balanced scorecard or strategy map from previous planning cycle"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "documented_organizational_strategy",
+    "financial_performance_data",
+    "customer_performance_data",
+    "internal_process_performance",
+    "current_learning_growth"
+  ]
+}

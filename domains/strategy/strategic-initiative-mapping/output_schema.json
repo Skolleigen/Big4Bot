@@ -1,0 +1,218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Strategic Initiative Mapping Output",
+  "description": "Structured output schema for the Strategic Initiative Mapping consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "strategic-initiative-mapping",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "strategic_objectives": {
+          "type": "array",
+          "description": "strategic objectives",
+          "items": {
+            "type": "object",
+            "properties": {
+              "objective": {
+                "type": "string",
+                "description": "objective"
+              },
+              "priority_weight": {
+                "type": "string",
+                "description": "priority weight"
+              }
+            },
+            "required": [
+              "objective",
+              "priority_weight"
+            ]
+          }
+        },
+        "initiative_assessments": {
+          "type": "array",
+          "description": "initiative assessments",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "sponsor": {
+                "type": "string",
+                "description": "sponsor"
+              },
+              "strategic_impact_score": {
+                "type": "number",
+                "description": "strategic impact score"
+              },
+              "feasibility_score": {
+                "type": "number",
+                "description": "feasibility score"
+              },
+              "composite_score": {
+                "type": "number",
+                "description": "composite score"
+              },
+              "quadrant": {
+                "type": "string",
+                "description": "quadrant"
+              },
+              "dependencies": {
+                "type": "array",
+                "description": "dependencies",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "resource_requirements": {
+                "type": "string",
+                "description": "resource requirements"
+              }
+            },
+            "required": [
+              "initiative",
+              "sponsor",
+              "strategic_impact_score",
+              "feasibility_score",
+              "composite_score",
+              "quadrant",
+              "dependencies",
+              "resource_requirements"
+            ]
+          }
+        },
+        "initiative_roadmap": {
+          "type": "object",
+          "properties": {
+            "phase_now": {
+              "type": "array",
+              "description": "phase now",
+              "items": {
+                "type": "string"
+              }
+            },
+            "phase_near": {
+              "type": "array",
+              "description": "phase near",
+              "items": {
+                "type": "string"
+              }
+            },
+            "phase_later": {
+              "type": "array",
+              "description": "phase later",
+              "items": {
+                "type": "string"
+              }
+            },
+            "reserve_list": {
+              "type": "array",
+              "description": "reserve list",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "phase_now",
+            "phase_near",
+            "phase_later",
+            "reserve_list"
+          ]
+        },
+        "dependency_map": {
+          "type": "array",
+          "description": "dependency map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "depends_on": {
+                "type": "string",
+                "description": "depends on"
+              },
+              "dependency_type": {
+                "type": "string",
+                "description": "dependency type"
+              }
+            },
+            "required": [
+              "initiative",
+              "depends_on",
+              "dependency_type"
+            ]
+          }
+        },
+        "resource_allocation_summary": {
+          "type": "object",
+          "properties": {
+            "total_budget": {
+              "type": "string",
+              "description": "total budget"
+            },
+            "allocated_budget": {
+              "type": "string",
+              "description": "allocated budget"
+            },
+            "headcount_required": {
+              "type": "string",
+              "description": "headcount required"
+            },
+            "headcount_available": {
+              "type": "string",
+              "description": "headcount available"
+            }
+          },
+          "required": [
+            "total_budget",
+            "allocated_budget",
+            "headcount_required",
+            "headcount_available"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "strategic_objectives",
+        "initiative_assessments",
+        "initiative_roadmap",
+        "dependency_map",
+        "resource_allocation_summary",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

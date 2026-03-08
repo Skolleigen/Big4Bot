@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Discovery Input",
+  "description": "Required and optional inputs for executing the Product Discovery skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "problem_opportunity_statement": {
+      "type": "string",
+      "description": "Problem opportunity statement or initial product hypothesis to investigate"
+    },
+    "definition_target_user": {
+      "type": "string",
+      "description": "Definition of the target user segment including criteria for participant recruitment"
+    },
+    "access_users_interviews": {
+      "type": "string",
+      "description": "Access to users for interviews, usability sessions, or prototype testing"
+    },
+    "existing_behavioral_data": {
+      "type": "string",
+      "description": "Existing behavioral data, analytics, or prior research available for secondary analysis"
+    },
+    "support_ticket_customer": {
+      "type": "string",
+      "description": "Support ticket or customer complaint logs to surface recurring pain points before primary research"
+    },
+    "competitor_analogous_product": {
+      "type": "number",
+      "description": "Competitor or analogous product examples to anchor solution hypothesis generation"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "problem_opportunity_statement",
+    "definition_target_user",
+    "access_users_interviews",
+    "existing_behavioral_data"
+  ]
+}

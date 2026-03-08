@@ -1,0 +1,280 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Organizational Network Analysis Output",
+  "description": "Structured output schema for the Organizational Network Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "organizational-network-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "network_scope": {
+          "type": "object",
+          "properties": {
+            "population_size": {
+              "type": "number",
+              "description": "population size"
+            },
+            "response_rate": {
+              "type": "string",
+              "description": "response rate"
+            },
+            "network_questions": {
+              "type": "array",
+              "description": "network questions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "time_reference_frame": {
+              "type": "string",
+              "description": "time reference frame"
+            }
+          },
+          "required": [
+            "population_size",
+            "response_rate",
+            "network_questions",
+            "time_reference_frame"
+          ]
+        },
+        "network_metrics": {
+          "type": "object",
+          "properties": {
+            "network_density": {
+              "type": "number",
+              "description": "network density"
+            },
+            "reciprocity_rate": {
+              "type": "string",
+              "description": "reciprocity rate"
+            },
+            "average_path_length": {
+              "type": "number",
+              "description": "average path length"
+            }
+          },
+          "required": [
+            "network_density",
+            "reciprocity_rate",
+            "average_path_length"
+          ]
+        },
+        "node_centrality": {
+          "type": "array",
+          "description": "node centrality",
+          "items": {
+            "type": "object",
+            "properties": {
+              "node": {
+                "type": "string",
+                "description": "node"
+              },
+              "function": {
+                "type": "string",
+                "description": "function"
+              },
+              "level": {
+                "type": "string",
+                "description": "level"
+              },
+              "degree_centrality_in": {
+                "type": "number",
+                "description": "degree centrality in"
+              },
+              "degree_centrality_out": {
+                "type": "number",
+                "description": "degree centrality out"
+              },
+              "betweenness_centrality": {
+                "type": "number",
+                "description": "betweenness centrality"
+              },
+              "closeness_centrality": {
+                "type": "number",
+                "description": "closeness centrality"
+              },
+              "role_classification": {
+                "type": "string",
+                "description": "role classification"
+              }
+            },
+            "required": [
+              "node",
+              "function",
+              "level",
+              "degree_centrality_in",
+              "degree_centrality_out",
+              "betweenness_centrality",
+              "closeness_centrality",
+              "role_classification"
+            ]
+          }
+        },
+        "critical_brokers": {
+          "type": "array",
+          "description": "critical brokers",
+          "items": {
+            "type": "string"
+          }
+        },
+        "peripheral_nodes": {
+          "type": "array",
+          "description": "peripheral nodes",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cluster_analysis": {
+          "type": "array",
+          "description": "cluster analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cluster_id": {
+                "type": "string",
+                "description": "cluster id"
+              },
+              "cluster_composition": {
+                "type": "array",
+                "description": "cluster composition",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "internal_density": {
+                "type": "number",
+                "description": "internal density"
+              },
+              "external_connections": {
+                "type": "number",
+                "description": "external connections"
+              },
+              "silo_risk": {
+                "type": "string",
+                "description": "silo risk"
+              }
+            },
+            "required": [
+              "cluster_id",
+              "cluster_composition",
+              "internal_density",
+              "external_connections",
+              "silo_risk"
+            ]
+          }
+        },
+        "formal_informal_alignment": {
+          "type": "object",
+          "properties": {
+            "misalignment_findings": {
+              "type": "array",
+              "description": "misalignment findings",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unintended_bottlenecks": {
+              "type": "array",
+              "description": "unintended bottlenecks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "informal_influencers_without_formal_authority": {
+              "type": "array",
+              "description": "informal influencers without formal authority",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "misalignment_findings",
+            "unintended_bottlenecks",
+            "informal_influencers_without_formal_authority"
+          ]
+        },
+        "structural_recommendations": {
+          "type": "array",
+          "description": "structural recommendations",
+          "items": {
+            "type": "object",
+            "properties": {
+              "network_pathology": {
+                "type": "string",
+                "description": "network pathology"
+              },
+              "affected_nodes_or_clusters": {
+                "type": "array",
+                "description": "affected nodes or clusters",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "intervention": {
+                "type": "string",
+                "description": "intervention"
+              },
+              "expected_impact": {
+                "type": "string",
+                "description": "expected impact"
+              },
+              "priority": {
+                "type": "string",
+                "description": "priority"
+              }
+            },
+            "required": [
+              "network_pathology",
+              "affected_nodes_or_clusters",
+              "intervention",
+              "expected_impact",
+              "priority"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "network_scope",
+        "network_metrics",
+        "node_centrality",
+        "critical_brokers",
+        "peripheral_nodes",
+        "cluster_analysis",
+        "formal_informal_alignment",
+        "structural_recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

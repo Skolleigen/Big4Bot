@@ -1,0 +1,290 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Value Proposition Canvas Output",
+  "description": "Structured output schema for the Value Proposition Canvas consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "value-proposition-canvas",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "customer_profile": {
+          "type": "object",
+          "properties": {
+            "target_segment": {
+              "type": "string",
+              "description": "target segment"
+            },
+            "customer_jobs": {
+              "type": "array",
+              "description": "customer jobs",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "job": {
+                    "type": "string",
+                    "description": "job"
+                  },
+                  "job_type": {
+                    "type": "string",
+                    "description": "job type"
+                  },
+                  "importance": {
+                    "type": "string",
+                    "description": "importance"
+                  }
+                },
+                "required": [
+                  "job",
+                  "job_type",
+                  "importance"
+                ]
+              }
+            },
+            "customer_pains": {
+              "type": "array",
+              "description": "customer pains",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "pain": {
+                    "type": "string",
+                    "description": "pain"
+                  },
+                  "severity": {
+                    "type": "string",
+                    "description": "severity"
+                  },
+                  "frequency": {
+                    "type": "string",
+                    "description": "frequency"
+                  }
+                },
+                "required": [
+                  "pain",
+                  "severity",
+                  "frequency"
+                ]
+              }
+            },
+            "customer_gains": {
+              "type": "array",
+              "description": "customer gains",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gain": {
+                    "type": "string",
+                    "description": "gain"
+                  },
+                  "gain_type": {
+                    "type": "string",
+                    "description": "gain type"
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "description": "relevance"
+                  }
+                },
+                "required": [
+                  "gain",
+                  "gain_type",
+                  "relevance"
+                ]
+              }
+            }
+          },
+          "required": [
+            "target_segment",
+            "customer_jobs",
+            "customer_pains",
+            "customer_gains"
+          ]
+        },
+        "value_map": {
+          "type": "object",
+          "properties": {
+            "products_and_services": {
+              "type": "array",
+              "description": "products and services",
+              "items": {
+                "type": "string"
+              }
+            },
+            "pain_relievers": {
+              "type": "array",
+              "description": "pain relievers",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "reliever": {
+                    "type": "string",
+                    "description": "reliever"
+                  },
+                  "pain_addressed": {
+                    "type": "string",
+                    "description": "pain addressed"
+                  },
+                  "effectiveness": {
+                    "type": "string",
+                    "description": "effectiveness"
+                  }
+                },
+                "required": [
+                  "reliever",
+                  "pain_addressed",
+                  "effectiveness"
+                ]
+              }
+            },
+            "gain_creators": {
+              "type": "array",
+              "description": "gain creators",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "creator": {
+                    "type": "string",
+                    "description": "creator"
+                  },
+                  "gain_addressed": {
+                    "type": "string",
+                    "description": "gain addressed"
+                  },
+                  "effectiveness": {
+                    "type": "string",
+                    "description": "effectiveness"
+                  }
+                },
+                "required": [
+                  "creator",
+                  "gain_addressed",
+                  "effectiveness"
+                ]
+              }
+            }
+          },
+          "required": [
+            "products_and_services",
+            "pain_relievers",
+            "gain_creators"
+          ]
+        },
+        "fit_assessment": {
+          "type": "object",
+          "properties": {
+            "overall_fit_score": {
+              "type": "string",
+              "description": "overall fit score"
+            },
+            "matched_pains": {
+              "type": "array",
+              "description": "matched pains",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unaddressed_pains": {
+              "type": "array",
+              "description": "unaddressed pains",
+              "items": {
+                "type": "string"
+              }
+            },
+            "matched_gains": {
+              "type": "array",
+              "description": "matched gains",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unaddressed_gains": {
+              "type": "array",
+              "description": "unaddressed gains",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fit_gaps": {
+              "type": "array",
+              "description": "fit gaps",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "gap": {
+                    "type": "string",
+                    "description": "gap"
+                  },
+                  "customer_importance": {
+                    "type": "string",
+                    "description": "customer importance"
+                  },
+                  "gap_type": {
+                    "type": "string",
+                    "description": "gap type"
+                  }
+                },
+                "required": [
+                  "gap",
+                  "customer_importance",
+                  "gap_type"
+                ]
+              }
+            }
+          },
+          "required": [
+            "overall_fit_score",
+            "matched_pains",
+            "unaddressed_pains",
+            "matched_gains",
+            "unaddressed_gains",
+            "fit_gaps"
+          ]
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "customer_profile",
+        "value_map",
+        "fit_assessment",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

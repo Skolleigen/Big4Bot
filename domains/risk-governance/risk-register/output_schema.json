@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Risk Register Output",
+  "description": "Structured output schema for the Risk Register consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "risk-register",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "risk-governance",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "risk_appetite_statement": {
+          "type": "string",
+          "description": "risk appetite statement"
+        },
+        "risks": {
+          "type": "array",
+          "description": "risks",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "risk_title": {
+                "type": "string",
+                "description": "risk title"
+              },
+              "risk_category": {
+                "type": "string",
+                "description": "risk category"
+              },
+              "risk_description": {
+                "type": "string",
+                "description": "risk description"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              },
+              "likelihood": {
+                "type": "number",
+                "description": "likelihood"
+              },
+              "impact": {
+                "type": "number",
+                "description": "impact"
+              },
+              "inherent_risk_score": {
+                "type": "number",
+                "description": "inherent risk score"
+              },
+              "existing_controls": {
+                "type": "array",
+                "description": "existing controls",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "residual_likelihood": {
+                "type": "number",
+                "description": "residual likelihood"
+              },
+              "residual_impact": {
+                "type": "number",
+                "description": "residual impact"
+              },
+              "residual_risk_score": {
+                "type": "number",
+                "description": "residual risk score"
+              },
+              "risk_owner": {
+                "type": "string",
+                "description": "risk owner"
+              },
+              "mitigation_actions": {
+                "type": "array",
+                "description": "mitigation actions",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "type": "string",
+                      "description": "action"
+                    },
+                    "action_owner": {
+                      "type": "string",
+                      "description": "action owner"
+                    },
+                    "due_date": {
+                      "type": "string",
+                      "description": "due date"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "status"
+                    }
+                  },
+                  "required": [
+                    "action",
+                    "action_owner",
+                    "due_date",
+                    "status"
+                  ]
+                }
+              },
+              "risk_trend": {
+                "type": "string",
+                "description": "risk trend"
+              },
+              "early_warning_indicators": {
+                "type": "array",
+                "description": "early warning indicators",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "risk_id",
+              "risk_title",
+              "risk_category",
+              "risk_description",
+              "root_cause",
+              "likelihood",
+              "impact",
+              "inherent_risk_score",
+              "existing_controls",
+              "residual_likelihood",
+              "residual_impact",
+              "residual_risk_score",
+              "risk_owner",
+              "mitigation_actions",
+              "risk_trend",
+              "early_warning_indicators"
+            ]
+          }
+        },
+        "risk_matrix": {
+          "type": "object",
+          "properties": {
+            "high_risks": {
+              "type": "array",
+              "description": "high risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "medium_risks": {
+              "type": "array",
+              "description": "medium risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "low_risks": {
+              "type": "array",
+              "description": "low risks",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "high_risks",
+            "medium_risks",
+            "low_risks"
+          ]
+        },
+        "top_risks_summary": {
+          "type": "array",
+          "description": "top risks summary",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risk_appetite_assessment": {
+          "type": "string",
+          "description": "risk appetite assessment"
+        },
+        "review_cadence": {
+          "type": "string",
+          "description": "review cadence"
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "risk_appetite_statement",
+        "risks",
+        "risk_matrix",
+        "top_risks_summary",
+        "risk_appetite_assessment",
+        "review_cadence",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

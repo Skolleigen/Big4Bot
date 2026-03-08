@@ -1,0 +1,14 @@
+# Service Blueprinting — References
+
+## Foundational Works
+- G. Lynn Shostack: *Designing Services That Deliver*, Harvard Business Review (1984) — The originating paper for service blueprinting; introduced the blueprint metaphor for service design, the concept of separating customer-facing from internal service activities through a line of visibility, and the fail point analysis methodology that identifies where a service is structurally likely to break down
+- Mary Jo Bitner, Amy L. Ostrom & Felicia N. Morgan: *Service Blueprinting: A Practical Technique for Service Innovation*, California Management Review (2008) — The definitive practitioner-academic paper on service blueprinting methodology; formalized the four-layer structure (customer actions, frontstage, backstage, support processes), the three lines of demarcation (interaction, visibility, internal interaction), and the fail point identification and prioritization approach
+
+## Academic Sources
+- Zeithaml, Valarie A., Parasuraman, A. & Berry, Leonard L.: *Delivering Quality Service: Balancing Customer Perceptions and Expectations* (1990) — Introduced the SERVQUAL model and the gaps framework for service quality; identified the gap between service specification and service delivery (the internal delivery gap) as a primary quality failure mode — the same gap that service blueprinting makes visible through backstage and support process mapping
+- Fließ, Sabine & Kleinaltenkamp, Michael: *Blueprinting the Service Company: Managing Service Processes Efficiently*, Journal of Business Research (2004) — Extends Shostack's original blueprint methodology to complex multi-stage service operations; provides analytical guidance on mapping information flows and support system dependencies in the backstage and support layers
+
+## Practitioner Resources
+- IDEO: *The Field Guide to Human-Centered Design* (2015) — Integrates service blueprinting within the broader human-centered design methodology; provides facilitation guidance for collaborative blueprinting workshops and the design sprint approach to service improvement prototyping
+- Service Design Network: *This Is Service Design Doing* (Stickdorn, Hormess, Lawrence & Schneider, 2018) — Comprehensive practitioner handbook covering service blueprinting alongside related service design tools including customer journey mapping, stakeholder mapping and service prototyping; provides integration guidance for using blueprinting within a complete service design process
+- McKinsey & Company: *The service revolution in global manufacturing industries* — Practitioner research on service operations excellence; documents the performance gap between organizations that achieve end-to-end service visibility through blueprinting and those that manage service quality exclusively through the customer-facing layer

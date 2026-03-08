@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Service Blueprinting Input",
+  "description": "Required and optional inputs for executing the Service Blueprinting skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "service_scope_definition": {
+      "type": "string",
+      "description": "Service scope definition: the specific service, the target customer segment and the start and end points of the service being mapped"
+    },
+    "existing_customer_journey": {
+      "type": "array",
+      "description": "Existing customer journey map or a documented inventory of customer touchpoints and stages across the service",
+      "items": {
+        "type": "string"
+      }
+    },
+    "list_internal_roles": {
+      "type": "array",
+      "description": "List of internal roles involved in service delivery at frontstage and backstage levels",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inventory_supporting_systems": {
+      "type": "array",
+      "description": "Inventory of supporting systems and technology platforms used at each stage of the service",
+      "items": {
+        "type": "string"
+      }
+    },
+    "service_level_agreement": {
+      "type": "string",
+      "description": "Service level agreement requirements specifying the quality and turnaround standards the service is expected to meet"
+    },
+    "failure_frequency_data": {
+      "type": "string",
+      "description": "Failure frequency data by touchpoint or stage, including customer complaint data and failure mode logs"
+    },
+    "cost": {
+      "type": "array",
+      "description": "Cost-per-interaction data to enable prioritization of improvement opportunities by financial impact",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "service_scope_definition",
+    "existing_customer_journey",
+    "list_internal_roles",
+    "inventory_supporting_systems"
+  ]
+}

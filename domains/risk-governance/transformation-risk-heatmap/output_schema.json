@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Transformation Risk Heatmap Output",
+  "description": "Structured output schema for the Transformation Risk Heatmap consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "transformation-risk-heatmap",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "risk-governance",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "transformation_scope": {
+          "type": "object",
+          "properties": {
+            "program_name": {
+              "type": "string",
+              "description": "program name"
+            },
+            "workstreams": {
+              "type": "array",
+              "description": "workstreams",
+              "items": {
+                "type": "string"
+              }
+            },
+            "systems_affected": {
+              "type": "array",
+              "description": "systems affected",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timeline": {
+              "type": "string",
+              "description": "timeline"
+            }
+          },
+          "required": [
+            "program_name",
+            "workstreams",
+            "systems_affected",
+            "timeline"
+          ]
+        },
+        "risk_scoring_scale": {
+          "type": "object",
+          "properties": {
+            "likelihood_descriptors": {
+              "type": "object",
+              "properties": {}
+            },
+            "impact_descriptors": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "likelihood_descriptors",
+            "impact_descriptors"
+          ]
+        },
+        "transformation_risks": {
+          "type": "array",
+          "description": "transformation risks",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "risk_title": {
+                "type": "string",
+                "description": "risk title"
+              },
+              "risk_category": {
+                "type": "string",
+                "description": "risk category"
+              },
+              "risk_description": {
+                "type": "string",
+                "description": "risk description"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              },
+              "likelihood_score": {
+                "type": "number",
+                "description": "likelihood score"
+              },
+              "impact_score": {
+                "type": "number",
+                "description": "impact score"
+              },
+              "risk_score": {
+                "type": "number",
+                "description": "risk score"
+              },
+              "zone": {
+                "type": "string",
+                "description": "zone"
+              },
+              "early_warning_indicators": {
+                "type": "array",
+                "description": "early warning indicators",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "delivery_outcomes_at_risk": {
+                "type": "array",
+                "description": "delivery outcomes at risk",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mitigation_owner": {
+                "type": "string",
+                "description": "mitigation owner"
+              },
+              "mitigation_plan": {
+                "type": "string",
+                "description": "mitigation plan"
+              },
+              "mitigation_deadline": {
+                "type": "string",
+                "description": "mitigation deadline"
+              },
+              "residual_risk_score": {
+                "type": "number",
+                "description": "residual risk score"
+              }
+            },
+            "required": [
+              "risk_id",
+              "risk_title",
+              "risk_category",
+              "risk_description",
+              "root_cause",
+              "likelihood_score",
+              "impact_score",
+              "risk_score",
+              "zone",
+              "early_warning_indicators",
+              "delivery_outcomes_at_risk",
+              "mitigation_owner",
+              "mitigation_plan",
+              "mitigation_deadline",
+              "residual_risk_score"
+            ]
+          }
+        },
+        "heatmap_matrix": {
+          "type": "object",
+          "properties": {
+            "red_zone_risks": {
+              "type": "array",
+              "description": "red zone risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "amber_zone_risks": {
+              "type": "array",
+              "description": "amber zone risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "green_zone_risks": {
+              "type": "array",
+              "description": "green zone risks",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "red_zone_risks",
+            "amber_zone_risks",
+            "green_zone_risks"
+          ]
+        },
+        "top_risks_narrative": {
+          "type": "array",
+          "description": "top risks narrative",
+          "items": {
+            "type": "string"
+          }
+        },
+        "review_cadence": {
+          "type": "object",
+          "properties": {
+            "red_zone": {
+              "type": "string",
+              "description": "red zone"
+            },
+            "amber_zone": {
+              "type": "string",
+              "description": "amber zone"
+            },
+            "green_zone": {
+              "type": "string",
+              "description": "green zone"
+            }
+          },
+          "required": [
+            "red_zone",
+            "amber_zone",
+            "green_zone"
+          ]
+        },
+        "residual_exposures_requiring_escalation": {
+          "type": "array",
+          "description": "residual exposures requiring escalation",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "transformation_scope",
+        "risk_scoring_scale",
+        "transformation_risks",
+        "heatmap_matrix",
+        "top_risks_narrative",
+        "review_cadence",
+        "residual_exposures_requiring_escalation",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

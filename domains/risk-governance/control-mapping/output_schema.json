@@ -1,0 +1,266 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Control Mapping Output",
+  "description": "Structured output schema for the Control Mapping consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "control-mapping",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "risk-governance",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "risk_universe": {
+          "type": "array",
+          "description": "risk universe",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "risk_description": {
+                "type": "string",
+                "description": "risk description"
+              },
+              "risk_category": {
+                "type": "string",
+                "description": "risk category"
+              },
+              "inherent_severity": {
+                "type": "string",
+                "description": "inherent severity"
+              }
+            },
+            "required": [
+              "risk_id",
+              "risk_description",
+              "risk_category",
+              "inherent_severity"
+            ]
+          }
+        },
+        "control_inventory": {
+          "type": "array",
+          "description": "control inventory",
+          "items": {
+            "type": "object",
+            "properties": {
+              "control_id": {
+                "type": "string",
+                "description": "control id"
+              },
+              "control_description": {
+                "type": "string",
+                "description": "control description"
+              },
+              "control_type": {
+                "type": "string",
+                "description": "control type"
+              },
+              "control_owner": {
+                "type": "string",
+                "description": "control owner"
+              },
+              "frequency": {
+                "type": "string",
+                "description": "frequency"
+              }
+            },
+            "required": [
+              "control_id",
+              "control_description",
+              "control_type",
+              "control_owner",
+              "frequency"
+            ]
+          }
+        },
+        "control_to_risk_matrix": {
+          "type": "array",
+          "description": "control to risk matrix",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "mapped_controls": {
+                "type": "array",
+                "description": "mapped controls",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "control_id": {
+                      "type": "string",
+                      "description": "control id"
+                    },
+                    "design_adequacy": {
+                      "type": "string",
+                      "description": "design adequacy"
+                    },
+                    "operating_effectiveness": {
+                      "type": "string",
+                      "description": "operating effectiveness"
+                    },
+                    "evidence_reviewed": {
+                      "type": "string",
+                      "description": "evidence reviewed"
+                    }
+                  },
+                  "required": [
+                    "control_id",
+                    "design_adequacy",
+                    "operating_effectiveness",
+                    "evidence_reviewed"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "risk_id",
+              "mapped_controls"
+            ]
+          }
+        },
+        "control_gaps": {
+          "type": "array",
+          "description": "control gaps",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "gap_description": {
+                "type": "string",
+                "description": "gap description"
+              },
+              "gap_severity": {
+                "type": "string",
+                "description": "gap severity"
+              },
+              "remediation_recommendation": {
+                "type": "string",
+                "description": "remediation recommendation"
+              },
+              "responsible_owner": {
+                "type": "string",
+                "description": "responsible owner"
+              },
+              "implementation_priority": {
+                "type": "string",
+                "description": "implementation priority"
+              }
+            },
+            "required": [
+              "risk_id",
+              "gap_description",
+              "gap_severity",
+              "remediation_recommendation",
+              "responsible_owner",
+              "implementation_priority"
+            ]
+          }
+        },
+        "over_controlled_areas": {
+          "type": "array",
+          "description": "over controlled areas",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_id": {
+                "type": "string",
+                "description": "risk id"
+              },
+              "excess_controls": {
+                "type": "array",
+                "description": "excess controls",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "rationalization_recommendation": {
+                "type": "string",
+                "description": "rationalization recommendation"
+              }
+            },
+            "required": [
+              "risk_id",
+              "excess_controls",
+              "rationalization_recommendation"
+            ]
+          }
+        },
+        "compliance_mapping": {
+          "type": "array",
+          "description": "compliance mapping",
+          "items": {
+            "type": "object",
+            "properties": {
+              "regulatory_requirement": {
+                "type": "string",
+                "description": "regulatory requirement"
+              },
+              "mapped_controls": {
+                "type": "array",
+                "description": "mapped controls",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "compliance_status": {
+                "type": "string",
+                "description": "compliance status"
+              }
+            },
+            "required": [
+              "regulatory_requirement",
+              "mapped_controls",
+              "compliance_status"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "risk_universe",
+        "control_inventory",
+        "control_to_risk_matrix",
+        "control_gaps",
+        "over_controlled_areas",
+        "compliance_mapping",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

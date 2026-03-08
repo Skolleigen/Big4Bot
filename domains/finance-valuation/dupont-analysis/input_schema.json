@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DuPont Analysis Input",
+  "description": "Required and optional inputs for executing the DuPont Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "net_income_period": {
+      "type": "string",
+      "description": "Net income for the period"
+    },
+    "total_revenues_period": {
+      "type": "number",
+      "description": "Total revenues for the period"
+    },
+    "total_assets": {
+      "type": "string",
+      "description": "Total assets (average for the period)"
+    },
+    "total_shareholders_equity": {
+      "type": "string",
+      "description": "Total shareholders' equity (average for the period)"
+    },
+    "interest_expense_pre": {
+      "type": "string",
+      "description": "Interest expense and pre-tax income (for 5-factor extension)"
+    },
+    "tax_expense": {
+      "type": "string",
+      "description": "Tax expense (to isolate tax burden factor in the 5-factor model)"
+    },
+    "peer_company_financials": {
+      "type": "string",
+      "description": "Peer company financials for cross-sectional benchmarking"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "net_income_period",
+    "total_revenues_period",
+    "total_assets",
+    "total_shareholders_equity",
+    "interest_expense_pre"
+  ]
+}

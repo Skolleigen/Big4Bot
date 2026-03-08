@@ -1,0 +1,343 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pulse Surveys Output",
+  "description": "Structured output schema for the Pulse Surveys consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "pulse-surveys",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "survey_design": {
+          "type": "object",
+          "properties": {
+            "measurement_dimensions": {
+              "type": "array",
+              "description": "measurement dimensions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "question_count": {
+              "type": "number",
+              "description": "question count"
+            },
+            "scale_type": {
+              "type": "string",
+              "description": "scale type"
+            },
+            "frequency": {
+              "type": "string",
+              "description": "frequency"
+            },
+            "sampling_approach": {
+              "type": "string",
+              "description": "sampling approach"
+            },
+            "anonymity_threshold": {
+              "type": "number",
+              "description": "anonymity threshold"
+            }
+          },
+          "required": [
+            "measurement_dimensions",
+            "question_count",
+            "scale_type",
+            "frequency",
+            "sampling_approach",
+            "anonymity_threshold"
+          ]
+        },
+        "response_metrics": {
+          "type": "object",
+          "properties": {
+            "total_respondents": {
+              "type": "number",
+              "description": "total respondents"
+            },
+            "response_rate": {
+              "type": "string",
+              "description": "response rate"
+            },
+            "response_rate_trend": {
+              "type": "array",
+              "description": "response rate trend",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "total_respondents",
+            "response_rate",
+            "response_rate_trend"
+          ]
+        },
+        "dimension_scores": {
+          "type": "array",
+          "description": "dimension scores",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dimension": {
+                "type": "string",
+                "description": "dimension"
+              },
+              "current_score": {
+                "type": "number",
+                "description": "current score"
+              },
+              "prior_period_score": {
+                "type": "number",
+                "description": "prior period score"
+              },
+              "trend_direction": {
+                "type": "string",
+                "description": "trend direction"
+              },
+              "change_magnitude": {
+                "type": "number",
+                "description": "change magnitude"
+              },
+              "statistical_significance": {
+                "type": "string",
+                "description": "statistical significance"
+              },
+              "benchmark_comparison": {
+                "type": "string",
+                "description": "benchmark comparison"
+              },
+              "alert_flag": {
+                "type": "number",
+                "description": "alert flag"
+              }
+            },
+            "required": [
+              "dimension",
+              "current_score",
+              "prior_period_score",
+              "trend_direction",
+              "change_magnitude",
+              "statistical_significance",
+              "benchmark_comparison",
+              "alert_flag"
+            ]
+          }
+        },
+        "segment_heat_map": {
+          "type": "array",
+          "description": "segment heat map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "segment_type": {
+                "type": "string",
+                "description": "segment type"
+              },
+              "segment_name": {
+                "type": "string",
+                "description": "segment name"
+              },
+              "overall_score": {
+                "type": "number",
+                "description": "overall score"
+              },
+              "dimension_scores": {
+                "type": "object",
+                "properties": {}
+              },
+              "risk_level": {
+                "type": "string",
+                "description": "risk level"
+              }
+            },
+            "required": [
+              "segment_type",
+              "segment_name",
+              "overall_score",
+              "dimension_scores",
+              "risk_level"
+            ]
+          }
+        },
+        "qualitative_themes": {
+          "type": "array",
+          "description": "qualitative themes",
+          "items": {
+            "type": "object",
+            "properties": {
+              "theme": {
+                "type": "string",
+                "description": "theme"
+              },
+              "frequency": {
+                "type": "string",
+                "description": "frequency"
+              },
+              "sentiment": {
+                "type": "string",
+                "description": "sentiment"
+              },
+              "representative_quotes": {
+                "type": "array",
+                "description": "representative quotes",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "theme",
+              "frequency",
+              "sentiment",
+              "representative_quotes"
+            ]
+          }
+        },
+        "high_risk_areas": {
+          "type": "array",
+          "description": "high risk areas",
+          "items": {
+            "type": "object",
+            "properties": {
+              "area": {
+                "type": "string",
+                "description": "area"
+              },
+              "dimension": {
+                "type": "string",
+                "description": "dimension"
+              },
+              "score": {
+                "type": "number",
+                "description": "score"
+              },
+              "decline_rate": {
+                "type": "string",
+                "description": "decline rate"
+              },
+              "recommended_intervention": {
+                "type": "string",
+                "description": "recommended intervention"
+              }
+            },
+            "required": [
+              "area",
+              "dimension",
+              "score",
+              "decline_rate",
+              "recommended_intervention"
+            ]
+          }
+        },
+        "action_agenda": {
+          "type": "array",
+          "description": "action agenda",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "description": "action"
+              },
+              "target_dimension": {
+                "type": "string",
+                "description": "target dimension"
+              },
+              "target_segment": {
+                "type": "string",
+                "description": "target segment"
+              },
+              "owner": {
+                "type": "string",
+                "description": "owner"
+              },
+              "timeline": {
+                "type": "string",
+                "description": "timeline"
+              }
+            },
+            "required": [
+              "action",
+              "target_dimension",
+              "target_segment",
+              "owner",
+              "timeline"
+            ]
+          }
+        },
+        "closed_loop_communication": {
+          "type": "object",
+          "properties": {
+            "what_we_heard": {
+              "type": "array",
+              "description": "what we heard",
+              "items": {
+                "type": "string"
+              }
+            },
+            "actions_taken": {
+              "type": "array",
+              "description": "actions taken",
+              "items": {
+                "type": "string"
+              }
+            },
+            "what_to_expect": {
+              "type": "array",
+              "description": "what to expect",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "what_we_heard",
+            "actions_taken",
+            "what_to_expect"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "survey_design",
+        "response_metrics",
+        "dimension_scores",
+        "segment_heat_map",
+        "qualitative_themes",
+        "high_risk_areas",
+        "action_agenda",
+        "closed_loop_communication",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

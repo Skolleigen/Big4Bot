@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scenario and Sensitivity Analysis Output",
+  "description": "Structured output schema for the Scenario and Sensitivity Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "scenario-and-sensitivity-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "base_case_model": {
+          "type": "object",
+          "properties": {
+            "target_output_metric": {
+              "type": "string",
+              "description": "target output metric"
+            },
+            "base_case_value": {
+              "type": "string",
+              "description": "base case value"
+            }
+          },
+          "required": [
+            "target_output_metric",
+            "base_case_value"
+          ]
+        },
+        "key_value_drivers": {
+          "type": "array",
+          "description": "key value drivers",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variable": {
+                "type": "string",
+                "description": "variable"
+              },
+              "base_case_value": {
+                "type": "string",
+                "description": "base case value"
+              },
+              "bear_case_value": {
+                "type": "string",
+                "description": "bear case value"
+              },
+              "bull_case_value": {
+                "type": "string",
+                "description": "bull case value"
+              },
+              "impact_rank": {
+                "type": "number",
+                "description": "impact rank"
+              }
+            },
+            "required": [
+              "variable",
+              "base_case_value",
+              "bear_case_value",
+              "bull_case_value",
+              "impact_rank"
+            ]
+          }
+        },
+        "one_variable_sensitivity_tables": {
+          "type": "array",
+          "description": "one variable sensitivity tables",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variable": {
+                "type": "string",
+                "description": "variable"
+              },
+              "intervals": {
+                "type": "array",
+                "description": "intervals",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "variable_value": {
+                      "type": "string",
+                      "description": "variable value"
+                    },
+                    "output_metric_value": {
+                      "type": "string",
+                      "description": "output metric value"
+                    },
+                    "delta_from_base": {
+                      "type": "string",
+                      "description": "delta from base"
+                    }
+                  },
+                  "required": [
+                    "variable_value",
+                    "output_metric_value",
+                    "delta_from_base"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "variable",
+              "intervals"
+            ]
+          }
+        },
+        "scenario_matrix": {
+          "type": "array",
+          "description": "scenario matrix",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scenario_name": {
+                "type": "string",
+                "description": "scenario name"
+              },
+              "scenario_description": {
+                "type": "string",
+                "description": "scenario description"
+              },
+              "input_assumptions": {
+                "type": "object",
+                "properties": {}
+              },
+              "output_metric_value": {
+                "type": "string",
+                "description": "output metric value"
+              },
+              "delta_from_base_absolute": {
+                "type": "string",
+                "description": "delta from base absolute"
+              },
+              "delta_from_base_percentage": {
+                "type": "string",
+                "description": "delta from base percentage"
+              },
+              "probability_weight": {
+                "type": "string",
+                "description": "probability weight"
+              }
+            },
+            "required": [
+              "scenario_name",
+              "scenario_description",
+              "input_assumptions",
+              "output_metric_value",
+              "delta_from_base_absolute",
+              "delta_from_base_percentage",
+              "probability_weight"
+            ]
+          }
+        },
+        "tornado_chart_ranking": {
+          "type": "array",
+          "description": "tornado chart ranking",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variable": {
+                "type": "string",
+                "description": "variable"
+              },
+              "low_case_output": {
+                "type": "string",
+                "description": "low case output"
+              },
+              "high_case_output": {
+                "type": "string",
+                "description": "high case output"
+              },
+              "absolute_impact_range": {
+                "type": "string",
+                "description": "absolute impact range"
+              }
+            },
+            "required": [
+              "variable",
+              "low_case_output",
+              "high_case_output",
+              "absolute_impact_range"
+            ]
+          }
+        },
+        "probability_weighted_value": {
+          "type": "string",
+          "description": "probability weighted value"
+        },
+        "robustness_assessment": {
+          "type": "string",
+          "description": "robustness assessment"
+        },
+        "risk_mitigation_recommendations": {
+          "type": "array",
+          "description": "risk mitigation recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "monitoring_triggers": {
+          "type": "array",
+          "description": "monitoring triggers",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "base_case_model",
+        "key_value_drivers",
+        "one_variable_sensitivity_tables",
+        "scenario_matrix",
+        "tornado_chart_ranking",
+        "probability_weighted_value",
+        "robustness_assessment",
+        "risk_mitigation_recommendations",
+        "monitoring_triggers",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

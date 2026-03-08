@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RACI / DACI Governance Output",
+  "description": "Structured output schema for the RACI / DACI Governance consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "raci-daci-governance",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "framework_type": {
+          "type": "string",
+          "description": "framework type"
+        },
+        "scope": {
+          "type": "string",
+          "description": "scope"
+        },
+        "stakeholder_roles": {
+          "type": "array",
+          "description": "stakeholder roles",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "description": "role"
+              },
+              "name": {
+                "type": "string",
+                "description": "name"
+              },
+              "function": {
+                "type": "string",
+                "description": "function"
+              }
+            },
+            "required": [
+              "role",
+              "name",
+              "function"
+            ]
+          }
+        },
+        "matrix": {
+          "type": "array",
+          "description": "matrix",
+          "items": {
+            "type": "object",
+            "properties": {
+              "decision_or_activity": {
+                "type": "string",
+                "description": "decision or activity"
+              },
+              "sequence_number": {
+                "type": "number",
+                "description": "sequence number"
+              },
+              "role_assignments": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": [
+              "decision_or_activity",
+              "sequence_number",
+              "role_assignments"
+            ]
+          }
+        },
+        "governance_issues": {
+          "type": "array",
+          "description": "governance issues",
+          "items": {
+            "type": "object",
+            "properties": {
+              "issue_type": {
+                "type": "string",
+                "description": "issue type"
+              },
+              "affected_activity": {
+                "type": "string",
+                "description": "affected activity"
+              },
+              "affected_roles": {
+                "type": "array",
+                "description": "affected roles",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string",
+                "description": "description"
+              },
+              "resolution": {
+                "type": "string",
+                "description": "resolution"
+              }
+            },
+            "required": [
+              "issue_type",
+              "affected_activity",
+              "affected_roles",
+              "description",
+              "resolution"
+            ]
+          }
+        },
+        "escalation_path_changes": {
+          "type": "array",
+          "description": "escalation path changes",
+          "items": {
+            "type": "string"
+          }
+        },
+        "implementation_notes": {
+          "type": "object",
+          "properties": {
+            "approval_authority_updates": {
+              "type": "array",
+              "description": "approval authority updates",
+              "items": {
+                "type": "string"
+              }
+            },
+            "communication_requirements": {
+              "type": "array",
+              "description": "communication requirements",
+              "items": {
+                "type": "string"
+              }
+            },
+            "effective_date": {
+              "type": "string",
+              "description": "effective date"
+            }
+          },
+          "required": [
+            "approval_authority_updates",
+            "communication_requirements",
+            "effective_date"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "framework_type",
+        "scope",
+        "stakeholder_roles",
+        "matrix",
+        "governance_issues",
+        "escalation_path_changes",
+        "implementation_notes",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

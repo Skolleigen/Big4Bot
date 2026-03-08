@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Visioning and Reverse Engineering Input",
+  "description": "Required and optional inputs for executing the Visioning and Reverse Engineering skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "leadership_consensus_on": {
+      "type": "string",
+      "description": "Leadership consensus on planning horizon (3, 5, or 10 years) and willingness to commit to an ambitious future state"
+    },
+    "current_state_performance": {
+      "type": "number",
+      "description": "Current state performance baseline across relevant dimensions (revenue, market position, geographic footprint, capability profile)"
+    },
+    "market_competitive_context": {
+      "type": "string",
+      "description": "Market and competitive context including trend analysis and competitive dynamics over the planning horizon"
+    },
+    "stakeholder_ambition_inputs": {
+      "type": "string",
+      "description": "Stakeholder ambition inputs from board, leadership team and major investors"
+    },
+    "scenario_analysis_inputs": {
+      "type": "boolean",
+      "description": "Scenario analysis inputs identifying key uncertainties that could affect the path from current to future state"
+    },
+    "board_investor_expectations": {
+      "type": "number",
+      "description": "Board or investor expectations regarding return profile, growth rate, or positioning outcomes"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "leadership_consensus_on",
+    "current_state_performance",
+    "market_competitive_context",
+    "stakeholder_ambition_inputs"
+  ]
+}

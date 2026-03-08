@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design Thinking Input",
+  "description": "Required and optional inputs for executing the Design Thinking skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_innovation_challenge": {
+      "type": "string",
+      "description": "A defined innovation challenge or problem space to investigate"
+    },
+    "access_target_users": {
+      "type": "string",
+      "description": "Access to target users for qualitative research (interviews, observation, shadowing)"
+    },
+    "stakeholder_alignment_on": {
+      "type": "string",
+      "description": "Stakeholder alignment on the scope and boundaries of the problem"
+    },
+    "time_allocation_iterative": {
+      "type": "string",
+      "description": "Time allocation for iterative prototyping and testing cycles"
+    },
+    "existing_customer_research": {
+      "type": "number",
+      "description": "Existing customer research, journey maps, or support data to accelerate the Empathize phase"
+    },
+    "competitor_analogous_industry": {
+      "type": "string",
+      "description": "Competitor or analogous industry examples to seed the Ideate phase"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_innovation_challenge",
+    "access_target_users",
+    "stakeholder_alignment_on",
+    "time_allocation_iterative"
+  ]
+}

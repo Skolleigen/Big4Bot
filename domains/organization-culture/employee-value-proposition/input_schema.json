@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Employee Value Proposition Input",
+  "description": "Required and optional inputs for executing the Employee Value Proposition skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "employee_research_data": {
+      "type": "number",
+      "description": "Employee research data: engagement survey results, exit interview themes, or focus group findings on what employees value and where the organization falls short"
+    },
+    "voluntary_attrition_rate": {
+      "type": "number",
+      "description": "Voluntary attrition rate by role, level, and tenure versus sector benchmarks"
+    },
+    "current_compensation_benefits": {
+      "type": "string",
+      "description": "Current compensation and benefits data benchmarked against the relevant talent market"
+    },
+    "defined_target_talent": {
+      "type": "array",
+      "description": "Defined target talent segments by role type, career stage, or strategic skill category",
+      "items": {
+        "type": "string"
+      }
+    },
+    "competitor_employer_brand": {
+      "type": "string",
+      "description": "Competitor employer brand analysis showing how peer organizations position their EVP in the talent market"
+    },
+    "employer_review_platform": {
+      "type": "string",
+      "description": "Employer review platform data (Glassdoor, LinkedIn) synthesizing unsolicited employee sentiment"
+    },
+    "current_recruitment_conversion": {
+      "type": "string",
+      "description": "Current recruitment conversion data showing where candidates drop out of the hiring process"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "employee_research_data",
+    "voluntary_attrition_rate",
+    "current_compensation_benefits",
+    "defined_target_talent"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Total Rewards Strategy Output",
+  "description": "Structured output schema for the Total Rewards Strategy diagnostic framework.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "number",
+      "const": "total-rewards-strategy",
+      "description": "The unique identifier for the Total Rewards Strategy skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The analytical domain to which this skill belongs."
+    },
+    "output": {
+      "type": "object",
+      "description": "The analytical findings produced by the framework.",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "A high-level synthesis of how the rewards structure must shift to deliver on the EVP and strategic goals."
+        },
+        "confidence_level": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "The executor's confidence based on the quality of benchmarking data and employee feedback."
+        },
+        "current_state_gaps": {
+          "type": "array",
+          "description": "Identified disconnects between the current rewards spend and the desired EVP.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reward_element": {
+                "type": "string"
+              },
+              "identified_gap": {
+                "type": "string"
+              },
+              "impact_on_talent": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "reward_element",
+              "identified_gap",
+              "impact_on_talent"
+            ]
+          }
+        },
+        "talent_segmentation_implications": {
+          "type": "array",
+          "description": "Recommendations on how to differentiate rewards for specific talent cohorts.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "segment": {
+                "type": "string"
+              },
+              "criticality": {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "recommended_reward_focus": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "segment",
+              "criticality",
+              "recommended_reward_focus"
+            ]
+          }
+        },
+        "proposed_total_rewards_mix": {
+          "type": "object",
+          "description": "The recommended design across the core components of total rewards.",
+          "properties": {
+            "base_compensation": {
+              "type": "string"
+            },
+            "variable_and_equity_compensation": {
+              "type": "string"
+            },
+            "health_and_retirement_benefits": {
+              "type": "string"
+            },
+            "well_being_and_flexibility": {
+              "type": "string"
+            },
+            "recognition_and_development": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_compensation",
+            "variable_and_equity_compensation",
+            "health_and_retirement_benefits",
+            "well_being_and_flexibility",
+            "recognition_and_development"
+          ]
+        },
+        "budget_and_feasibility_assessment": {
+          "type": "string",
+          "description": "Analysis of the financial viability of the proposed rewards mix against known constraints."
+        },
+        "implementation_recommendations": {
+          "type": "array",
+          "description": "Prioritized programmatic changes to shift from current state to desired state.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "confidence_level",
+        "current_state_gaps",
+        "talent_segmentation_implications",
+        "proposed_total_rewards_mix",
+        "budget_and_feasibility_assessment",
+        "implementation_recommendations"
+      ]
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

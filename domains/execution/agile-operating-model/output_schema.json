@@ -1,0 +1,295 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agile Operating Model Output",
+  "description": "Structured output schema for the Agile Operating Model consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "agile-operating-model",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "current_state_assessment": {
+          "type": "object",
+          "properties": {
+            "delivery_maturity": {
+              "type": "string",
+              "description": "delivery maturity"
+            },
+            "agile_adoption_level": {
+              "type": "string",
+              "description": "agile adoption level"
+            },
+            "key_pain_points": {
+              "type": "array",
+              "description": "key pain points",
+              "items": {
+                "type": "string"
+              }
+            },
+            "organizational_readiness": {
+              "type": "string",
+              "description": "organizational readiness"
+            }
+          },
+          "required": [
+            "delivery_maturity",
+            "agile_adoption_level",
+            "key_pain_points",
+            "organizational_readiness"
+          ]
+        },
+        "value_streams": {
+          "type": "array",
+          "description": "value streams",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value_stream": {
+                "type": "string",
+                "description": "value stream"
+              },
+              "customer_segment": {
+                "type": "string",
+                "description": "customer segment"
+              },
+              "end_to_end_lead_time": {
+                "type": "string",
+                "description": "end to end lead time"
+              },
+              "bottlenecks": {
+                "type": "array",
+                "description": "bottlenecks",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "value_stream",
+              "customer_segment",
+              "end_to_end_lead_time",
+              "bottlenecks"
+            ]
+          }
+        },
+        "team_topology": {
+          "type": "array",
+          "description": "team topology",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team_name": {
+                "type": "string",
+                "description": "team name"
+              },
+              "team_type": {
+                "type": "string",
+                "description": "team type"
+              },
+              "value_stream": {
+                "type": "string",
+                "description": "value stream"
+              },
+              "size": {
+                "type": "number",
+                "description": "size"
+              },
+              "key_capabilities": {
+                "type": "array",
+                "description": "key capabilities",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dependencies": {
+                "type": "array",
+                "description": "dependencies",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "team_name",
+              "team_type",
+              "value_stream",
+              "size",
+              "key_capabilities",
+              "dependencies"
+            ]
+          }
+        },
+        "governance_model": {
+          "type": "object",
+          "properties": {
+            "planning_cadence": {
+              "type": "string",
+              "description": "planning cadence"
+            },
+            "review_cadence": {
+              "type": "string",
+              "description": "review cadence"
+            },
+            "escalation_path": {
+              "type": "string",
+              "description": "escalation path"
+            },
+            "decision_rights": {
+              "type": "string",
+              "description": "decision rights"
+            }
+          },
+          "required": [
+            "planning_cadence",
+            "review_cadence",
+            "escalation_path",
+            "decision_rights"
+          ]
+        },
+        "cadence_map": {
+          "type": "object",
+          "properties": {
+            "sprint_length": {
+              "type": "string",
+              "description": "sprint length"
+            },
+            "program_increment_length": {
+              "type": "string",
+              "description": "program increment length"
+            },
+            "ceremonies": {
+              "type": "array",
+              "description": "ceremonies",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ceremony": {
+                    "type": "string",
+                    "description": "ceremony"
+                  },
+                  "frequency": {
+                    "type": "string",
+                    "description": "frequency"
+                  },
+                  "participants": {
+                    "type": "array",
+                    "description": "participants",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "description": "purpose"
+                  }
+                },
+                "required": [
+                  "ceremony",
+                  "frequency",
+                  "participants",
+                  "purpose"
+                ]
+              }
+            }
+          },
+          "required": [
+            "sprint_length",
+            "program_increment_length",
+            "ceremonies"
+          ]
+        },
+        "transition_roadmap": {
+          "type": "array",
+          "description": "transition roadmap",
+          "items": {
+            "type": "object",
+            "properties": {
+              "phase": {
+                "type": "string",
+                "description": "phase"
+              },
+              "duration": {
+                "type": "string",
+                "description": "duration"
+              },
+              "key_activities": {
+                "type": "array",
+                "description": "key activities",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "success_criteria": {
+                "type": "array",
+                "description": "success criteria",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "risks": {
+                "type": "array",
+                "description": "risks",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "phase",
+              "duration",
+              "key_activities",
+              "success_criteria",
+              "risks"
+            ]
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "current_state_assessment",
+        "value_streams",
+        "team_topology",
+        "governance_model",
+        "cadence_map",
+        "transition_roadmap",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

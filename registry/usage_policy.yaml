@@ -1,0 +1,39 @@
+# Big4Bot Usage Policy
+# This file defines the intended operating behavior of Big4Bot for AI agents and integrators.
+# It ensures agents prioritize the consulting framework over rigid graph execution.
+
+version: "1.0"
+
+policy:
+  skills_first: true
+  description: "Big4Bot is a skill library first. The core value is the individual consulting frameworks (SKILL.md & schemas), not a mandatory execution engine."
+
+  graph_mode: "advisory"
+  description: "The dependency graph (dependencies.yaml) helps navigation and reasoning but does not force rigid, sequential workflow execution."
+
+  allow_targeted_execution: true
+  description: "If the user explicitly requests one framework (e.g., 'run SWOT'), the agent may focus solely on that framework without executing upstream dependencies."
+
+  allow_framework_advisory: true
+  description: "If the user does not know where to start, the agent may suggest candidate frameworks based on the stated problem or entry-point mappings."
+
+  allow_guided_analysis: true
+  description: "If helpful to the user's goals, the agent may use the dependency graph to suggest or actively follow a chain of frameworks (e.g., SWOT -> Risk Register)."
+
+  allow_single_artifact_focus: true
+  description: "If the user provides one artifact or evidence set and wants work focused only there (e.g., 'Audit this Balanced Scorecard'), the agent must stay focused on that artifact."
+
+  explicit_user_framework_priority: true
+  description: "User requests for specific frameworks or bypasses always override the dependency graph's suggested sequence."
+
+  suggest_missing_inputs: true
+  description: "The agent may suggest missing context or suggest running upstream frameworks if data is thin, but it must not force them as hard blockers."
+
+  do_not_force_upstream_steps: true
+  description: "Agents should synthesize available data best-effort rather than blocking execution to force a user through upstream prerequisites."
+
+  allow_pivoting: true
+  description: "The agent may pivot between frameworks or domains mid-analysis if the user's needs shift or if the data organically justifies it."
+
+  allow_feedback_paths: true
+  description: "Some frameworks legitimately send reasoning back upstream (e.g., weak Unit Economics may force a revisit of Product Discovery). Agents may traverse these paths iteratively."

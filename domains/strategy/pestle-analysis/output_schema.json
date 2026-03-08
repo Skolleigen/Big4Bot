@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PESTLE Analysis Output",
+  "description": "Structured output schema for the PESTLE macro-environmental diagnostic framework.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "pestle-analysis",
+      "description": "The unique identifier for the PESTLE Analysis skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The analytical domain to which this skill belongs."
+    },
+    "output": {
+      "type": "object",
+      "description": "The analytical findings produced by the framework.",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "A high-level synthesis of the macro-environmental landscape and its strategic implications."
+        },
+        "confidence_level": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "The executor's confidence in the analysis based on the quality and completeness of the inputs."
+        },
+        "political_factors": {
+          "type": "array",
+          "description": "Government policies, stability, trade tariffs, and taxation impacting the industry.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string",
+                "description": "Name or description of the political factor."
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ],
+                "description": "Whether the factor represents an opportunity, a threat, or is neutral."
+              },
+              "strategic_implication": {
+                "type": "string",
+                "description": "How this factor specifically impacts the organization's strategy."
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "economic_factors": {
+          "type": "array",
+          "description": "Macroeconomic indicators such as inflation, exchange rates, and growth phases.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ]
+              },
+              "strategic_implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "social_factors": {
+          "type": "array",
+          "description": "Demographic shifts, cultural trends, lifestyle changes, and consumer attitudes.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ]
+              },
+              "strategic_implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "technological_factors": {
+          "type": "array",
+          "description": "Emerging technologies, R&D momentum, automation trends, and digital disruptions.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ]
+              },
+              "strategic_implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "legal_factors": {
+          "type": "array",
+          "description": "Legislation, labor laws, consumer protection regulations, and antitrust directives.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ]
+              },
+              "strategic_implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "environmental_factors": {
+          "type": "array",
+          "description": "Climate change impacts, sustainability mandates, resource scarcity, and corporate ESG expectations.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor_name": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative",
+                  "neutral"
+                ]
+              },
+              "strategic_implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "factor_name",
+              "impact_direction",
+              "strategic_implication"
+            ]
+          }
+        },
+        "critical_macro_risks": {
+          "type": "array",
+          "description": "Synthesized critical strategic risks originating from the PESTLE analysis.",
+          "items": {
+            "type": "string",
+            "description": "A description of the top-priority macro-environmental risk."
+          }
+        },
+        "strategic_opportunities": {
+          "type": "array",
+          "description": "Synthesized macro-opportunities enabling growth or defensibility.",
+          "items": {
+            "type": "string",
+            "description": "A description of a major opportunity derived from PESTLE findings."
+          }
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "confidence_level",
+        "political_factors",
+        "economic_factors",
+        "social_factors",
+        "technological_factors",
+        "legal_factors",
+        "environmental_factors",
+        "critical_macro_risks",
+        "strategic_opportunities"
+      ]
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

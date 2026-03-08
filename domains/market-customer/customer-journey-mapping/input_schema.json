@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Customer Journey Mapping Input",
+  "description": "Required and optional inputs for executing the Customer Journey Mapping skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_customer_persona": {
+      "type": "string",
+      "description": "Defined customer persona including demographics, goals, and primary jobs-to-be-done"
+    },
+    "enumeration_all_known": {
+      "type": "number",
+      "description": "Enumeration of all known customer touchpoints across channels (digital, physical, human-assisted)"
+    },
+    "existing_quantitative_data": {
+      "type": "number",
+      "description": "Existing quantitative data on touchpoint performance (e.g., web analytics, call center volume, survey scores by interaction type)"
+    },
+    "qualitative_customer_feedback": {
+      "type": "string",
+      "description": "Qualitative customer feedback such as support tickets, interview transcripts, or usability study findings"
+    },
+    "internal_process_documentation": {
+      "type": "number",
+      "description": "Internal process documentation or service blueprints showing backstage operations that affect customer-facing touchpoints"
+    },
+    "competitor_experience_benchmarks": {
+      "type": "string",
+      "description": "Competitor experience benchmarks or industry CX benchmark data"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_customer_persona",
+    "enumeration_all_known",
+    "existing_quantitative_data",
+    "qualitative_customer_feedback"
+  ]
+}

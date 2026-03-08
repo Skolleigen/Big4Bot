@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Business Model Canvas Input",
+  "description": "Required and optional inputs for executing the Business Model Canvas skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "description_target_customer": {
+      "type": "array",
+      "description": "Description of the target customer segments served or proposed",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_proposed_value": {
+      "type": "number",
+      "description": "Current or proposed value proposition for each segment"
+    },
+    "existing_revenue_cost": {
+      "type": "number",
+      "description": "Existing revenue and cost data or reliable estimates"
+    },
+    "organizational_capability_inventory": {
+      "type": "array",
+      "description": "Organizational capability inventory covering resources, activities, and key partnerships",
+      "items": {
+        "type": "string"
+      }
+    },
+    "competitor_business_model": {
+      "type": "string",
+      "description": "Competitor business model profiles for benchmarking"
+    },
+    "customer_research_data": {
+      "type": "number",
+      "description": "Customer research data or Jobs-to-be-Done analysis to sharpen value proposition articulation"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "description_target_customer",
+    "current_proposed_value",
+    "existing_revenue_cost",
+    "organizational_capability_inventory"
+  ]
+}

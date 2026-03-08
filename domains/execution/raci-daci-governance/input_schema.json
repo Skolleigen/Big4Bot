@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RACI / DACI Governance Input",
+  "description": "Required and optional inputs for executing the RACI / DACI Governance skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "list_decisions_process": {
+      "type": "array",
+      "description": "List of decisions or process activities requiring role assignment \u2014 the rows of the matrix",
+      "items": {
+        "type": "string"
+      }
+    },
+    "roster_stakeholder_roles": {
+      "type": "string",
+      "description": "Roster of stakeholder roles to appear on the matrix \u2014 the columns; individual names are included but roles are the primary unit of mapping"
+    },
+    "existing_escalation_paths": {
+      "type": "string",
+      "description": "Existing escalation paths and authority limits relevant to the decisions being mapped"
+    },
+    "decision_frequency_urgency": {
+      "type": "string",
+      "description": "Decision frequency and urgency classification to identify which decisions most need governance clarity"
+    },
+    "existing_process_documentation": {
+      "type": "array",
+      "description": "Existing process documentation or swim lane maps to anchor the activity list",
+      "items": {
+        "type": "string"
+      }
+    },
+    "raci_daci_matrices": {
+      "type": "string",
+      "description": "RACI or DACI matrices from comparable functions or organizations as reference benchmarks"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "list_decisions_process",
+    "roster_stakeholder_roles",
+    "existing_escalation_paths"
+  ]
+}

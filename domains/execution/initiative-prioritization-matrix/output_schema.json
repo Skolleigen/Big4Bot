@@ -1,0 +1,221 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Initiative Prioritization Matrix Output",
+  "description": "Structured output schema for the Initiative Prioritization Matrix consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "initiative-prioritization-matrix",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "scoring_dimensions": {
+          "type": "array",
+          "description": "scoring dimensions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dimension": {
+                "type": "string",
+                "description": "dimension"
+              },
+              "weight": {
+                "type": "number",
+                "description": "weight"
+              },
+              "scoring_criteria": {
+                "type": "string",
+                "description": "scoring criteria"
+              }
+            },
+            "required": [
+              "dimension",
+              "weight",
+              "scoring_criteria"
+            ]
+          }
+        },
+        "initiative_scores": {
+          "type": "array",
+          "description": "initiative scores",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "sponsor": {
+                "type": "string",
+                "description": "sponsor"
+              },
+              "dimension_scores": {
+                "type": "object",
+                "properties": {}
+              },
+              "weighted_composite_score": {
+                "type": "number",
+                "description": "weighted composite score"
+              },
+              "quadrant": {
+                "type": "string",
+                "description": "quadrant"
+              },
+              "constraints": {
+                "type": "array",
+                "description": "constraints",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "initiative",
+              "sponsor",
+              "dimension_scores",
+              "weighted_composite_score",
+              "quadrant",
+              "constraints"
+            ]
+          }
+        },
+        "impact_effort_matrix": {
+          "type": "object",
+          "properties": {
+            "quick_wins": {
+              "type": "array",
+              "description": "quick wins",
+              "items": {
+                "type": "string"
+              }
+            },
+            "major_bets": {
+              "type": "array",
+              "description": "major bets",
+              "items": {
+                "type": "string"
+              }
+            },
+            "fill_ins": {
+              "type": "array",
+              "description": "fill ins",
+              "items": {
+                "type": "string"
+              }
+            },
+            "time_wasters": {
+              "type": "array",
+              "description": "time wasters",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "quick_wins",
+            "major_bets",
+            "fill_ins",
+            "time_wasters"
+          ]
+        },
+        "prioritized_backlog": {
+          "type": "array",
+          "description": "prioritized backlog",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rank": {
+                "type": "number",
+                "description": "rank"
+              },
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "score": {
+                "type": "number",
+                "description": "score"
+              },
+              "recommended_action": {
+                "type": "string",
+                "description": "recommended action"
+              },
+              "rationale": {
+                "type": "string",
+                "description": "rationale"
+              }
+            },
+            "required": [
+              "rank",
+              "initiative",
+              "score",
+              "recommended_action",
+              "rationale"
+            ]
+          }
+        },
+        "capacity_constraints": {
+          "type": "object",
+          "properties": {
+            "available_budget": {
+              "type": "string",
+              "description": "available budget"
+            },
+            "available_headcount": {
+              "type": "string",
+              "description": "available headcount"
+            },
+            "constraint_driven_adjustments": {
+              "type": "array",
+              "description": "constraint driven adjustments",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "available_budget",
+            "available_headcount",
+            "constraint_driven_adjustments"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "scoring_dimensions",
+        "initiative_scores",
+        "impact_effort_matrix",
+        "prioritized_backlog",
+        "capacity_constraints",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

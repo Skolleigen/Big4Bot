@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DCF Valuation Output",
+  "description": "Structured output schema for the DCF Valuation consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "dcf-valuation",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "projection_period": {
+          "type": "string",
+          "description": "projection period"
+        },
+        "revenue_projections": {
+          "type": "array",
+          "description": "revenue projections",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "year"
+              },
+              "revenue": {
+                "type": "string",
+                "description": "revenue"
+              },
+              "growth_rate": {
+                "type": "string",
+                "description": "growth rate"
+              }
+            },
+            "required": [
+              "year",
+              "revenue",
+              "growth_rate"
+            ]
+          }
+        },
+        "free_cash_flow_projections": {
+          "type": "array",
+          "description": "free cash flow projections",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "year"
+              },
+              "ebitda": {
+                "type": "string",
+                "description": "ebitda"
+              },
+              "depreciation_amortization": {
+                "type": "string",
+                "description": "depreciation amortization"
+              },
+              "taxes": {
+                "type": "string",
+                "description": "taxes"
+              },
+              "change_in_working_capital": {
+                "type": "string",
+                "description": "change in working capital"
+              },
+              "capital_expenditures": {
+                "type": "string",
+                "description": "capital expenditures"
+              },
+              "unlevered_free_cash_flow": {
+                "type": "string",
+                "description": "unlevered free cash flow"
+              }
+            },
+            "required": [
+              "year",
+              "ebitda",
+              "depreciation_amortization",
+              "taxes",
+              "change_in_working_capital",
+              "capital_expenditures",
+              "unlevered_free_cash_flow"
+            ]
+          }
+        },
+        "discount_rate": {
+          "type": "object",
+          "properties": {
+            "wacc": {
+              "type": "string",
+              "description": "wacc"
+            },
+            "cost_of_equity": {
+              "type": "string",
+              "description": "cost of equity"
+            },
+            "cost_of_debt": {
+              "type": "string",
+              "description": "cost of debt"
+            },
+            "debt_equity_ratio": {
+              "type": "string",
+              "description": "debt equity ratio"
+            },
+            "risk_free_rate": {
+              "type": "string",
+              "description": "risk free rate"
+            },
+            "equity_risk_premium": {
+              "type": "string",
+              "description": "equity risk premium"
+            },
+            "beta": {
+              "type": "string",
+              "description": "beta"
+            }
+          },
+          "required": [
+            "wacc",
+            "cost_of_equity",
+            "cost_of_debt",
+            "debt_equity_ratio",
+            "risk_free_rate",
+            "equity_risk_premium",
+            "beta"
+          ]
+        },
+        "terminal_value": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "description": "method"
+            },
+            "terminal_growth_rate": {
+              "type": "string",
+              "description": "terminal growth rate"
+            },
+            "terminal_multiple": {
+              "type": "string",
+              "description": "terminal multiple"
+            },
+            "terminal_value": {
+              "type": "string",
+              "description": "terminal value"
+            },
+            "present_value_of_terminal_value": {
+              "type": "string",
+              "description": "present value of terminal value"
+            },
+            "terminal_value_as_percentage_of_ev": {
+              "type": "string",
+              "description": "terminal value as percentage of ev"
+            }
+          },
+          "required": [
+            "method",
+            "terminal_growth_rate",
+            "terminal_multiple",
+            "terminal_value",
+            "present_value_of_terminal_value",
+            "terminal_value_as_percentage_of_ev"
+          ]
+        },
+        "valuation_summary": {
+          "type": "object",
+          "properties": {
+            "present_value_of_fcf": {
+              "type": "string",
+              "description": "present value of fcf"
+            },
+            "present_value_of_terminal_value": {
+              "type": "string",
+              "description": "present value of terminal value"
+            },
+            "enterprise_value": {
+              "type": "string",
+              "description": "enterprise value"
+            },
+            "net_debt": {
+              "type": "string",
+              "description": "net debt"
+            },
+            "equity_value": {
+              "type": "string",
+              "description": "equity value"
+            },
+            "implied_share_price": {
+              "type": "string",
+              "description": "implied share price"
+            }
+          },
+          "required": [
+            "present_value_of_fcf",
+            "present_value_of_terminal_value",
+            "enterprise_value",
+            "net_debt",
+            "equity_value",
+            "implied_share_price"
+          ]
+        },
+        "sensitivity_analysis": {
+          "type": "array",
+          "description": "sensitivity analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variable_1": {
+                "type": "string",
+                "description": "variable 1"
+              },
+              "variable_2": {
+                "type": "string",
+                "description": "variable 2"
+              },
+              "value_matrix": {
+                "type": "array",
+                "description": "value matrix",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "variable_1",
+              "variable_2",
+              "value_matrix"
+            ]
+          }
+        },
+        "key_assumptions": {
+          "type": "array",
+          "description": "key assumptions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "projection_period",
+        "revenue_projections",
+        "free_cash_flow_projections",
+        "discount_rate",
+        "terminal_value",
+        "valuation_summary",
+        "sensitivity_analysis",
+        "key_assumptions",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

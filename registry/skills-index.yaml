@@ -1,0 +1,231 @@
+skills:
+  - name: "PESTLE Analysis"
+    id: pestle-analysis
+    domain: strategy
+    description: "Macro-environmental analysis of external strategic factors."
+
+  - name: "M&A Due Diligence"
+    id: ma-due-diligence
+    domain: finance-valuation
+    description: "Structured diagnostic for evaluating acquisition targets and synergy claims."
+
+  - name: "Total Rewards Strategy"
+    id: total-rewards-strategy
+    domain: organization-culture
+    description: "Operationalize EVP through targeted compensation and benefits design."
+
+  - name: "SWOT Analysis"
+    id: swot-analysis
+    domain: strategy
+    description: "Strategic diagnostic of strengths, weaknesses, opportunities and threats."
+
+  - name: "Visioning & Reverse Engineering"
+    id: visioning-and-reverse-engineering
+    domain: strategy
+    description: "Define future vision and backcast required steps."
+
+  - name: "Balanced Scorecard"
+    id: balanced-scorecard
+    domain: strategy
+    description: "Translate strategy into measurable performance perspectives."
+
+  - name: "OKR Design"
+    id: okr-design
+    domain: strategy
+    description: "Define objectives and measurable key results for alignment."
+
+  - name: "Strategic Initiative Mapping"
+    id: strategic-initiative-mapping
+    domain: strategy
+    description: "Map initiatives supporting strategic goals."
+
+  - name: "Product Discovery"
+    id: product-discovery
+    domain: product-innovation
+    description: "Identify real user problems before building solutions."
+
+  - name: "Lean Startup Cycle"
+    id: lean-startup-cycle
+    domain: product-innovation
+    description: "Build‑measure‑learn experimentation loop."
+
+  - name: "Design Thinking"
+    id: design-thinking
+    domain: product-innovation
+    description: "Human‑centered innovation methodology."
+
+  - name: "Value Proposition Canvas"
+    id: value-proposition-canvas
+    domain: product-innovation
+    description: "Align product value with customer needs."
+
+  - name: "Business Model Canvas"
+    id: business-model-canvas
+    domain: product-innovation
+    description: "Model how value is created, delivered and captured."
+
+  - name: "Product Market Fit Diagnostics"
+    id: product-market-fit-diagnostics
+    domain: product-innovation
+    description: "Evaluate alignment between product and market demand."
+
+  - name: "Customer Journey Mapping"
+    id: customer-journey-mapping
+    domain: market-customer
+    description: "Map customer interactions across lifecycle."
+
+  - name: "Market Segmentation"
+    id: market-segmentation
+    domain: market-customer
+    description: "Identify meaningful customer groups."
+
+  - name: "Competitive Positioning"
+    id: competitive-positioning
+    domain: market-customer
+    description: "Analyze differentiation vs competitors."
+
+  - name: "Pricing & Packaging Strategy"
+    id: pricing-and-packaging-strategy
+    domain: market-customer
+    description: "Define monetization structure."
+
+  - name: "Inbound Marketing Strategy"
+    id: inbound-marketing-strategy
+    domain: market-customer
+    description: "Customer acquisition via content and funnels."
+
+  - name: "Agile Operating Model"
+    id: agile-operating-model
+    domain: execution
+    description: "Iterative development approach for teams."
+
+  - name: "Scrum Framework"
+    id: scrum-framework
+    domain: execution
+    description: "Agile delivery framework with defined ceremonies."
+
+  - name: "Process Mapping"
+    id: process-mapping
+    domain: execution
+    description: "Visualize operational workflows."
+
+  - name: "Service Blueprinting"
+    id: service-blueprinting
+    domain: execution
+    description: "Map service operations including backstage processes."
+
+  - name: "RACI / DACI Governance"
+    id: raci-daci-governance
+    domain: execution
+    description: "Clarify ownership and decision rights."
+
+  - name: "Initiative Prioritization Matrix"
+    id: initiative-prioritization-matrix
+    domain: execution
+    description: "Rank initiatives by impact and effort."
+
+  - name: "Portfolio Governance"
+    id: portfolio-governance
+    domain: execution
+    description: "Coordinate multiple strategic initiatives."
+
+  - name: "Change Management"
+    id: change-management
+    domain: organization-culture
+    description: "Structured approach to transformation."
+
+  - name: "Organizational Network Analysis"
+    id: organizational-network-analysis
+    domain: organization-culture
+    description: "Analyze informal communication patterns."
+
+  - name: "Employee Value Proposition"
+    id: employee-value-proposition
+    domain: organization-culture
+    description: "Define value offered to employees."
+
+  - name: "Pulse Surveys"
+    id: pulse-surveys
+    domain: organization-culture
+    description: "Continuous employee sentiment measurement."
+
+  - name: "OCAI Culture Assessment"
+    id: ocai-culture-assessment
+    domain: organization-culture
+    description: "Organizational culture evaluation framework."
+
+  - name: "Competing Values Framework"
+    id: competing-values-framework
+    domain: organization-culture
+    description: "Diagnose cultural archetypes."
+
+  - name: "360 Feedback"
+    id: 360-feedback
+    domain: organization-culture
+    description: "Multi‑source leadership evaluation."
+
+  - name: "Culture Workshops"
+    id: culture-workshops
+    domain: organization-culture
+    description: "Facilitated sessions to shape culture."
+
+  - name: "Financial Ratio Analysis"
+    id: financial-ratio-analysis
+    domain: finance-valuation
+    description: "Analyze liquidity, profitability and leverage ratios."
+
+  - name: "DuPont Analysis"
+    id: dupont-analysis
+    domain: finance-valuation
+    description: "Decompose ROE into profitability, efficiency and leverage."
+
+  - name: "Unit Economics"
+    id: unit-economics
+    domain: finance-valuation
+    description: "Evaluate business viability per unit."
+
+  - name: "Break‑Even Analysis"
+    id: break-even-analysis
+    domain: finance-valuation
+    description: "Determine revenue needed to cover costs."
+
+  - name: "Cash Conversion Cycle"
+    id: cash-conversion-cycle
+    domain: finance-valuation
+    description: "Measure working capital efficiency."
+
+  - name: "DCF Valuation"
+    id: dcf-valuation
+    domain: finance-valuation
+    description: "Estimate intrinsic company value via discounted cash flows."
+
+  - name: "Comparable Company Valuation"
+    id: comparable-company-valuation
+    domain: finance-valuation
+    description: "Benchmark valuation multiples."
+
+  - name: "Scenario & Sensitivity Analysis"
+    id: scenario-and-sensitivity-analysis
+    domain: finance-valuation
+    description: "Model best, base and worst‑case outcomes."
+
+  - name: "Risk Register"
+    id: risk-register
+    domain: risk-governance
+    description: "Catalog organizational risks."
+
+  - name: "Control Mapping"
+    id: control-mapping
+    domain: risk-governance
+    description: "Map controls to risks and compliance frameworks."
+
+  - name: "Capability Maturity Assessment"
+    id: capability-maturity-assessment
+    domain: risk-governance
+    description: "Assess organizational capability maturity."
+
+  - name: "Transformation Risk Heatmap"
+    id: transformation-risk-heatmap
+    domain: risk-governance
+    description: "Identify risks during transformation programs."
+

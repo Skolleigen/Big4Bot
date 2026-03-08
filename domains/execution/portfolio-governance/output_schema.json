@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio Governance Output",
+  "description": "Structured output schema for the Portfolio Governance consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "portfolio-governance",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "portfolio_inventory": {
+          "type": "array",
+          "description": "portfolio inventory",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "strategic_objective": {
+                "type": "string",
+                "description": "strategic objective"
+              },
+              "phase": {
+                "type": "string",
+                "description": "phase"
+              },
+              "health_status": {
+                "type": "string",
+                "description": "health status"
+              },
+              "budget_consumed": {
+                "type": "string",
+                "description": "budget consumed"
+              },
+              "budget_total": {
+                "type": "string",
+                "description": "budget total"
+              },
+              "schedule_variance": {
+                "type": "string",
+                "description": "schedule variance"
+              },
+              "benefit_trajectory": {
+                "type": "string",
+                "description": "benefit trajectory"
+              }
+            },
+            "required": [
+              "initiative",
+              "strategic_objective",
+              "phase",
+              "health_status",
+              "budget_consumed",
+              "budget_total",
+              "schedule_variance",
+              "benefit_trajectory"
+            ]
+          }
+        },
+        "resource_demand_analysis": {
+          "type": "object",
+          "properties": {
+            "over_allocated_resources": {
+              "type": "array",
+              "description": "over allocated resources",
+              "items": {
+                "type": "string"
+              }
+            },
+            "under_utilized_resources": {
+              "type": "array",
+              "description": "under utilized resources",
+              "items": {
+                "type": "string"
+              }
+            },
+            "critical_resource_conflicts": {
+              "type": "array",
+              "description": "critical resource conflicts",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "over_allocated_resources",
+            "under_utilized_resources",
+            "critical_resource_conflicts"
+          ]
+        },
+        "interdependency_map": {
+          "type": "array",
+          "description": "interdependency map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "depends_on": {
+                "type": "string",
+                "description": "depends on"
+              },
+              "dependency_type": {
+                "type": "string",
+                "description": "dependency type"
+              },
+              "critical_path_impact": {
+                "type": "string",
+                "description": "critical path impact"
+              }
+            },
+            "required": [
+              "initiative",
+              "depends_on",
+              "dependency_type",
+              "critical_path_impact"
+            ]
+          }
+        },
+        "portfolio_risk_assessment": {
+          "type": "object",
+          "properties": {
+            "systemic_risks": {
+              "type": "array",
+              "description": "systemic risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "concentration_risks": {
+              "type": "array",
+              "description": "concentration risks",
+              "items": {
+                "type": "string"
+              }
+            },
+            "aggregate_risk_level": {
+              "type": "string",
+              "description": "aggregate risk level"
+            }
+          },
+          "required": [
+            "systemic_risks",
+            "concentration_risks",
+            "aggregate_risk_level"
+          ]
+        },
+        "portfolio_decisions": {
+          "type": "array",
+          "description": "portfolio decisions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "initiative": {
+                "type": "string",
+                "description": "initiative"
+              },
+              "decision": {
+                "type": "string",
+                "description": "decision"
+              },
+              "rationale": {
+                "type": "string",
+                "description": "rationale"
+              },
+              "resource_reallocation": {
+                "type": "string",
+                "description": "resource reallocation"
+              }
+            },
+            "required": [
+              "initiative",
+              "decision",
+              "rationale",
+              "resource_reallocation"
+            ]
+          }
+        },
+        "updated_roadmap": {
+          "type": "object",
+          "properties": {
+            "revised_sequencing": {
+              "type": "array",
+              "description": "revised sequencing",
+              "items": {
+                "type": "string"
+              }
+            },
+            "resource_reallocations": {
+              "type": "array",
+              "description": "resource reallocations",
+              "items": {
+                "type": "string"
+              }
+            },
+            "next_review_date": {
+              "type": "string",
+              "description": "next review date"
+            }
+          },
+          "required": [
+            "revised_sequencing",
+            "resource_reallocations",
+            "next_review_date"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "portfolio_inventory",
+        "resource_demand_analysis",
+        "interdependency_map",
+        "portfolio_risk_assessment",
+        "portfolio_decisions",
+        "updated_roadmap",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

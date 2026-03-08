@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OCAI Culture Assessment Input",
+  "description": "Required and optional inputs for executing the OCAI Culture Assessment skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "ocai_survey_administered": {
+      "type": "number",
+      "description": "OCAI survey administered to the target population with confirmed anonymity and a minimum response rate target of 60%"
+    },
+    "organizational_segmentation_data": {
+      "type": "string",
+      "description": "Organizational segmentation data to enable analysis by level, function, business unit, or geography"
+    },
+    "strategic_context_document": {
+      "type": "number",
+      "description": "Strategic context document describing the organization's current priorities and the specific performance challenges motivating the culture assessment"
+    },
+    "leadership": {
+      "type": "string",
+      "description": "Leadership-defined desired culture profile or, if not yet defined, a facilitated session to produce one using the same OCAI instrument"
+    },
+    "prior_ocai_results": {
+      "type": "string",
+      "description": "Prior OCAI results for longitudinal comparison of culture profile movement over time"
+    },
+    "industry_sector_benchmarks": {
+      "type": "number",
+      "description": "Industry or sector benchmarks for OCAI quadrant scores to contextualize findings against peer organizations"
+    },
+    "qualitative_interview_data": {
+      "type": "string",
+      "description": "Qualitative interview data to enrich interpretation of the quantitative quadrant profiles"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "ocai_survey_administered",
+    "organizational_segmentation_data",
+    "strategic_context_document",
+    "leadership"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Market Segmentation Output",
+  "description": "Structured output schema for the Market Segmentation consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "market-segmentation",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "market-customer",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "segmentation_basis": {
+          "type": "string",
+          "description": "segmentation basis"
+        },
+        "segmentation_variables": {
+          "type": "array",
+          "description": "segmentation variables",
+          "items": {
+            "type": "string"
+          }
+        },
+        "segments": {
+          "type": "array",
+          "description": "segments",
+          "items": {
+            "type": "object",
+            "properties": {
+              "segment_name": {
+                "type": "string",
+                "description": "segment name"
+              },
+              "segment_profile": {
+                "type": "object",
+                "properties": {
+                  "demographics": {
+                    "type": "string",
+                    "description": "demographics"
+                  },
+                  "firmographics": {
+                    "type": "string",
+                    "description": "firmographics"
+                  },
+                  "behavioral_characteristics": {
+                    "type": "string",
+                    "description": "behavioral characteristics"
+                  },
+                  "needs_and_motivations": {
+                    "type": "string",
+                    "description": "needs and motivations"
+                  },
+                  "estimated_size": {
+                    "type": "string",
+                    "description": "estimated size"
+                  },
+                  "growth_rate": {
+                    "type": "string",
+                    "description": "growth rate"
+                  }
+                },
+                "required": [
+                  "demographics",
+                  "firmographics",
+                  "behavioral_characteristics",
+                  "needs_and_motivations",
+                  "estimated_size",
+                  "growth_rate"
+                ]
+              },
+              "attractiveness_score": {
+                "type": "number",
+                "description": "attractiveness score"
+              },
+              "accessibility": {
+                "type": "string",
+                "description": "accessibility"
+              },
+              "competitive_intensity": {
+                "type": "string",
+                "description": "competitive intensity"
+              },
+              "strategic_fit": {
+                "type": "string",
+                "description": "strategic fit"
+              }
+            },
+            "required": [
+              "segment_name",
+              "segment_profile",
+              "attractiveness_score",
+              "accessibility",
+              "competitive_intensity",
+              "strategic_fit"
+            ]
+          }
+        },
+        "targeting_recommendation": {
+          "type": "object",
+          "properties": {
+            "primary_target_segments": {
+              "type": "array",
+              "description": "primary target segments",
+              "items": {
+                "type": "string"
+              }
+            },
+            "secondary_segments": {
+              "type": "array",
+              "description": "secondary segments",
+              "items": {
+                "type": "string"
+              }
+            },
+            "segments_to_avoid": {
+              "type": "array",
+              "description": "segments to avoid",
+              "items": {
+                "type": "string"
+              }
+            },
+            "targeting_rationale": {
+              "type": "string",
+              "description": "targeting rationale"
+            }
+          },
+          "required": [
+            "primary_target_segments",
+            "secondary_segments",
+            "segments_to_avoid",
+            "targeting_rationale"
+          ]
+        },
+        "segment_comparison_matrix": {
+          "type": "array",
+          "description": "segment comparison matrix",
+          "items": {
+            "type": "object",
+            "properties": {
+              "criterion": {
+                "type": "string",
+                "description": "criterion"
+              },
+              "segment_scores": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": [
+              "criterion",
+              "segment_scores"
+            ]
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "segmentation_basis",
+        "segmentation_variables",
+        "segments",
+        "targeting_recommendation",
+        "segment_comparison_matrix",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

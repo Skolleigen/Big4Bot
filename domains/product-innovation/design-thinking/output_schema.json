@@ -1,0 +1,337 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design Thinking Output",
+  "description": "Structured output schema for the Design Thinking consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "design-thinking",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "empathize": {
+          "type": "object",
+          "properties": {
+            "research_methods": {
+              "type": "array",
+              "description": "research methods",
+              "items": {
+                "type": "string"
+              }
+            },
+            "user_behaviors": {
+              "type": "array",
+              "description": "user behaviors",
+              "items": {
+                "type": "string"
+              }
+            },
+            "user_motivations": {
+              "type": "array",
+              "description": "user motivations",
+              "items": {
+                "type": "string"
+              }
+            },
+            "user_pain_points": {
+              "type": "array",
+              "description": "user pain points",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "research_methods",
+            "user_behaviors",
+            "user_motivations",
+            "user_pain_points"
+          ]
+        },
+        "define": {
+          "type": "object",
+          "properties": {
+            "problem_statement": {
+              "type": "string",
+              "description": "problem statement"
+            },
+            "how_might_we_questions": {
+              "type": "array",
+              "description": "how might we questions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "validated_user_needs": {
+              "type": "array",
+              "description": "validated user needs",
+              "items": {
+                "type": "string"
+              }
+            },
+            "insight_clusters": {
+              "type": "array",
+              "description": "insight clusters",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "problem_statement",
+            "how_might_we_questions",
+            "validated_user_needs",
+            "insight_clusters"
+          ]
+        },
+        "ideate": {
+          "type": "object",
+          "properties": {
+            "solution_concepts": {
+              "type": "array",
+              "description": "solution concepts",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "concept": {
+                    "type": "string",
+                    "description": "concept"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "description"
+                  },
+                  "feasibility": {
+                    "type": "string",
+                    "description": "feasibility"
+                  },
+                  "desirability": {
+                    "type": "string",
+                    "description": "desirability"
+                  },
+                  "viability": {
+                    "type": "string",
+                    "description": "viability"
+                  }
+                },
+                "required": [
+                  "concept",
+                  "description",
+                  "feasibility",
+                  "desirability",
+                  "viability"
+                ]
+              }
+            },
+            "selected_concepts": {
+              "type": "array",
+              "description": "selected concepts",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "solution_concepts",
+            "selected_concepts"
+          ]
+        },
+        "prototype": {
+          "type": "object",
+          "properties": {
+            "prototypes": {
+              "type": "array",
+              "description": "prototypes",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "concept": {
+                    "type": "string",
+                    "description": "concept"
+                  },
+                  "fidelity_level": {
+                    "type": "string",
+                    "description": "fidelity level"
+                  },
+                  "prototype_format": {
+                    "type": "string",
+                    "description": "prototype format"
+                  },
+                  "core_interaction_tested": {
+                    "type": "string",
+                    "description": "core interaction tested"
+                  }
+                },
+                "required": [
+                  "concept",
+                  "fidelity_level",
+                  "prototype_format",
+                  "core_interaction_tested"
+                ]
+              }
+            }
+          },
+          "required": [
+            "prototypes"
+          ]
+        },
+        "test": {
+          "type": "object",
+          "properties": {
+            "test_sessions": {
+              "type": "array",
+              "description": "test sessions",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "prototype_tested": {
+                    "type": "string",
+                    "description": "prototype tested"
+                  },
+                  "participants": {
+                    "type": "number",
+                    "description": "participants"
+                  },
+                  "evaluation_criteria": {
+                    "type": "array",
+                    "description": "evaluation criteria",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "observations": {
+                    "type": "array",
+                    "description": "observations",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "description": "outcome"
+                  }
+                },
+                "required": [
+                  "prototype_tested",
+                  "participants",
+                  "evaluation_criteria",
+                  "observations",
+                  "outcome"
+                ]
+              }
+            },
+            "validated_elements": {
+              "type": "array",
+              "description": "validated elements",
+              "items": {
+                "type": "string"
+              }
+            },
+            "failed_elements": {
+              "type": "array",
+              "description": "failed elements",
+              "items": {
+                "type": "string"
+              }
+            },
+            "iteration_notes": {
+              "type": "string",
+              "description": "iteration notes"
+            }
+          },
+          "required": [
+            "test_sessions",
+            "validated_elements",
+            "failed_elements",
+            "iteration_notes"
+          ]
+        },
+        "design_requirements": {
+          "type": "array",
+          "description": "design requirements",
+          "items": {
+            "type": "object",
+            "properties": {
+              "requirement": {
+                "type": "string",
+                "description": "requirement"
+              },
+              "evidence_source": {
+                "type": "string",
+                "description": "evidence source"
+              },
+              "priority": {
+                "type": "string",
+                "description": "priority"
+              }
+            },
+            "required": [
+              "requirement",
+              "evidence_source",
+              "priority"
+            ]
+          }
+        },
+        "discarded_concepts": {
+          "type": "array",
+          "description": "discarded concepts",
+          "items": {
+            "type": "object",
+            "properties": {
+              "concept": {
+                "type": "string",
+                "description": "concept"
+              },
+              "failure_rationale": {
+                "type": "string",
+                "description": "failure rationale"
+              }
+            },
+            "required": [
+              "concept",
+              "failure_rationale"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "empathize",
+        "define",
+        "ideate",
+        "prototype",
+        "test",
+        "design_requirements",
+        "discarded_concepts",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

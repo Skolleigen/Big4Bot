@@ -1,0 +1,4 @@
+mcp
+pydantic
+pyyaml
+jsonschema

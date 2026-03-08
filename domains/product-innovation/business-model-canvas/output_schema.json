@@ -1,0 +1,335 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Business Model Canvas Output",
+  "description": "Structured output schema for the Business Model Canvas consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "business-model-canvas",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "canvas": {
+          "type": "object",
+          "properties": {
+            "customer_segments": {
+              "type": "array",
+              "description": "customer segments",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "segment": {
+                    "type": "string",
+                    "description": "segment"
+                  },
+                  "characteristics": {
+                    "type": "string",
+                    "description": "characteristics"
+                  },
+                  "segment_type": {
+                    "type": "string",
+                    "description": "segment type"
+                  }
+                },
+                "required": [
+                  "segment",
+                  "characteristics",
+                  "segment_type"
+                ]
+              }
+            },
+            "value_propositions": {
+              "type": "array",
+              "description": "value propositions",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "proposition": {
+                    "type": "string",
+                    "description": "proposition"
+                  },
+                  "target_segment": {
+                    "type": "string",
+                    "description": "target segment"
+                  },
+                  "differentiation": {
+                    "type": "string",
+                    "description": "differentiation"
+                  }
+                },
+                "required": [
+                  "proposition",
+                  "target_segment",
+                  "differentiation"
+                ]
+              }
+            },
+            "channels": {
+              "type": "array",
+              "description": "channels",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "channel": {
+                    "type": "string",
+                    "description": "channel"
+                  },
+                  "phase": {
+                    "type": "string",
+                    "description": "phase"
+                  },
+                  "effectiveness": {
+                    "type": "string",
+                    "description": "effectiveness"
+                  }
+                },
+                "required": [
+                  "channel",
+                  "phase",
+                  "effectiveness"
+                ]
+              }
+            },
+            "customer_relationships": {
+              "type": "array",
+              "description": "customer relationships",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "relationship_type": {
+                    "type": "string",
+                    "description": "relationship type"
+                  },
+                  "target_segment": {
+                    "type": "string",
+                    "description": "target segment"
+                  },
+                  "purpose": {
+                    "type": "string",
+                    "description": "purpose"
+                  }
+                },
+                "required": [
+                  "relationship_type",
+                  "target_segment",
+                  "purpose"
+                ]
+              }
+            },
+            "revenue_streams": {
+              "type": "array",
+              "description": "revenue streams",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "stream": {
+                    "type": "string",
+                    "description": "stream"
+                  },
+                  "pricing_model": {
+                    "type": "string",
+                    "description": "pricing model"
+                  },
+                  "revenue_share": {
+                    "type": "string",
+                    "description": "revenue share"
+                  }
+                },
+                "required": [
+                  "stream",
+                  "pricing_model",
+                  "revenue_share"
+                ]
+              }
+            },
+            "key_resources": {
+              "type": "array",
+              "description": "key resources",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "resource": {
+                    "type": "string",
+                    "description": "resource"
+                  },
+                  "resource_type": {
+                    "type": "string",
+                    "description": "resource type"
+                  },
+                  "criticality": {
+                    "type": "string",
+                    "description": "criticality"
+                  }
+                },
+                "required": [
+                  "resource",
+                  "resource_type",
+                  "criticality"
+                ]
+              }
+            },
+            "key_activities": {
+              "type": "array",
+              "description": "key activities",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "activity": {
+                    "type": "string",
+                    "description": "activity"
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "category"
+                  },
+                  "strategic_importance": {
+                    "type": "string",
+                    "description": "strategic importance"
+                  }
+                },
+                "required": [
+                  "activity",
+                  "category",
+                  "strategic_importance"
+                ]
+              }
+            },
+            "key_partnerships": {
+              "type": "array",
+              "description": "key partnerships",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "partner": {
+                    "type": "string",
+                    "description": "partner"
+                  },
+                  "partnership_type": {
+                    "type": "string",
+                    "description": "partnership type"
+                  },
+                  "key_resources_provided": {
+                    "type": "string",
+                    "description": "key resources provided"
+                  }
+                },
+                "required": [
+                  "partner",
+                  "partnership_type",
+                  "key_resources_provided"
+                ]
+              }
+            },
+            "cost_structure": {
+              "type": "object",
+              "properties": {
+                "cost_model": {
+                  "type": "string",
+                  "description": "cost model"
+                },
+                "major_cost_drivers": {
+                  "type": "array",
+                  "description": "major cost drivers",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "fixed_variable_split": {
+                  "type": "string",
+                  "description": "fixed variable split"
+                }
+              },
+              "required": [
+                "cost_model",
+                "major_cost_drivers",
+                "fixed_variable_split"
+              ]
+            }
+          },
+          "required": [
+            "customer_segments",
+            "value_propositions",
+            "channels",
+            "customer_relationships",
+            "revenue_streams",
+            "key_resources",
+            "key_activities",
+            "key_partnerships",
+            "cost_structure"
+          ]
+        },
+        "coherence_assessment": {
+          "type": "object",
+          "properties": {
+            "internal_consistency": {
+              "type": "string",
+              "description": "internal consistency"
+            },
+            "value_proposition_fit": {
+              "type": "string",
+              "description": "value proposition fit"
+            },
+            "revenue_cost_alignment": {
+              "type": "string",
+              "description": "revenue cost alignment"
+            },
+            "identified_gaps": {
+              "type": "array",
+              "description": "identified gaps",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "internal_consistency",
+            "value_proposition_fit",
+            "revenue_cost_alignment",
+            "identified_gaps"
+          ]
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "canvas",
+        "coherence_assessment",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

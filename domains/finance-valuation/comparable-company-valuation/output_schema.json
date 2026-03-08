@@ -1,0 +1,329 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Comparable Company Valuation Output",
+  "description": "Structured output schema for the Comparable Company Valuation consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "comparable-company-valuation",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "peer_selection": {
+          "type": "object",
+          "properties": {
+            "inclusion_criteria": {
+              "type": "string",
+              "description": "inclusion criteria"
+            },
+            "exclusion_criteria": {
+              "type": "string",
+              "description": "exclusion criteria"
+            },
+            "peers_excluded_with_rationale": {
+              "type": "array",
+              "description": "peers excluded with rationale",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "inclusion_criteria",
+            "exclusion_criteria",
+            "peers_excluded_with_rationale"
+          ]
+        },
+        "comparable_companies": {
+          "type": "array",
+          "description": "comparable companies",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string",
+                "description": "company"
+              },
+              "market_cap": {
+                "type": "string",
+                "description": "market cap"
+              },
+              "enterprise_value": {
+                "type": "string",
+                "description": "enterprise value"
+              },
+              "ltm_revenue": {
+                "type": "string",
+                "description": "ltm revenue"
+              },
+              "ltm_ebitda": {
+                "type": "string",
+                "description": "ltm ebitda"
+              },
+              "ltm_net_income": {
+                "type": "string",
+                "description": "ltm net income"
+              },
+              "ev_ltm_revenue": {
+                "type": "number",
+                "description": "ev ltm revenue"
+              },
+              "ev_ltm_ebitda": {
+                "type": "number",
+                "description": "ev ltm ebitda"
+              },
+              "ev_forward_revenue": {
+                "type": "number",
+                "description": "ev forward revenue"
+              },
+              "ev_forward_ebitda": {
+                "type": "number",
+                "description": "ev forward ebitda"
+              },
+              "pe_ltm": {
+                "type": "number",
+                "description": "pe ltm"
+              },
+              "pe_forward": {
+                "type": "number",
+                "description": "pe forward"
+              },
+              "revenue_growth_rate": {
+                "type": "string",
+                "description": "revenue growth rate"
+              },
+              "ebitda_margin": {
+                "type": "string",
+                "description": "ebitda margin"
+              }
+            },
+            "required": [
+              "company",
+              "market_cap",
+              "enterprise_value",
+              "ltm_revenue",
+              "ltm_ebitda",
+              "ltm_net_income",
+              "ev_ltm_revenue",
+              "ev_ltm_ebitda",
+              "ev_forward_revenue",
+              "ev_forward_ebitda",
+              "pe_ltm",
+              "pe_forward",
+              "revenue_growth_rate",
+              "ebitda_margin"
+            ]
+          }
+        },
+        "multiple_statistics": {
+          "type": "object",
+          "properties": {
+            "ev_ltm_revenue": {
+              "type": "object",
+              "properties": {
+                "median": {
+                  "type": "number",
+                  "description": "median"
+                },
+                "mean": {
+                  "type": "number",
+                  "description": "mean"
+                },
+                "percentile_25": {
+                  "type": "number",
+                  "description": "percentile 25"
+                },
+                "percentile_75": {
+                  "type": "number",
+                  "description": "percentile 75"
+                }
+              },
+              "required": [
+                "median",
+                "mean",
+                "percentile_25",
+                "percentile_75"
+              ]
+            },
+            "ev_ltm_ebitda": {
+              "type": "object",
+              "properties": {
+                "median": {
+                  "type": "number",
+                  "description": "median"
+                },
+                "mean": {
+                  "type": "number",
+                  "description": "mean"
+                },
+                "percentile_25": {
+                  "type": "number",
+                  "description": "percentile 25"
+                },
+                "percentile_75": {
+                  "type": "number",
+                  "description": "percentile 75"
+                }
+              },
+              "required": [
+                "median",
+                "mean",
+                "percentile_25",
+                "percentile_75"
+              ]
+            },
+            "pe_ltm": {
+              "type": "object",
+              "properties": {
+                "median": {
+                  "type": "number",
+                  "description": "median"
+                },
+                "mean": {
+                  "type": "number",
+                  "description": "mean"
+                },
+                "percentile_25": {
+                  "type": "number",
+                  "description": "percentile 25"
+                },
+                "percentile_75": {
+                  "type": "number",
+                  "description": "percentile 75"
+                }
+              },
+              "required": [
+                "median",
+                "mean",
+                "percentile_25",
+                "percentile_75"
+              ]
+            }
+          },
+          "required": [
+            "ev_ltm_revenue",
+            "ev_ltm_ebitda",
+            "pe_ltm"
+          ]
+        },
+        "implied_valuation": {
+          "type": "array",
+          "description": "implied valuation",
+          "items": {
+            "type": "object",
+            "properties": {
+              "multiple_type": {
+                "type": "string",
+                "description": "multiple type"
+              },
+              "selected_range_low": {
+                "type": "number",
+                "description": "selected range low"
+              },
+              "selected_range_high": {
+                "type": "number",
+                "description": "selected range high"
+              },
+              "subject_metric": {
+                "type": "string",
+                "description": "subject metric"
+              },
+              "implied_enterprise_value_low": {
+                "type": "string",
+                "description": "implied enterprise value low"
+              },
+              "implied_enterprise_value_high": {
+                "type": "string",
+                "description": "implied enterprise value high"
+              },
+              "implied_equity_value_low": {
+                "type": "string",
+                "description": "implied equity value low"
+              },
+              "implied_equity_value_high": {
+                "type": "string",
+                "description": "implied equity value high"
+              }
+            },
+            "required": [
+              "multiple_type",
+              "selected_range_low",
+              "selected_range_high",
+              "subject_metric",
+              "implied_enterprise_value_low",
+              "implied_enterprise_value_high",
+              "implied_equity_value_low",
+              "implied_equity_value_high"
+            ]
+          }
+        },
+        "consolidated_valuation_range": {
+          "type": "object",
+          "properties": {
+            "low": {
+              "type": "string",
+              "description": "low"
+            },
+            "central_estimate": {
+              "type": "string",
+              "description": "central estimate"
+            },
+            "high": {
+              "type": "string",
+              "description": "high"
+            }
+          },
+          "required": [
+            "low",
+            "central_estimate",
+            "high"
+          ]
+        },
+        "key_assumptions": {
+          "type": "array",
+          "description": "key assumptions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "peer_selection",
+        "comparable_companies",
+        "multiple_statistics",
+        "implied_valuation",
+        "consolidated_valuation_range",
+        "key_assumptions",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

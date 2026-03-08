@@ -1,0 +1,326 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Employee Value Proposition Output",
+  "description": "Structured output schema for the Employee Value Proposition consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "employee-value-proposition",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "target_talent_segments": {
+          "type": "array",
+          "description": "target talent segments",
+          "items": {
+            "type": "object",
+            "properties": {
+              "segment": {
+                "type": "string",
+                "description": "segment"
+              },
+              "role_type": {
+                "type": "string",
+                "description": "role type"
+              },
+              "career_stage": {
+                "type": "string",
+                "description": "career stage"
+              },
+              "strategic_priority": {
+                "type": "string",
+                "description": "strategic priority"
+              }
+            },
+            "required": [
+              "segment",
+              "role_type",
+              "career_stage",
+              "strategic_priority"
+            ]
+          }
+        },
+        "importance_satisfaction_matrix": {
+          "type": "array",
+          "description": "importance satisfaction matrix",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evp_element": {
+                "type": "string",
+                "description": "evp element"
+              },
+              "importance_score": {
+                "type": "number",
+                "description": "importance score"
+              },
+              "satisfaction_score": {
+                "type": "number",
+                "description": "satisfaction score"
+              },
+              "gap": {
+                "type": "number",
+                "description": "gap"
+              },
+              "element_type": {
+                "type": "string",
+                "description": "element type"
+              }
+            },
+            "required": [
+              "evp_element",
+              "importance_score",
+              "satisfaction_score",
+              "gap",
+              "element_type"
+            ]
+          }
+        },
+        "competitive_benchmark": {
+          "type": "object",
+          "properties": {
+            "compensation_and_benefits": {
+              "type": "object",
+              "properties": {
+                "current_position": {
+                  "type": "string",
+                  "description": "current position"
+                },
+                "market_benchmark": {
+                  "type": "string",
+                  "description": "market benchmark"
+                },
+                "gap": {
+                  "type": "string",
+                  "description": "gap"
+                }
+              },
+              "required": [
+                "current_position",
+                "market_benchmark",
+                "gap"
+              ]
+            },
+            "career_development": {
+              "type": "object",
+              "properties": {
+                "current_position": {
+                  "type": "string",
+                  "description": "current position"
+                },
+                "market_benchmark": {
+                  "type": "string",
+                  "description": "market benchmark"
+                },
+                "gap": {
+                  "type": "string",
+                  "description": "gap"
+                }
+              },
+              "required": [
+                "current_position",
+                "market_benchmark",
+                "gap"
+              ]
+            },
+            "culture_and_environment": {
+              "type": "object",
+              "properties": {
+                "current_position": {
+                  "type": "string",
+                  "description": "current position"
+                },
+                "market_benchmark": {
+                  "type": "string",
+                  "description": "market benchmark"
+                },
+                "gap": {
+                  "type": "string",
+                  "description": "gap"
+                }
+              },
+              "required": [
+                "current_position",
+                "market_benchmark",
+                "gap"
+              ]
+            },
+            "purpose_and_mission": {
+              "type": "object",
+              "properties": {
+                "current_position": {
+                  "type": "string",
+                  "description": "current position"
+                },
+                "market_benchmark": {
+                  "type": "string",
+                  "description": "market benchmark"
+                },
+                "gap": {
+                  "type": "string",
+                  "description": "gap"
+                }
+              },
+              "required": [
+                "current_position",
+                "market_benchmark",
+                "gap"
+              ]
+            },
+            "flexibility": {
+              "type": "object",
+              "properties": {
+                "current_position": {
+                  "type": "string",
+                  "description": "current position"
+                },
+                "market_benchmark": {
+                  "type": "string",
+                  "description": "market benchmark"
+                },
+                "gap": {
+                  "type": "string",
+                  "description": "gap"
+                }
+              },
+              "required": [
+                "current_position",
+                "market_benchmark",
+                "gap"
+              ]
+            }
+          },
+          "required": [
+            "compensation_and_benefits",
+            "career_development",
+            "culture_and_environment",
+            "purpose_and_mission",
+            "flexibility"
+          ]
+        },
+        "evp_pillars": {
+          "type": "array",
+          "description": "evp pillars",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pillar": {
+                "type": "string",
+                "description": "pillar"
+              },
+              "headline": {
+                "type": "string",
+                "description": "headline"
+              },
+              "proof_points": {
+                "type": "array",
+                "description": "proof points",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "target_segments": {
+                "type": "array",
+                "description": "target segments",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "pillar",
+              "headline",
+              "proof_points",
+              "target_segments"
+            ]
+          }
+        },
+        "evp_statement": {
+          "type": "string",
+          "description": "evp statement"
+        },
+        "activation_plan": {
+          "type": "object",
+          "properties": {
+            "internal_communication": {
+              "type": "array",
+              "description": "internal communication",
+              "items": {
+                "type": "string"
+              }
+            },
+            "external_employer_brand": {
+              "type": "array",
+              "description": "external employer brand",
+              "items": {
+                "type": "string"
+              }
+            },
+            "manager_enablement": {
+              "type": "array",
+              "description": "manager enablement",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hr_program_investments": {
+              "type": "array",
+              "description": "hr program investments",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "internal_communication",
+            "external_employer_brand",
+            "manager_enablement",
+            "hr_program_investments"
+          ]
+        },
+        "attrition_impact_estimate": {
+          "type": "string",
+          "description": "attrition impact estimate"
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "target_talent_segments",
+        "importance_satisfaction_matrix",
+        "competitive_benchmark",
+        "evp_pillars",
+        "evp_statement",
+        "activation_plan",
+        "attrition_impact_estimate",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

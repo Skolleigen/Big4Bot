@@ -1,0 +1,510 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Financial Ratio Analysis Output",
+  "description": "Structured output schema for the Financial Ratio Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "financial-ratio-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "analysis_period": {
+          "type": "string",
+          "description": "analysis period"
+        },
+        "liquidity_ratios": {
+          "type": "object",
+          "properties": {
+            "current_ratio": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "quick_ratio": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            }
+          },
+          "required": [
+            "current_ratio",
+            "quick_ratio"
+          ]
+        },
+        "solvency_ratios": {
+          "type": "object",
+          "properties": {
+            "debt_to_equity": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "net_debt_to_ebitda": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "interest_coverage_ratio": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            }
+          },
+          "required": [
+            "debt_to_equity",
+            "net_debt_to_ebitda",
+            "interest_coverage_ratio"
+          ]
+        },
+        "profitability_ratios": {
+          "type": "object",
+          "properties": {
+            "gross_margin": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "string",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "ebitda_margin": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "string",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "net_profit_margin": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "string",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "return_on_assets": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "string",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "return_on_equity": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "string",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            }
+          },
+          "required": [
+            "gross_margin",
+            "ebitda_margin",
+            "net_profit_margin",
+            "return_on_assets",
+            "return_on_equity"
+          ]
+        },
+        "efficiency_ratios": {
+          "type": "object",
+          "properties": {
+            "asset_turnover": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "inventory_turnover": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            },
+            "accounts_receivable_turnover": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "number",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_median": {
+                  "type": "number",
+                  "description": "peer median"
+                },
+                "rating": {
+                  "type": "string",
+                  "description": "rating"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_median",
+                "rating"
+              ]
+            }
+          },
+          "required": [
+            "asset_turnover",
+            "inventory_turnover",
+            "accounts_receivable_turnover"
+          ]
+        },
+        "top_strengths": {
+          "type": "array",
+          "description": "top strengths",
+          "items": {
+            "type": "string"
+          }
+        },
+        "top_risks": {
+          "type": "array",
+          "description": "top risks",
+          "items": {
+            "type": "string"
+          }
+        },
+        "follow_on_analyses_recommended": {
+          "type": "array",
+          "description": "follow on analyses recommended",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "analysis_period",
+        "liquidity_ratios",
+        "solvency_ratios",
+        "profitability_ratios",
+        "efficiency_ratios",
+        "top_strengths",
+        "top_risks",
+        "follow_on_analyses_recommended",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

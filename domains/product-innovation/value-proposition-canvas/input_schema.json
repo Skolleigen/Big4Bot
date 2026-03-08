@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Value Proposition Canvas Input",
+  "description": "Required and optional inputs for executing the Value Proposition Canvas skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_target_customer": {
+      "type": "string",
+      "description": "Defined target customer segment with demographic and behavioral characteristics"
+    },
+    "customer_research_data": {
+      "type": "string",
+      "description": "Customer research data: interview transcripts, observation notes, or survey results capturing jobs, pains, and gains"
+    },
+    "inventory_existing_proposed": {
+      "type": "array",
+      "description": "Inventory of existing or proposed product features, services, and capabilities",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prioritization_input_on": {
+      "type": "string",
+      "description": "Prioritization input on which customer jobs are most important to the segment"
+    },
+    "competitive_product_feature": {
+      "type": "array",
+      "description": "Competitive product feature maps to identify where competitors address the same customer profile",
+      "items": {
+        "type": "string"
+      }
+    },
+    "net_promoter_score": {
+      "type": "number",
+      "description": "Net Promoter Score verbatims or support ticket logs to surface unarticulated pains"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_target_customer",
+    "customer_research_data",
+    "inventory_existing_proposed",
+    "prioritization_input_on"
+  ]
+}

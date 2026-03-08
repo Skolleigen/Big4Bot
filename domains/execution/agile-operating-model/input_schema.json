@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agile Operating Model Input",
+  "description": "Required and optional inputs for executing the Agile Operating Model skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "current_organizational_chart": {
+      "type": "string",
+      "description": "Current organizational chart and reporting structure, including spans of control"
+    },
+    "inventory_active_delivery": {
+      "type": "array",
+      "description": "Inventory of active delivery initiatives and programs with ownership mapping",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_service_portfolio": {
+      "type": "number",
+      "description": "Product or service portfolio with identification of customer-facing value streams"
+    },
+    "current_delivery_methodology": {
+      "type": "string",
+      "description": "Current delivery methodology documentation (e.g., waterfall stage-gate, PMO charters, project governance policies)"
+    },
+    "employee_engagement_team": {
+      "type": "number",
+      "description": "Employee engagement or team health survey data indicating collaboration barriers"
+    },
+    "existing_okr_kpi": {
+      "type": "string",
+      "description": "Existing OKR or KPI frameworks in use across teams or business units"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "current_organizational_chart",
+    "inventory_active_delivery",
+    "product_service_portfolio",
+    "current_delivery_methodology"
+  ]
+}

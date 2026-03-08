@@ -1,0 +1,254 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Discovery Output",
+  "description": "Structured output schema for the Product Discovery consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "product-discovery",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "opportunity_statement": {
+          "type": "string",
+          "description": "opportunity statement"
+        },
+        "target_user_segment": {
+          "type": "string",
+          "description": "target user segment"
+        },
+        "user_research_findings": {
+          "type": "array",
+          "description": "user research findings",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding": {
+                "type": "string",
+                "description": "finding"
+              },
+              "source": {
+                "type": "string",
+                "description": "source"
+              },
+              "evidence_strength": {
+                "type": "string",
+                "description": "evidence strength"
+              }
+            },
+            "required": [
+              "finding",
+              "source",
+              "evidence_strength"
+            ]
+          }
+        },
+        "behavioral_data_insights": {
+          "type": "array",
+          "description": "behavioral data insights",
+          "items": {
+            "type": "object",
+            "properties": {
+              "insight": {
+                "type": "string",
+                "description": "insight"
+              },
+              "data_source": {
+                "type": "string",
+                "description": "data source"
+              },
+              "metric_value": {
+                "type": "string",
+                "description": "metric value"
+              }
+            },
+            "required": [
+              "insight",
+              "data_source",
+              "metric_value"
+            ]
+          }
+        },
+        "solution_hypotheses": {
+          "type": "array",
+          "description": "solution hypotheses",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hypothesis": {
+                "type": "string",
+                "description": "hypothesis"
+              },
+              "expected_outcome": {
+                "type": "string",
+                "description": "expected outcome"
+              },
+              "target_segment": {
+                "type": "string",
+                "description": "target segment"
+              },
+              "underlying_assumption": {
+                "type": "string",
+                "description": "underlying assumption"
+              },
+              "validation_status": {
+                "type": "string",
+                "description": "validation status"
+              }
+            },
+            "required": [
+              "hypothesis",
+              "expected_outcome",
+              "target_segment",
+              "underlying_assumption",
+              "validation_status"
+            ]
+          }
+        },
+        "prototype_test_results": {
+          "type": "array",
+          "description": "prototype test results",
+          "items": {
+            "type": "object",
+            "properties": {
+              "solution_tested": {
+                "type": "string",
+                "description": "solution tested"
+              },
+              "prototype_fidelity": {
+                "type": "string",
+                "description": "prototype fidelity"
+              },
+              "participant_count": {
+                "type": "number",
+                "description": "participant count"
+              },
+              "key_reactions": {
+                "type": "array",
+                "description": "key reactions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "outcome": {
+                "type": "string",
+                "description": "outcome"
+              }
+            },
+            "required": [
+              "solution_tested",
+              "prototype_fidelity",
+              "participant_count",
+              "key_reactions",
+              "outcome"
+            ]
+          }
+        },
+        "validated_requirements": {
+          "type": "array",
+          "description": "validated requirements",
+          "items": {
+            "type": "object",
+            "properties": {
+              "requirement": {
+                "type": "string",
+                "description": "requirement"
+              },
+              "supporting_evidence": {
+                "type": "array",
+                "description": "supporting evidence",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "user_value": {
+                "type": "string",
+                "description": "user value"
+              },
+              "business_value": {
+                "type": "string",
+                "description": "business value"
+              },
+              "estimated_effort": {
+                "type": "string",
+                "description": "estimated effort"
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "requirement",
+              "supporting_evidence",
+              "user_value",
+              "business_value",
+              "estimated_effort",
+              "priority_rank"
+            ]
+          }
+        },
+        "discarded_hypotheses": {
+          "type": "array",
+          "description": "discarded hypotheses",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hypothesis": {
+                "type": "string",
+                "description": "hypothesis"
+              },
+              "invalidating_evidence": {
+                "type": "string",
+                "description": "invalidating evidence"
+              }
+            },
+            "required": [
+              "hypothesis",
+              "invalidating_evidence"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "opportunity_statement",
+        "target_user_segment",
+        "user_research_findings",
+        "behavioral_data_insights",
+        "solution_hypotheses",
+        "prototype_test_results",
+        "validated_requirements",
+        "discarded_hypotheses",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

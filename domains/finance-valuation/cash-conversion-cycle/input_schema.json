@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cash Conversion Cycle Input",
+  "description": "Required and optional inputs for executing the Cash Conversion Cycle skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "average_inventory_balance": {
+      "type": "array",
+      "description": "Average inventory balance for the period",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_goods_sold": {
+      "type": "number",
+      "description": "Cost of goods sold (COGS) for the period"
+    },
+    "average_accounts_receivable": {
+      "type": "string",
+      "description": "Average accounts receivable balance for the period"
+    },
+    "average_accounts_payable": {
+      "type": "string",
+      "description": "Average accounts payable balance for the period"
+    },
+    "total_revenue_period": {
+      "type": "number",
+      "description": "Total revenue for the period (used to cross-check DSO against revenue rather than COGS)"
+    },
+    "peer_company_ccc": {
+      "type": "string",
+      "description": "Peer company CCC data for benchmarking"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "average_inventory_balance",
+    "cost_goods_sold",
+    "average_accounts_receivable",
+    "average_accounts_payable"
+  ]
+}

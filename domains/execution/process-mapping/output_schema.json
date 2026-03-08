@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Process Mapping Output",
+  "description": "Structured output schema for the Process Mapping consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "process-mapping",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "process_scope": {
+          "type": "object",
+          "properties": {
+            "process_name": {
+              "type": "string",
+              "description": "process name"
+            },
+            "start_event": {
+              "type": "string",
+              "description": "start event"
+            },
+            "end_event": {
+              "type": "string",
+              "description": "end event"
+            },
+            "improvement_objective": {
+              "type": "string",
+              "description": "improvement objective"
+            }
+          },
+          "required": [
+            "process_name",
+            "start_event",
+            "end_event",
+            "improvement_objective"
+          ]
+        },
+        "current_state_map": {
+          "type": "object",
+          "properties": {
+            "process_steps": {
+              "type": "array",
+              "description": "process steps",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "step_number": {
+                    "type": "number",
+                    "description": "step number"
+                  },
+                  "step_name": {
+                    "type": "string",
+                    "description": "step name"
+                  },
+                  "step_type": {
+                    "type": "string",
+                    "description": "step type"
+                  },
+                  "responsible_role": {
+                    "type": "string",
+                    "description": "responsible role"
+                  },
+                  "system_involved": {
+                    "type": "string",
+                    "description": "system involved"
+                  },
+                  "cycle_time": {
+                    "type": "string",
+                    "description": "cycle time"
+                  },
+                  "wait_time": {
+                    "type": "string",
+                    "description": "wait time"
+                  },
+                  "error_rate": {
+                    "type": "string",
+                    "description": "error rate"
+                  },
+                  "rework_frequency": {
+                    "type": "string",
+                    "description": "rework frequency"
+                  }
+                },
+                "required": [
+                  "step_number",
+                  "step_name",
+                  "step_type",
+                  "responsible_role",
+                  "system_involved",
+                  "cycle_time",
+                  "wait_time",
+                  "error_rate",
+                  "rework_frequency"
+                ]
+              }
+            },
+            "handoffs": {
+              "type": "array",
+              "description": "handoffs",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "from_role": {
+                    "type": "string",
+                    "description": "from role"
+                  },
+                  "to_role": {
+                    "type": "string",
+                    "description": "to role"
+                  },
+                  "handoff_mechanism": {
+                    "type": "string",
+                    "description": "handoff mechanism"
+                  },
+                  "delay_introduced": {
+                    "type": "string",
+                    "description": "delay introduced"
+                  }
+                },
+                "required": [
+                  "from_role",
+                  "to_role",
+                  "handoff_mechanism",
+                  "delay_introduced"
+                ]
+              }
+            },
+            "decision_points": {
+              "type": "array",
+              "description": "decision points",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "description": "decision"
+                  },
+                  "criteria": {
+                    "type": "string",
+                    "description": "criteria"
+                  },
+                  "outcomes": {
+                    "type": "array",
+                    "description": "outcomes",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "decision",
+                  "criteria",
+                  "outcomes"
+                ]
+              }
+            }
+          },
+          "required": [
+            "process_steps",
+            "handoffs",
+            "decision_points"
+          ]
+        },
+        "waste_identification": {
+          "type": "array",
+          "description": "waste identification",
+          "items": {
+            "type": "object",
+            "properties": {
+              "waste_category": {
+                "type": "string",
+                "description": "waste category"
+              },
+              "location": {
+                "type": "string",
+                "description": "location"
+              },
+              "impact_quantification": {
+                "type": "string",
+                "description": "impact quantification"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              }
+            },
+            "required": [
+              "waste_category",
+              "location",
+              "impact_quantification",
+              "root_cause"
+            ]
+          }
+        },
+        "future_state_map": {
+          "type": "object",
+          "properties": {
+            "changes_from_current": {
+              "type": "array",
+              "description": "changes from current",
+              "items": {
+                "type": "string"
+              }
+            },
+            "steps_eliminated": {
+              "type": "array",
+              "description": "steps eliminated",
+              "items": {
+                "type": "string"
+              }
+            },
+            "steps_automated": {
+              "type": "array",
+              "description": "steps automated",
+              "items": {
+                "type": "string"
+              }
+            },
+            "handoffs_consolidated": {
+              "type": "array",
+              "description": "handoffs consolidated",
+              "items": {
+                "type": "string"
+              }
+            },
+            "projected_improvements": {
+              "type": "object",
+              "properties": {
+                "cycle_time_reduction": {
+                  "type": "string",
+                  "description": "cycle time reduction"
+                },
+                "error_rate_reduction": {
+                  "type": "string",
+                  "description": "error rate reduction"
+                },
+                "cost_savings": {
+                  "type": "string",
+                  "description": "cost savings"
+                }
+              },
+              "required": [
+                "cycle_time_reduction",
+                "error_rate_reduction",
+                "cost_savings"
+              ]
+            }
+          },
+          "required": [
+            "changes_from_current",
+            "steps_eliminated",
+            "steps_automated",
+            "handoffs_consolidated",
+            "projected_improvements"
+          ]
+        },
+        "implementation_plan": {
+          "type": "object",
+          "properties": {
+            "process_owner": {
+              "type": "string",
+              "description": "process owner"
+            },
+            "training_requirements": {
+              "type": "array",
+              "description": "training requirements",
+              "items": {
+                "type": "string"
+              }
+            },
+            "technology_changes": {
+              "type": "array",
+              "description": "technology changes",
+              "items": {
+                "type": "string"
+              }
+            },
+            "policy_updates": {
+              "type": "array",
+              "description": "policy updates",
+              "items": {
+                "type": "string"
+              }
+            },
+            "success_metrics": {
+              "type": "array",
+              "description": "success metrics",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "process_owner",
+            "training_requirements",
+            "technology_changes",
+            "policy_updates",
+            "success_metrics"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "process_scope",
+        "current_state_map",
+        "waste_identification",
+        "future_state_map",
+        "implementation_plan",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

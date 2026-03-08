@@ -1,0 +1,363 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DuPont Analysis Output",
+  "description": "Structured output schema for the DuPont Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "dupont-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "headline_roe": {
+          "type": "object",
+          "properties": {
+            "current_period": {
+              "type": "string",
+              "description": "current period"
+            },
+            "prior_periods": {
+              "type": "array",
+              "description": "prior periods",
+              "items": {
+                "type": "string"
+              }
+            },
+            "year_over_year_change": {
+              "type": "string",
+              "description": "year over year change"
+            }
+          },
+          "required": [
+            "current_period",
+            "prior_periods",
+            "year_over_year_change"
+          ]
+        },
+        "three_factor_decomposition": {
+          "type": "object",
+          "properties": {
+            "net_profit_margin": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "string",
+                  "description": "peer benchmark"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_benchmark"
+              ]
+            },
+            "asset_turnover": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "string",
+                  "description": "peer benchmark"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_benchmark"
+              ]
+            },
+            "equity_multiplier": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "string",
+                  "description": "peer benchmark"
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods",
+                "peer_benchmark"
+              ]
+            },
+            "verification_product": {
+              "type": "string",
+              "description": "verification product"
+            }
+          },
+          "required": [
+            "net_profit_margin",
+            "asset_turnover",
+            "equity_multiplier",
+            "verification_product"
+          ]
+        },
+        "five_factor_decomposition": {
+          "type": "object",
+          "properties": {
+            "tax_burden": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods"
+              ]
+            },
+            "interest_burden": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods"
+              ]
+            },
+            "ebit_margin": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods"
+              ]
+            },
+            "asset_turnover": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods"
+              ]
+            },
+            "equity_multiplier": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string",
+                  "description": "current"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "current",
+                "prior_periods"
+              ]
+            }
+          },
+          "required": [
+            "tax_burden",
+            "interest_burden",
+            "ebit_margin",
+            "asset_turnover",
+            "equity_multiplier"
+          ]
+        },
+        "primary_driver_attribution": {
+          "type": "object",
+          "properties": {
+            "primary_driver": {
+              "type": "string",
+              "description": "primary driver"
+            },
+            "contribution_to_roe_change": {
+              "type": "string",
+              "description": "contribution to roe change"
+            },
+            "root_cause": {
+              "type": "string",
+              "description": "root cause"
+            }
+          },
+          "required": [
+            "primary_driver",
+            "contribution_to_roe_change",
+            "root_cause"
+          ]
+        },
+        "peer_comparison": {
+          "type": "array",
+          "description": "peer comparison",
+          "items": {
+            "type": "object",
+            "properties": {
+              "peer": {
+                "type": "string",
+                "description": "peer"
+              },
+              "roe": {
+                "type": "string",
+                "description": "roe"
+              },
+              "net_profit_margin": {
+                "type": "string",
+                "description": "net profit margin"
+              },
+              "asset_turnover": {
+                "type": "string",
+                "description": "asset turnover"
+              },
+              "equity_multiplier": {
+                "type": "string",
+                "description": "equity multiplier"
+              }
+            },
+            "required": [
+              "peer",
+              "roe",
+              "net_profit_margin",
+              "asset_turnover",
+              "equity_multiplier"
+            ]
+          }
+        },
+        "improvement_recommendations": {
+          "type": "array",
+          "description": "improvement recommendations",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lever": {
+                "type": "string",
+                "description": "lever"
+              },
+              "action": {
+                "type": "string",
+                "description": "action"
+              },
+              "projected_roe_impact": {
+                "type": "string",
+                "description": "projected roe impact"
+              }
+            },
+            "required": [
+              "lever",
+              "action",
+              "projected_roe_impact"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "headline_roe",
+        "three_factor_decomposition",
+        "five_factor_decomposition",
+        "primary_driver_attribution",
+        "peer_comparison",
+        "improvement_recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

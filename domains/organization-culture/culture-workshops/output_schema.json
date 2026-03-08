@@ -1,0 +1,273 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Culture Workshops Output",
+  "description": "Structured output schema for the Culture Workshops consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "culture-workshops",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "workshop_design": {
+          "type": "object",
+          "properties": {
+            "objectives": {
+              "type": "array",
+              "description": "objectives",
+              "items": {
+                "type": "string"
+              }
+            },
+            "participant_count": {
+              "type": "number",
+              "description": "participant count"
+            },
+            "participant_composition": {
+              "type": "string",
+              "description": "participant composition"
+            },
+            "facilitator": {
+              "type": "string",
+              "description": "facilitator"
+            },
+            "duration": {
+              "type": "string",
+              "description": "duration"
+            }
+          },
+          "required": [
+            "objectives",
+            "participant_count",
+            "participant_composition",
+            "facilitator",
+            "duration"
+          ]
+        },
+        "current_state_norms": {
+          "type": "array",
+          "description": "current state norms",
+          "items": {
+            "type": "object",
+            "properties": {
+              "norm": {
+                "type": "string",
+                "description": "norm"
+              },
+              "behavioral_evidence": {
+                "type": "string",
+                "description": "behavioral evidence"
+              },
+              "prevalence": {
+                "type": "string",
+                "description": "prevalence"
+              },
+              "impact_on_performance": {
+                "type": "string",
+                "description": "impact on performance"
+              }
+            },
+            "required": [
+              "norm",
+              "behavioral_evidence",
+              "prevalence",
+              "impact_on_performance"
+            ]
+          }
+        },
+        "desired_state_norms": {
+          "type": "array",
+          "description": "desired state norms",
+          "items": {
+            "type": "object",
+            "properties": {
+              "desired_norm": {
+                "type": "string",
+                "description": "desired norm"
+              },
+              "behavioral_description": {
+                "type": "string",
+                "description": "behavioral description"
+              },
+              "strategic_rationale": {
+                "type": "string",
+                "description": "strategic rationale"
+              }
+            },
+            "required": [
+              "desired_norm",
+              "behavioral_description",
+              "strategic_rationale"
+            ]
+          }
+        },
+        "cultural_tensions": {
+          "type": "array",
+          "description": "cultural tensions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tension": {
+                "type": "string",
+                "description": "tension"
+              },
+              "current_norm": {
+                "type": "string",
+                "description": "current norm"
+              },
+              "desired_norm": {
+                "type": "string",
+                "description": "desired norm"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              }
+            },
+            "required": [
+              "tension",
+              "current_norm",
+              "desired_norm",
+              "root_cause"
+            ]
+          }
+        },
+        "prioritized_shifts": {
+          "type": "array",
+          "description": "prioritized shifts",
+          "items": {
+            "type": "object",
+            "properties": {
+              "shift_description": {
+                "type": "string",
+                "description": "shift description"
+              },
+              "from_behavior": {
+                "type": "string",
+                "description": "from behavior"
+              },
+              "to_behavior": {
+                "type": "string",
+                "description": "to behavior"
+              },
+              "leverage_type": {
+                "type": "string",
+                "description": "leverage type"
+              },
+              "impact_score": {
+                "type": "number",
+                "description": "impact score"
+              },
+              "feasibility_score": {
+                "type": "number",
+                "description": "feasibility score"
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "shift_description",
+              "from_behavior",
+              "to_behavior",
+              "leverage_type",
+              "impact_score",
+              "feasibility_score",
+              "priority_rank"
+            ]
+          }
+        },
+        "action_plan": {
+          "type": "object",
+          "properties": {
+            "thirty_day_actions": {
+              "type": "array",
+              "description": "thirty day actions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sixty_day_actions": {
+              "type": "array",
+              "description": "sixty day actions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ninety_day_actions": {
+              "type": "array",
+              "description": "ninety day actions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "accountability_owners": {
+              "type": "array",
+              "description": "accountability owners",
+              "items": {
+                "type": "string"
+              }
+            },
+            "check_in_mechanism": {
+              "type": "string",
+              "description": "check in mechanism"
+            }
+          },
+          "required": [
+            "thirty_day_actions",
+            "sixty_day_actions",
+            "ninety_day_actions",
+            "accountability_owners",
+            "check_in_mechanism"
+          ]
+        },
+        "participant_commitments": {
+          "type": "array",
+          "description": "participant commitments",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "workshop_design",
+        "current_state_norms",
+        "desired_state_norms",
+        "cultural_tensions",
+        "prioritized_shifts",
+        "action_plan",
+        "participant_commitments",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

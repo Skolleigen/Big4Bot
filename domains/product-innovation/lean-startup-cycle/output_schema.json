@@ -1,0 +1,221 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lean Startup Cycle Output",
+  "description": "Structured output schema for the Lean Startup Cycle consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "lean-startup-cycle",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "product-innovation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "hypotheses": {
+          "type": "array",
+          "description": "hypotheses",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hypothesis": {
+                "type": "string",
+                "description": "hypothesis"
+              },
+              "assumption_type": {
+                "type": "string",
+                "description": "assumption type"
+              },
+              "risk_level": {
+                "type": "string",
+                "description": "risk level"
+              },
+              "falsifiable_statement": {
+                "type": "string",
+                "description": "falsifiable statement"
+              }
+            },
+            "required": [
+              "hypothesis",
+              "assumption_type",
+              "risk_level",
+              "falsifiable_statement"
+            ]
+          }
+        },
+        "experiment_log": {
+          "type": "array",
+          "description": "experiment log",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cycle_number": {
+                "type": "number",
+                "description": "cycle number"
+              },
+              "hypothesis_tested": {
+                "type": "string",
+                "description": "hypothesis tested"
+              },
+              "mvp_design": {
+                "type": "string",
+                "description": "mvp design"
+              },
+              "target_segment": {
+                "type": "string",
+                "description": "target segment"
+              },
+              "success_metrics": {
+                "type": "array",
+                "description": "success metrics",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "metric": {
+                      "type": "string",
+                      "description": "metric"
+                    },
+                    "pass_threshold": {
+                      "type": "string",
+                      "description": "pass threshold"
+                    },
+                    "actual_result": {
+                      "type": "string",
+                      "description": "actual result"
+                    }
+                  },
+                  "required": [
+                    "metric",
+                    "pass_threshold",
+                    "actual_result"
+                  ]
+                }
+              },
+              "qualitative_feedback": {
+                "type": "array",
+                "description": "qualitative feedback",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "outcome": {
+                "type": "string",
+                "description": "outcome"
+              },
+              "decision": {
+                "type": "string",
+                "description": "decision"
+              },
+              "decision_rationale": {
+                "type": "string",
+                "description": "decision rationale"
+              },
+              "next_hypothesis": {
+                "type": "string",
+                "description": "next hypothesis"
+              }
+            },
+            "required": [
+              "cycle_number",
+              "hypothesis_tested",
+              "mvp_design",
+              "target_segment",
+              "success_metrics",
+              "qualitative_feedback",
+              "outcome",
+              "decision",
+              "decision_rationale",
+              "next_hypothesis"
+            ]
+          }
+        },
+        "pivot_history": {
+          "type": "array",
+          "description": "pivot history",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pivot_type": {
+                "type": "string",
+                "description": "pivot type"
+              },
+              "from_assumption": {
+                "type": "string",
+                "description": "from assumption"
+              },
+              "to_assumption": {
+                "type": "string",
+                "description": "to assumption"
+              },
+              "evidence_basis": {
+                "type": "string",
+                "description": "evidence basis"
+              }
+            },
+            "required": [
+              "pivot_type",
+              "from_assumption",
+              "to_assumption",
+              "evidence_basis"
+            ]
+          }
+        },
+        "validated_assumptions": {
+          "type": "array",
+          "description": "validated assumptions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "invalidated_assumptions": {
+          "type": "array",
+          "description": "invalidated assumptions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "description": "recommendations",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "hypotheses",
+        "experiment_log",
+        "pivot_history",
+        "validated_assumptions",
+        "invalidated_assumptions",
+        "recommendations",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

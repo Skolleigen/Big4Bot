@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Total Rewards Strategy Input",
+  "description": "Required and optional inputs for executing the Total Rewards Strategy skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The specific rewards challenge (e.g., stopping high turnover in critical roles, or unifying benefits post-merger)."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Overview of the organization, employee demographics, and its business model."
+    },
+    "employee_value_proposition": {
+      "type": "number",
+      "description": "The organization's overarching Employee Value Proposition (EVP)."
+    },
+    "strategic_talent_goals": {
+      "type": "number",
+      "description": "The specific behavioral and retention goals required by the business strategy."
+    },
+    "current_rewards_spend": {
+      "type": "number",
+      "description": "Summary of current compensation and benefits spend or specific budget constraints."
+    },
+    "employee_demographics_feedback": {
+      "type": "array",
+      "description": "Data indicating current dissatisfaction, flight risks, or desired benefits from employees.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "benchmarking_data": {
+      "type": "string",
+      "description": "Optional industry benchmarking data for compensation across relevant talent pools."
+    },
+    "known_constraints": {
+      "type": "string",
+      "description": "Optional constraints such as strict cash preservation requiring equity-heavy rewards."
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "employee_value_proposition",
+    "strategic_talent_goals",
+    "current_rewards_spend",
+    "employee_demographics_feedback"
+  ]
+}

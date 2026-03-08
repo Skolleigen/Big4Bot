@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Capability Maturity Assessment Output",
+  "description": "Structured output schema for the Capability Maturity Assessment consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "capability-maturity-assessment",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "risk-governance",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "maturity_model_used": {
+          "type": "string",
+          "description": "maturity model used"
+        },
+        "capability_assessments": {
+          "type": "array",
+          "description": "capability assessments",
+          "items": {
+            "type": "object",
+            "properties": {
+              "capability_domain": {
+                "type": "string",
+                "description": "capability domain"
+              },
+              "current_maturity_level": {
+                "type": "number",
+                "description": "current maturity level"
+              },
+              "target_maturity_level": {
+                "type": "number",
+                "description": "target maturity level"
+              },
+              "maturity_gap": {
+                "type": "number",
+                "description": "maturity gap"
+              },
+              "strategic_importance": {
+                "type": "string",
+                "description": "strategic importance"
+              },
+              "evidence_base": {
+                "type": "array",
+                "description": "evidence base",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "rating": {
+                "type": "string",
+                "description": "rating"
+              }
+            },
+            "required": [
+              "capability_domain",
+              "current_maturity_level",
+              "target_maturity_level",
+              "maturity_gap",
+              "strategic_importance",
+              "evidence_base",
+              "rating"
+            ]
+          }
+        },
+        "capability_heat_map": {
+          "type": "object",
+          "properties": {
+            "red_capabilities": {
+              "type": "array",
+              "description": "red capabilities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "amber_capabilities": {
+              "type": "array",
+              "description": "amber capabilities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "green_capabilities": {
+              "type": "array",
+              "description": "green capabilities",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "red_capabilities",
+            "amber_capabilities",
+            "green_capabilities"
+          ]
+        },
+        "priority_improvements": {
+          "type": "array",
+          "description": "priority improvements",
+          "items": {
+            "type": "object",
+            "properties": {
+              "capability": {
+                "type": "string",
+                "description": "capability"
+              },
+              "current_level": {
+                "type": "number",
+                "description": "current level"
+              },
+              "target_level": {
+                "type": "number",
+                "description": "target level"
+              },
+              "improvement_initiative": {
+                "type": "string",
+                "description": "improvement initiative"
+              },
+              "estimated_effort": {
+                "type": "string",
+                "description": "estimated effort"
+              },
+              "estimated_timeline": {
+                "type": "string",
+                "description": "estimated timeline"
+              },
+              "accountability_owner": {
+                "type": "string",
+                "description": "accountability owner"
+              },
+              "milestones": {
+                "type": "array",
+                "description": "milestones",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "capability",
+              "current_level",
+              "target_level",
+              "improvement_initiative",
+              "estimated_effort",
+              "estimated_timeline",
+              "accountability_owner",
+              "milestones",
+              "priority_rank"
+            ]
+          }
+        },
+        "improvement_roadmap_sequencing": {
+          "type": "array",
+          "description": "improvement roadmap sequencing",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "maturity_model_used",
+        "capability_assessments",
+        "capability_heat_map",
+        "priority_improvements",
+        "improvement_roadmap_sequencing",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

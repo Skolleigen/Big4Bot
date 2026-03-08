@@ -1,0 +1,248 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cash Conversion Cycle Output",
+  "description": "Structured output schema for the Cash Conversion Cycle consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "cash-conversion-cycle",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "components": {
+          "type": "object",
+          "properties": {
+            "days_inventory_outstanding": {
+              "type": "object",
+              "properties": {
+                "current_period": {
+                  "type": "number",
+                  "description": "current period"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "number",
+                  "description": "peer benchmark"
+                },
+                "year_over_year_change": {
+                  "type": "number",
+                  "description": "year over year change"
+                }
+              },
+              "required": [
+                "current_period",
+                "prior_periods",
+                "peer_benchmark",
+                "year_over_year_change"
+              ]
+            },
+            "days_sales_outstanding": {
+              "type": "object",
+              "properties": {
+                "current_period": {
+                  "type": "number",
+                  "description": "current period"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "number",
+                  "description": "peer benchmark"
+                },
+                "year_over_year_change": {
+                  "type": "number",
+                  "description": "year over year change"
+                }
+              },
+              "required": [
+                "current_period",
+                "prior_periods",
+                "peer_benchmark",
+                "year_over_year_change"
+              ]
+            },
+            "days_payable_outstanding": {
+              "type": "object",
+              "properties": {
+                "current_period": {
+                  "type": "number",
+                  "description": "current period"
+                },
+                "prior_periods": {
+                  "type": "array",
+                  "description": "prior periods",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "peer_benchmark": {
+                  "type": "number",
+                  "description": "peer benchmark"
+                },
+                "year_over_year_change": {
+                  "type": "number",
+                  "description": "year over year change"
+                }
+              },
+              "required": [
+                "current_period",
+                "prior_periods",
+                "peer_benchmark",
+                "year_over_year_change"
+              ]
+            }
+          },
+          "required": [
+            "days_inventory_outstanding",
+            "days_sales_outstanding",
+            "days_payable_outstanding"
+          ]
+        },
+        "cash_conversion_cycle": {
+          "type": "object",
+          "properties": {
+            "current_period": {
+              "type": "number",
+              "description": "current period"
+            },
+            "prior_periods": {
+              "type": "array",
+              "description": "prior periods",
+              "items": {
+                "type": "string"
+              }
+            },
+            "peer_benchmark": {
+              "type": "number",
+              "description": "peer benchmark"
+            },
+            "trend_direction": {
+              "type": "string",
+              "description": "trend direction"
+            }
+          },
+          "required": [
+            "current_period",
+            "prior_periods",
+            "peer_benchmark",
+            "trend_direction"
+          ]
+        },
+        "primary_driver_analysis": {
+          "type": "object",
+          "properties": {
+            "largest_contributor": {
+              "type": "string",
+              "description": "largest contributor"
+            },
+            "contribution_to_ccc": {
+              "type": "number",
+              "description": "contribution to ccc"
+            },
+            "deterioration_flag": {
+              "type": "number",
+              "description": "deterioration flag"
+            },
+            "root_cause": {
+              "type": "string",
+              "description": "root cause"
+            }
+          },
+          "required": [
+            "largest_contributor",
+            "contribution_to_ccc",
+            "deterioration_flag",
+            "root_cause"
+          ]
+        },
+        "improvement_targets": {
+          "type": "array",
+          "description": "improvement targets",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lever": {
+                "type": "string",
+                "description": "lever"
+              },
+              "current_value": {
+                "type": "number",
+                "description": "current value"
+              },
+              "target_value": {
+                "type": "number",
+                "description": "target value"
+              },
+              "improvement_action": {
+                "type": "string",
+                "description": "improvement action"
+              },
+              "projected_ccc_impact": {
+                "type": "number",
+                "description": "projected ccc impact"
+              }
+            },
+            "required": [
+              "lever",
+              "current_value",
+              "target_value",
+              "improvement_action",
+              "projected_ccc_impact"
+            ]
+          }
+        },
+        "working_capital_implications": {
+          "type": "string",
+          "description": "working capital implications"
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "components",
+        "cash_conversion_cycle",
+        "primary_driver_analysis",
+        "improvement_targets",
+        "working_capital_implications",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

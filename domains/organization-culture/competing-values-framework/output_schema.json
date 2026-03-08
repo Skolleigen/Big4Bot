@@ -1,0 +1,289 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Competing Values Framework Output",
+  "description": "Structured output schema for the Competing Values Framework consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "competing-values-framework",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "current_culture_profile": {
+          "type": "object",
+          "properties": {
+            "clan_score": {
+              "type": "number",
+              "description": "clan score"
+            },
+            "adhocracy_score": {
+              "type": "number",
+              "description": "adhocracy score"
+            },
+            "market_score": {
+              "type": "number",
+              "description": "market score"
+            },
+            "hierarchy_score": {
+              "type": "number",
+              "description": "hierarchy score"
+            },
+            "dominant_culture_type": {
+              "type": "string",
+              "description": "dominant culture type"
+            },
+            "segment_variation": {
+              "type": "array",
+              "description": "segment variation",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "segment": {
+                    "type": "string",
+                    "description": "segment"
+                  },
+                  "clan": {
+                    "type": "number",
+                    "description": "clan"
+                  },
+                  "adhocracy": {
+                    "type": "number",
+                    "description": "adhocracy"
+                  },
+                  "market": {
+                    "type": "number",
+                    "description": "market"
+                  },
+                  "hierarchy": {
+                    "type": "number",
+                    "description": "hierarchy"
+                  }
+                },
+                "required": [
+                  "segment",
+                  "clan",
+                  "adhocracy",
+                  "market",
+                  "hierarchy"
+                ]
+              }
+            }
+          },
+          "required": [
+            "clan_score",
+            "adhocracy_score",
+            "market_score",
+            "hierarchy_score",
+            "dominant_culture_type",
+            "segment_variation"
+          ]
+        },
+        "desired_culture_profile": {
+          "type": "object",
+          "properties": {
+            "clan_score": {
+              "type": "number",
+              "description": "clan score"
+            },
+            "adhocracy_score": {
+              "type": "number",
+              "description": "adhocracy score"
+            },
+            "market_score": {
+              "type": "number",
+              "description": "market score"
+            },
+            "hierarchy_score": {
+              "type": "number",
+              "description": "hierarchy score"
+            }
+          },
+          "required": [
+            "clan_score",
+            "adhocracy_score",
+            "market_score",
+            "hierarchy_score"
+          ]
+        },
+        "gap_analysis": {
+          "type": "array",
+          "description": "gap analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quadrant": {
+                "type": "string",
+                "description": "quadrant"
+              },
+              "current_score": {
+                "type": "number",
+                "description": "current score"
+              },
+              "desired_score": {
+                "type": "number",
+                "description": "desired score"
+              },
+              "gap": {
+                "type": "number",
+                "description": "gap"
+              },
+              "gap_significance": {
+                "type": "string",
+                "description": "gap significance"
+              },
+              "direction": {
+                "type": "string",
+                "description": "direction"
+              }
+            },
+            "required": [
+              "quadrant",
+              "current_score",
+              "desired_score",
+              "gap",
+              "gap_significance",
+              "direction"
+            ]
+          }
+        },
+        "culture_drivers": {
+          "type": "array",
+          "description": "culture drivers",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quadrant": {
+                "type": "string",
+                "description": "quadrant"
+              },
+              "driver": {
+                "type": "string",
+                "description": "driver"
+              },
+              "driver_type": {
+                "type": "string",
+                "description": "driver type"
+              },
+              "changeability": {
+                "type": "string",
+                "description": "changeability"
+              }
+            },
+            "required": [
+              "quadrant",
+              "driver",
+              "driver_type",
+              "changeability"
+            ]
+          }
+        },
+        "interventions": {
+          "type": "array",
+          "description": "interventions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quadrant_gap": {
+                "type": "string",
+                "description": "quadrant gap"
+              },
+              "intervention": {
+                "type": "string",
+                "description": "intervention"
+              },
+              "intervention_type": {
+                "type": "string",
+                "description": "intervention type"
+              },
+              "expected_impact": {
+                "type": "string",
+                "description": "expected impact"
+              },
+              "accountability_owner": {
+                "type": "string",
+                "description": "accountability owner"
+              },
+              "timeline": {
+                "type": "string",
+                "description": "timeline"
+              }
+            },
+            "required": [
+              "quadrant_gap",
+              "intervention",
+              "intervention_type",
+              "expected_impact",
+              "accountability_owner",
+              "timeline"
+            ]
+          }
+        },
+        "measurement_plan": {
+          "type": "object",
+          "properties": {
+            "follow_up_assessment_date": {
+              "type": "string",
+              "description": "follow up assessment date"
+            },
+            "interim_indicators": {
+              "type": "array",
+              "description": "interim indicators",
+              "items": {
+                "type": "string"
+              }
+            },
+            "accountability_owners": {
+              "type": "array",
+              "description": "accountability owners",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "follow_up_assessment_date",
+            "interim_indicators",
+            "accountability_owners"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "current_culture_profile",
+        "desired_culture_profile",
+        "gap_analysis",
+        "culture_drivers",
+        "interventions",
+        "measurement_plan",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

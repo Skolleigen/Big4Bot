@@ -1,0 +1,253 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Customer Journey Mapping Output",
+  "description": "Structured output schema for the Customer Journey Mapping consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "customer-journey-mapping",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "market-customer",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "persona": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "name"
+            },
+            "demographics": {
+              "type": "string",
+              "description": "demographics"
+            },
+            "primary_goal": {
+              "type": "string",
+              "description": "primary goal"
+            },
+            "context_of_use": {
+              "type": "string",
+              "description": "context of use"
+            }
+          },
+          "required": [
+            "name",
+            "demographics",
+            "primary_goal",
+            "context_of_use"
+          ]
+        },
+        "journey_scope": {
+          "type": "object",
+          "properties": {
+            "start_event": {
+              "type": "string",
+              "description": "start event"
+            },
+            "end_event": {
+              "type": "string",
+              "description": "end event"
+            }
+          },
+          "required": [
+            "start_event",
+            "end_event"
+          ]
+        },
+        "journey_stages": {
+          "type": "array",
+          "description": "journey stages",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "stage"
+              },
+              "touchpoints": {
+                "type": "array",
+                "description": "touchpoints",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "touchpoint": {
+                      "type": "string",
+                      "description": "touchpoint"
+                    },
+                    "channel": {
+                      "type": "string",
+                      "description": "channel"
+                    },
+                    "customer_action": {
+                      "type": "string",
+                      "description": "customer action"
+                    },
+                    "customer_thought": {
+                      "type": "string",
+                      "description": "customer thought"
+                    },
+                    "customer_emotion": {
+                      "type": "string",
+                      "description": "customer emotion"
+                    },
+                    "emotion_valence": {
+                      "type": "string",
+                      "description": "emotion valence"
+                    },
+                    "internal_owner": {
+                      "type": "string",
+                      "description": "internal owner"
+                    },
+                    "quantitative_metric": {
+                      "type": "string",
+                      "description": "quantitative metric"
+                    }
+                  },
+                  "required": [
+                    "touchpoint",
+                    "channel",
+                    "customer_action",
+                    "customer_thought",
+                    "customer_emotion",
+                    "emotion_valence",
+                    "internal_owner",
+                    "quantitative_metric"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "stage",
+              "touchpoints"
+            ]
+          }
+        },
+        "pain_points": {
+          "type": "array",
+          "description": "pain points",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pain_point": {
+                "type": "string",
+                "description": "pain point"
+              },
+              "stage": {
+                "type": "string",
+                "description": "stage"
+              },
+              "touchpoint": {
+                "type": "string",
+                "description": "touchpoint"
+              },
+              "frequency": {
+                "type": "string",
+                "description": "frequency"
+              },
+              "severity": {
+                "type": "string",
+                "description": "severity"
+              },
+              "priority_score": {
+                "type": "number",
+                "description": "priority score"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              }
+            },
+            "required": [
+              "pain_point",
+              "stage",
+              "touchpoint",
+              "frequency",
+              "severity",
+              "priority_score",
+              "root_cause"
+            ]
+          }
+        },
+        "moments_of_truth": {
+          "type": "array",
+          "description": "moments of truth",
+          "items": {
+            "type": "string"
+          }
+        },
+        "improvement_opportunities": {
+          "type": "array",
+          "description": "improvement opportunities",
+          "items": {
+            "type": "object",
+            "properties": {
+              "opportunity": {
+                "type": "string",
+                "description": "opportunity"
+              },
+              "pain_point_addressed": {
+                "type": "string",
+                "description": "pain point addressed"
+              },
+              "expected_impact": {
+                "type": "string",
+                "description": "expected impact"
+              },
+              "implementation_effort": {
+                "type": "string",
+                "description": "implementation effort"
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "opportunity",
+              "pain_point_addressed",
+              "expected_impact",
+              "implementation_effort",
+              "priority_rank"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "persona",
+        "journey_scope",
+        "journey_stages",
+        "pain_points",
+        "moments_of_truth",
+        "improvement_opportunities",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

@@ -1,0 +1,482 @@
+# Big4Bot - Consulting Skill Dependency Graph
+# Defines domain-level progression and skill-level trigger chains
+# for structured AI agent reasoning across consulting frameworks.
+
+version: "1.1"
+last_updated: "2026-03-08"
+
+# Entry points: problem classification layer for diagnostic reasoning.
+# Agents classify a problem and select the most appropriate starting frameworks.
+
+entry_points:
+  strategic_problem:
+    description: Problems related to company direction, positioning, growth strategy or long-term objectives.
+    start_with:
+      - pestle-analysis
+      - swot-analysis
+      - balanced-scorecard
+      - okr-design
+
+  market_problem:
+    description: Problems related to customers, market segmentation, competition or demand.
+    start_with:
+      - market-segmentation
+      - competitive-positioning
+      - customer-journey-mapping
+
+  product_problem:
+    description: Problems involving product value, product-market fit, feature prioritization or innovation.
+    start_with:
+      - product-discovery
+      - value-proposition-canvas
+      - product-market-fit-diagnostics
+
+  operational_problem:
+    description: Problems related to delivery processes, efficiency, governance or execution.
+    start_with:
+      - process-mapping
+      - agile-operating-model
+      - raci-daci-governance
+
+  financial_problem:
+    description: Problems related to profitability, financial health, capital efficiency or valuation.
+    start_with:
+      - financial-ratio-analysis
+      - dupont-analysis
+      - unit-economics
+
+  risk_problem:
+    description: Problems involving compliance exposure, operational risk or governance failures.
+    start_with:
+      - risk-register
+      - capability-maturity-assessment
+
+  culture_problem:
+    description: Problems related to leadership, organizational culture or employee engagement.
+    start_with:
+      - ocai-culture-assessment
+      - competing-values-framework
+      - pulse-surveys
+
+# Domain graph: macro reasoning flow between consulting domains.
+# Agents traverse this graph as they move through a diagnostic engagement.
+
+domains:
+  strategy:
+    description: Strategic positioning and long-term direction analysis.
+    next:
+      - market-customer
+      - finance-valuation
+
+  market-customer:
+    description: Market dynamics, segmentation, customer behavior and positioning.
+    next:
+      - product-innovation
+      - finance-valuation
+
+  product-innovation:
+    description: Product strategy, innovation frameworks and product-market fit.
+    next:
+      - execution
+      - finance-valuation
+
+  execution:
+    description: Operational processes, delivery frameworks and governance.
+    next:
+      - finance-valuation
+      - organization-culture
+
+  finance-valuation:
+    description: Financial performance, profitability and valuation analysis.
+    next:
+      - risk-governance
+      - strategy
+
+  risk-governance:
+    description: Risk identification, controls and governance analysis.
+    next:
+      - organization-culture
+      - strategy
+
+  organization-culture:
+    description: Organizational design, leadership and cultural transformation.
+    next:
+      - strategy
+      - execution
+
+# Skill graph: framework-level trigger chains within and across domains.
+# Agents may follow these triggers to deepen diagnostic analysis.
+# Each trigger includes a relevance level:
+#   high   = common or recommended next step
+#   medium = situational follow-up
+#   low    = optional or exploratory
+
+skills:
+
+  # ─── Strategy ────────────────────────────────────────
+
+  pestle-analysis:
+    triggers:
+      - skill: swot-analysis
+        relevance: high
+
+  swot-analysis:
+    triggers:
+      - skill: market-segmentation
+        relevance: high
+      - skill: competitive-positioning
+        relevance: high
+      - skill: risk-register
+        relevance: medium
+      - skill: visioning-and-reverse-engineering
+        relevance: medium
+
+  balanced-scorecard:
+    triggers:
+      - skill: strategic-initiative-mapping
+        relevance: high
+      - skill: okr-design
+        relevance: medium
+      - skill: financial-ratio-analysis
+        relevance: medium
+
+  okr-design:
+    triggers:
+      - skill: initiative-prioritization-matrix
+        relevance: high
+      - skill: agile-operating-model
+        relevance: medium
+
+  strategic-initiative-mapping:
+    triggers:
+      - skill: initiative-prioritization-matrix
+        relevance: high
+      - skill: portfolio-governance
+        relevance: high
+      - skill: okr-design
+        relevance: medium
+
+  visioning-and-reverse-engineering:
+    triggers:
+      - skill: balanced-scorecard
+        relevance: high
+      - skill: strategic-initiative-mapping
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+
+  # ─── Product & Innovation ────────────────────────────
+
+  product-discovery:
+    triggers:
+      - skill: product-market-fit-diagnostics
+        relevance: high
+      - skill: value-proposition-canvas
+        relevance: high
+      - skill: design-thinking
+        relevance: medium
+
+  value-proposition-canvas:
+    triggers:
+      - skill: business-model-canvas
+        relevance: high
+      - skill: product-market-fit-diagnostics
+        relevance: medium
+
+  business-model-canvas:
+    triggers:
+      - skill: unit-economics
+        relevance: high
+      - skill: pricing-and-packaging-strategy
+        relevance: medium
+
+  design-thinking:
+    triggers:
+      - skill: lean-startup-cycle
+        relevance: high
+      - skill: value-proposition-canvas
+        relevance: high
+      - skill: customer-journey-mapping
+        relevance: medium
+
+  lean-startup-cycle:
+    triggers:
+      - skill: product-market-fit-diagnostics
+        relevance: high
+      - skill: business-model-canvas
+        relevance: medium
+
+  product-market-fit-diagnostics:
+    triggers:
+      - skill: pricing-and-packaging-strategy
+        relevance: high
+      - skill: unit-economics
+        relevance: high
+
+  # ─── Market & Customer ───────────────────────────────
+
+  market-segmentation:
+    triggers:
+      - skill: value-proposition-canvas
+        relevance: high
+      - skill: customer-journey-mapping
+        relevance: medium
+
+  competitive-positioning:
+    triggers:
+      - skill: pricing-and-packaging-strategy
+        relevance: high
+      - skill: value-proposition-canvas
+        relevance: medium
+
+  customer-journey-mapping:
+    triggers:
+      - skill: service-blueprinting
+        relevance: high
+      - skill: inbound-marketing-strategy
+        relevance: medium
+      - skill: value-proposition-canvas
+        relevance: low
+
+  inbound-marketing-strategy:
+    triggers:
+      - skill: market-segmentation
+        relevance: high
+      - skill: competitive-positioning
+        relevance: medium
+
+  pricing-and-packaging-strategy:
+    triggers:
+      - skill: unit-economics
+        relevance: high
+      - skill: value-proposition-canvas
+        relevance: medium
+      - skill: market-segmentation
+        relevance: low
+
+  # ─── Execution ───────────────────────────────────────
+
+  agile-operating-model:
+    triggers:
+      - skill: scrum-framework
+        relevance: high
+      - skill: process-mapping
+        relevance: medium
+
+  process-mapping:
+    triggers:
+      - skill: service-blueprinting
+        relevance: high
+      - skill: raci-daci-governance
+        relevance: medium
+
+  scrum-framework:
+    triggers:
+      - skill: raci-daci-governance
+        relevance: high
+      - skill: okr-design
+        relevance: medium
+
+  service-blueprinting:
+    triggers:
+      - skill: raci-daci-governance
+        relevance: high
+      - skill: agile-operating-model
+        relevance: medium
+
+  raci-daci-governance:
+    triggers:
+      - skill: portfolio-governance
+        relevance: high
+      - skill: change-management
+        relevance: medium
+
+  initiative-prioritization-matrix:
+    triggers:
+      - skill: portfolio-governance
+        relevance: high
+      - skill: balanced-scorecard
+        relevance: medium
+
+  portfolio-governance:
+    triggers:
+      - skill: balanced-scorecard
+        relevance: high
+      - skill: risk-register
+        relevance: medium
+
+  # ─── Finance & Valuation ─────────────────────────────
+
+  ma-due-diligence:
+    triggers:
+      - skill: scenario-and-sensitivity-analysis
+        relevance: high
+      - skill: strategic-initiative-mapping
+        relevance: medium
+
+  financial-ratio-analysis:
+    triggers:
+      - skill: dupont-analysis
+        relevance: high
+      - skill: cash-conversion-cycle
+        relevance: medium
+      - skill: dcf-valuation
+        relevance: low
+
+  dupont-analysis:
+    triggers:
+      - skill: risk-register
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+
+  unit-economics:
+    triggers:
+      - skill: break-even-analysis
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+      - skill: product-discovery
+        relevance: low
+
+  dcf-valuation:
+    triggers:
+      - skill: ma-due-diligence
+        relevance: high
+      - skill: comparable-company-valuation
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: high
+
+  comparable-company-valuation:
+    triggers:
+      - skill: strategic-initiative-mapping
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+      - skill: financial-ratio-analysis
+        relevance: medium
+
+  break-even-analysis:
+    triggers:
+      - skill: pricing-and-packaging-strategy
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+      - skill: financial-ratio-analysis
+        relevance: medium
+
+  cash-conversion-cycle:
+    triggers:
+      - skill: dupont-analysis
+        relevance: high
+      - skill: scenario-and-sensitivity-analysis
+        relevance: medium
+
+  scenario-and-sensitivity-analysis:
+    triggers:
+      - skill: risk-register
+        relevance: high
+      - skill: financial-ratio-analysis
+        relevance: medium
+
+  # ─── Risk & Governance ───────────────────────────────
+
+  risk-register:
+    triggers:
+      - skill: control-mapping
+        relevance: high
+      - skill: capability-maturity-assessment
+        relevance: high
+
+  capability-maturity-assessment:
+    triggers:
+      - skill: transformation-risk-heatmap
+        relevance: high
+
+  control-mapping:
+    triggers:
+      - skill: capability-maturity-assessment
+        relevance: high
+      - skill: transformation-risk-heatmap
+        relevance: medium
+
+  transformation-risk-heatmap:
+    triggers:
+      - skill: change-management
+        relevance: high
+      - skill: risk-register
+        relevance: medium
+      - skill: scenario-and-sensitivity-analysis
+        relevance: low
+
+  # ─── Organization & Culture ──────────────────────────
+
+  total-rewards-strategy:
+    triggers:
+      - skill: pulse-surveys
+        relevance: high
+      - skill: ocai-culture-assessment
+        relevance: medium
+
+  change-management:
+    triggers:
+      - skill: culture-workshops
+        relevance: high
+      - skill: pulse-surveys
+        relevance: medium
+      - skill: organizational-network-analysis
+        relevance: low
+
+  ocai-culture-assessment:
+    triggers:
+      - skill: competing-values-framework
+        relevance: high
+      - skill: culture-workshops
+        relevance: medium
+      - skill: 360-feedback
+        relevance: low
+
+  competing-values-framework:
+    triggers:
+      - skill: change-management
+        relevance: high
+      - skill: culture-workshops
+        relevance: medium
+
+  360-feedback:
+    triggers:
+      - skill: employee-value-proposition
+        relevance: high
+      - skill: culture-workshops
+        relevance: medium
+
+  pulse-surveys:
+    triggers:
+      - skill: employee-value-proposition
+        relevance: high
+      - skill: ocai-culture-assessment
+        relevance: medium
+
+  employee-value-proposition:
+    triggers:
+      - skill: change-management
+        relevance: high
+      - skill: total-rewards-strategy
+        relevance: high
+      - skill: culture-workshops
+        relevance: medium
+
+  culture-workshops:
+    triggers:
+      - skill: pulse-surveys
+        relevance: high
+
+  organizational-network-analysis:
+    triggers:
+      - skill: raci-daci-governance
+        relevance: high
+      - skill: 360-feedback
+        relevance: medium
+      - skill: culture-workshops
+        relevance: low

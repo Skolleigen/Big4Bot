@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Change Management Input",
+  "description": "Required and optional inputs for executing the Change Management skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_change_scope": {
+      "type": "string",
+      "description": "Defined change scope: description of what is changing, why, and what the future state looks like"
+    },
+    "stakeholder_inventory_list": {
+      "type": "array",
+      "description": "Stakeholder inventory: list of affected populations segmented by role, location, or function",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timeline_key_milestones": {
+      "type": "string",
+      "description": "Timeline and key milestones for the change initiative"
+    },
+    "organizational_readiness_data": {
+      "type": "string",
+      "description": "Organizational readiness data: baseline survey or interview findings on employee confidence and awareness"
+    },
+    "prior_change_history": {
+      "type": "array",
+      "description": "Prior change history at the organization and lessons learned from previous initiatives",
+      "items": {
+        "type": "string"
+      }
+    },
+    "existing_communication_channels": {
+      "type": "string",
+      "description": "Existing communication channels and their reach and credibility with affected populations"
+    },
+    "hr_line_manager": {
+      "type": "string",
+      "description": "HR or line manager capacity available to support the change effort"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_change_scope",
+    "stakeholder_inventory_list",
+    "timeline_key_milestones",
+    "organizational_readiness_data"
+  ]
+}

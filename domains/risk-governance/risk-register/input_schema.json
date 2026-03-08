@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Risk Register Input",
+  "description": "Required and optional inputs for executing the Risk Register skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_risk_assessment": {
+      "type": "string",
+      "description": "Defined risk assessment scope (organization-wide, business unit, program, or project level) with explicit inclusion and exclusion boundaries"
+    },
+    "stakeholder_interviews_facilitated": {
+      "type": "string",
+      "description": "Stakeholder interviews, facilitated risk workshops, and historical incident and loss data to support risk identification"
+    },
+    "risk_categorization_taxonomy": {
+      "type": "number",
+      "description": "A risk categorization taxonomy (strategic, operational, financial, compliance, reputational, or equivalent client-specific categories)"
+    },
+    "likelihood_impact_scoring": {
+      "type": "string",
+      "description": "A likelihood and impact scoring scale with defined descriptors for each level (1\u20135 recommended)"
+    },
+    "benchmarking_data": {
+      "type": "string",
+      "description": "Industry risk benchmarking data or sector-specific risk library to supplement internal identification and ensure completeness"
+    },
+    "existing_audit_findings": {
+      "type": "array",
+      "description": "Existing audit findings, board papers, and prior risk assessments to incorporate previously identified risks and their historical treatment",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_risk_assessment",
+    "stakeholder_interviews_facilitated",
+    "risk_categorization_taxonomy",
+    "likelihood_impact_scoring"
+  ]
+}

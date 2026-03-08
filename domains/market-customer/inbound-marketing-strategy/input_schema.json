@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Inbound Marketing Strategy Input",
+  "description": "Required and optional inputs for executing the Inbound Marketing Strategy skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_buyer_personas": {
+      "type": "string",
+      "description": "Defined buyer personas including role, industry, primary business problems, and information-seeking behavior"
+    },
+    "current_website_analytics": {
+      "type": "number",
+      "description": "Current website analytics including organic traffic volume, traffic sources, top-performing content, and conversion rates by page type"
+    },
+    "existing_content_inventory": {
+      "type": "array",
+      "description": "Existing content inventory with content type, topic, funnel stage alignment, and performance metrics",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lead_volume_quality": {
+      "type": "string",
+      "description": "Lead volume and quality data by acquisition channel showing where current inbound leads originate and how they convert through the sales funnel"
+    },
+    "keyword_research_data": {
+      "type": "string",
+      "description": "Keyword research data showing organic search demand and competitive difficulty for topics relevant to the buyer's research journey"
+    },
+    "competitor_content_analysis": {
+      "type": "array",
+      "description": "Competitor content analysis showing where competitors are generating organic visibility",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_buyer_personas",
+    "current_website_analytics",
+    "existing_content_inventory",
+    "lead_volume_quality"
+  ]
+}

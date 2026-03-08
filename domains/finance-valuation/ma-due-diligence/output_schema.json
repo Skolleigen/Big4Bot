@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "M&A Due Diligence Output",
+  "description": "Structured output schema for the M&A Due Diligence diagnostic framework.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "ma-due-diligence",
+      "description": "The unique identifier for the M&A Due Diligence skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The analytical domain to which this skill belongs."
+    },
+    "output": {
+      "type": "object",
+      "description": "The analytical findings produced by the framework.",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "A high-level synthesis of whether the target supports the deal thesis and if current valuation assumptions hold."
+        },
+        "confidence_level": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "The executor's confidence in the analysis based on the quality and robustness of the data room."
+        },
+        "commercial_strategic_findings": {
+          "type": "array",
+          "description": "Evaluation of market position, competitive advantage, and sustainability of top-line growth.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding": {
+                "type": "string"
+              },
+              "supports_thesis": {
+                "type": "boolean"
+              },
+              "implication": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding",
+              "supports_thesis",
+              "implication"
+            ]
+          }
+        },
+        "quality_of_earnings_adjustments": {
+          "type": "array",
+          "description": "Identified adjustments bridging reported EBITDA to normalized true run-rate EBITDA.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "adjustment_description": {
+                "type": "string"
+              },
+              "impact_direction": {
+                "type": "string",
+                "enum": [
+                  "positive",
+                  "negative"
+                ]
+              },
+              "estimated_magnitude_description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "adjustment_description",
+              "impact_direction",
+              "estimated_magnitude_description"
+            ]
+          }
+        },
+        "operational_and_it_findings": {
+          "type": "array",
+          "description": "Assessment of operating model resilience, IT debt, and immediate CapEx requirements.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding": {
+                "type": "string"
+              },
+              "remediation_cost_profile": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "finding",
+              "remediation_cost_profile"
+            ]
+          }
+        },
+        "synergy_validation": {
+          "type": "object",
+          "description": "Testing of acquirer's revenue and cost synergy assumptions with probability weightings.",
+          "properties": {
+            "revenue_synergies": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "synergy_type": {
+                    "type": "string"
+                  },
+                  "achievability_probability": {
+                    "type": "string",
+                    "enum": [
+                      "high",
+                      "medium",
+                      "low"
+                    ]
+                  },
+                  "validation_notes": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "synergy_type",
+                  "achievability_probability",
+                  "validation_notes"
+                ]
+              }
+            },
+            "cost_synergies": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "synergy_type": {
+                    "type": "string"
+                  },
+                  "achievability_probability": {
+                    "type": "string",
+                    "enum": [
+                      "high",
+                      "medium",
+                      "low"
+                    ]
+                  },
+                  "validation_notes": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "synergy_type",
+                  "achievability_probability",
+                  "validation_notes"
+                ]
+              }
+            }
+          },
+          "required": [
+            "revenue_synergies",
+            "cost_synergies"
+          ]
+        },
+        "integration_risks": {
+          "type": "array",
+          "description": "Identified cultural mismatches, key personnel retention threats, and PMI complexities.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deal_recommendations": {
+          "type": "object",
+          "description": "Actionable advice on valuation adjustments, structure parameters, or walking away.",
+          "properties": {
+            "valuation_impact": {
+              "type": "string",
+              "description": "Recommended adjustment to enterprise value based on QoE findings and synergy haircuts."
+            },
+            "structuring_advice": {
+              "type": "string",
+              "description": "Suggestions on earn-outs, escrow holdbacks, or indemnities to mitigate identified risks."
+            },
+            "proceed_decision": {
+              "type": "string",
+              "enum": [
+                "proceed",
+                "proceed_with_caution",
+                "walk_away"
+              ],
+              "description": "Overall deal viability recommendation."
+            }
+          },
+          "required": [
+            "valuation_impact",
+            "structuring_advice",
+            "proceed_decision"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "confidence_level",
+        "commercial_strategic_findings",
+        "quality_of_earnings_adjustments",
+        "operational_and_it_findings",
+        "synergy_validation",
+        "integration_risks",
+        "deal_recommendations"
+      ]
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

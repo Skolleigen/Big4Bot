@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "M&A Due Diligence Input",
+  "description": "Required and optional inputs for executing the M&A Due Diligence skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The specific diligence goal, such as validating a targeted valuation multiple or uncovering deal-breakers."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Overview of the acquiring organization and an introduction to the target entity being evaluated."
+    },
+    "strategic_deal_thesis": {
+      "type": "number",
+      "description": "Articulation of the core strategic rationale (e.g., geographic expansion, product adjacency, acqui-hire)."
+    },
+    "key_valuation_assumptions": {
+      "type": "number",
+      "description": "Key assumptions driving the initial offer (e.g., specific revenue growth rates, expected cost synergies)."
+    },
+    "preliminary_target_information": {
+      "type": "string",
+      "description": "Summary of preliminary financial and commercial information provided by the target."
+    },
+    "upstream_valuation_findings": {
+      "type": "string",
+      "description": "Optional findings from upstream valuation frameworks like DCF or Comparable Company Valuation."
+    },
+    "known_red_flags": {
+      "type": "boolean",
+      "description": "Optional known red flags or initial concerns raised by the deal team."
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "strategic_deal_thesis",
+    "key_valuation_assumptions",
+    "preliminary_target_information"
+  ]
+}

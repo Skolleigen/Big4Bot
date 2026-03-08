@@ -1,0 +1,346 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SWOT Analysis Output",
+  "description": "Structured output schema for the SWOT Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "swot-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "strengths": {
+          "type": "array",
+          "description": "strengths",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor": {
+                "type": "string",
+                "description": "factor"
+              },
+              "evidence": {
+                "type": "string",
+                "description": "evidence"
+              },
+              "magnitude": {
+                "type": "string",
+                "description": "magnitude"
+              }
+            },
+            "required": [
+              "factor",
+              "evidence",
+              "magnitude"
+            ]
+          }
+        },
+        "weaknesses": {
+          "type": "array",
+          "description": "weaknesses",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor": {
+                "type": "string",
+                "description": "factor"
+              },
+              "evidence": {
+                "type": "string",
+                "description": "evidence"
+              },
+              "magnitude": {
+                "type": "string",
+                "description": "magnitude"
+              }
+            },
+            "required": [
+              "factor",
+              "evidence",
+              "magnitude"
+            ]
+          }
+        },
+        "opportunities": {
+          "type": "array",
+          "description": "opportunities",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor": {
+                "type": "string",
+                "description": "factor"
+              },
+              "evidence": {
+                "type": "string",
+                "description": "evidence"
+              },
+              "time_horizon": {
+                "type": "string",
+                "description": "time horizon"
+              }
+            },
+            "required": [
+              "factor",
+              "evidence",
+              "time_horizon"
+            ]
+          }
+        },
+        "threats": {
+          "type": "array",
+          "description": "threats",
+          "items": {
+            "type": "object",
+            "properties": {
+              "factor": {
+                "type": "string",
+                "description": "factor"
+              },
+              "evidence": {
+                "type": "string",
+                "description": "evidence"
+              },
+              "severity": {
+                "type": "string",
+                "description": "severity"
+              }
+            },
+            "required": [
+              "factor",
+              "evidence",
+              "severity"
+            ]
+          }
+        },
+        "strategic_options": {
+          "type": "object",
+          "properties": {
+            "so_strategies": {
+              "type": "array",
+              "description": "so strategies",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "option"
+                  },
+                  "strengths_leveraged": {
+                    "type": "array",
+                    "description": "strengths leveraged",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "opportunities_captured": {
+                    "type": "array",
+                    "description": "opportunities captured",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "description": "rationale"
+                  }
+                },
+                "required": [
+                  "option",
+                  "strengths_leveraged",
+                  "opportunities_captured",
+                  "rationale"
+                ]
+              }
+            },
+            "st_strategies": {
+              "type": "array",
+              "description": "st strategies",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "option"
+                  },
+                  "strengths_leveraged": {
+                    "type": "array",
+                    "description": "strengths leveraged",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "threats_mitigated": {
+                    "type": "array",
+                    "description": "threats mitigated",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "description": "rationale"
+                  }
+                },
+                "required": [
+                  "option",
+                  "strengths_leveraged",
+                  "threats_mitigated",
+                  "rationale"
+                ]
+              }
+            },
+            "wo_strategies": {
+              "type": "array",
+              "description": "wo strategies",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "option"
+                  },
+                  "weaknesses_addressed": {
+                    "type": "array",
+                    "description": "weaknesses addressed",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "opportunities_unlocked": {
+                    "type": "array",
+                    "description": "opportunities unlocked",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "description": "rationale"
+                  }
+                },
+                "required": [
+                  "option",
+                  "weaknesses_addressed",
+                  "opportunities_unlocked",
+                  "rationale"
+                ]
+              }
+            },
+            "wt_strategies": {
+              "type": "array",
+              "description": "wt strategies",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "option"
+                  },
+                  "weaknesses_minimized": {
+                    "type": "array",
+                    "description": "weaknesses minimized",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "threats_avoided": {
+                    "type": "array",
+                    "description": "threats avoided",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "description": "rationale"
+                  }
+                },
+                "required": [
+                  "option",
+                  "weaknesses_minimized",
+                  "threats_avoided",
+                  "rationale"
+                ]
+              }
+            }
+          },
+          "required": [
+            "so_strategies",
+            "st_strategies",
+            "wo_strategies",
+            "wt_strategies"
+          ]
+        },
+        "prioritized_actions": {
+          "type": "array",
+          "description": "prioritized actions",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "description": "action"
+              },
+              "impact": {
+                "type": "string",
+                "description": "impact"
+              },
+              "feasibility": {
+                "type": "string",
+                "description": "feasibility"
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "action",
+              "impact",
+              "feasibility",
+              "priority_rank"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "strengths",
+        "weaknesses",
+        "opportunities",
+        "threats",
+        "strategic_options",
+        "prioritized_actions",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

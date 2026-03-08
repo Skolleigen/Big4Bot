@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Strategic Initiative Mapping Input",
+  "description": "Required and optional inputs for executing the Strategic Initiative Mapping skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "strategic_objectives_priority": {
+      "type": "number",
+      "description": "Strategic objectives with priority weighting (must-win battles, growth pillars, or equivalent)"
+    },
+    "full_list_candidate": {
+      "type": "array",
+      "description": "Full list of candidate initiatives with rough scoping, sponsor and strategic theme classification",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resource_envelope_defining": {
+      "type": "number",
+      "description": "Resource envelope defining available budget, headcount and time horizon"
+    },
+    "existing_commitments_run": {
+      "type": "array",
+      "description": "Existing commitments, run-the-business obligations and known dependencies between initiatives",
+      "items": {
+        "type": "string"
+      }
+    },
+    "initiative_feasibility_assessments": {
+      "type": "string",
+      "description": "Initiative feasibility assessments or pre-read business cases"
+    },
+    "sponsor_alignment_status": {
+      "type": "string",
+      "description": "Sponsor alignment status and political readiness signals"
+    },
+    "external_benchmarks_on": {
+      "type": "array",
+      "description": "External benchmarks on implementation timelines for comparable initiatives",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "strategic_objectives_priority",
+    "full_list_candidate",
+    "resource_envelope_defining",
+    "existing_commitments_run"
+  ]
+}

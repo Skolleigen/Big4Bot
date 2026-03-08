@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "360-Degree Feedback Input",
+  "description": "Required and optional inputs for executing the 360-Degree Feedback skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_competency_model": {
+      "type": "string",
+      "description": "Defined competency model with behavioral indicators for the role or level being assessed"
+    },
+    "list_ratees": {
+      "type": "array",
+      "description": "List of ratees (individuals being assessed) with confirmed rater group assignments",
+      "items": {
+        "type": "string"
+      }
+    },
+    "survey_instrument_aligned": {
+      "type": "string",
+      "description": "Survey instrument aligned to the competency model with a validated rating scale and open-text questions"
+    },
+    "prior_year_360": {
+      "type": "string",
+      "description": "Prior year 360 results for longitudinal trend comparison"
+    },
+    "role": {
+      "type": "string",
+      "description": "Role-specific performance data to contextualize behavioral ratings"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_competency_model",
+    "list_ratees",
+    "survey_instrument_aligned"
+  ]
+}

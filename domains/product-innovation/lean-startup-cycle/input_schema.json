@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lean Startup Cycle Input",
+  "description": "Required and optional inputs for executing the Lean Startup Cycle skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "statement_core_business": {
+      "type": "string",
+      "description": "Statement of the core business hypotheses underlying the product or feature"
+    },
+    "definition_target_customer": {
+      "type": "string",
+      "description": "Definition of the target customer segment for initial testing"
+    },
+    "proposed_success_metrics": {
+      "type": "array",
+      "description": "Proposed success metrics and measurement approach",
+      "items": {
+        "type": "string"
+      }
+    },
+    "minimum_viable_product": {
+      "type": "string",
+      "description": "Minimum viable product concept or experiment design"
+    },
+    "existing_customer_behavioral": {
+      "type": "string",
+      "description": "Existing customer behavioral data that can reduce the number of hypotheses requiring active testing"
+    },
+    "competitive_benchmarks_calibrate": {
+      "type": "array",
+      "description": "Competitive benchmarks to calibrate what \"validated\" looks like for key metrics",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "statement_core_business",
+    "definition_target_customer",
+    "proposed_success_metrics",
+    "minimum_viable_product"
+  ]
+}

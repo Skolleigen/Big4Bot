@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "360-Degree Feedback Output",
+  "description": "Structured output schema for the 360-Degree Feedback consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "360-feedback",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "organization-culture",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "competency_model": {
+          "type": "array",
+          "description": "competency model",
+          "items": {
+            "type": "object",
+            "properties": {
+              "competency": {
+                "type": "string",
+                "description": "competency"
+              },
+              "behavioral_indicators": {
+                "type": "array",
+                "description": "behavioral indicators",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "competency",
+              "behavioral_indicators"
+            ]
+          }
+        },
+        "individual_reports": {
+          "type": "array",
+          "description": "individual reports",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ratee": {
+                "type": "string",
+                "description": "ratee"
+              },
+              "role": {
+                "type": "string",
+                "description": "role"
+              },
+              "ratings_by_source": {
+                "type": "object",
+                "properties": {
+                  "self": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "manager": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "peers": {
+                    "type": "object",
+                    "properties": {}
+                  },
+                  "direct_reports": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                },
+                "required": [
+                  "self",
+                  "manager",
+                  "peers",
+                  "direct_reports"
+                ]
+              },
+              "self_to_others_gaps": {
+                "type": "array",
+                "description": "self to others gaps",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "competency": {
+                      "type": "string",
+                      "description": "competency"
+                    },
+                    "self_score": {
+                      "type": "number",
+                      "description": "self score"
+                    },
+                    "others_average": {
+                      "type": "number",
+                      "description": "others average"
+                    },
+                    "gap": {
+                      "type": "number",
+                      "description": "gap"
+                    },
+                    "significance": {
+                      "type": "string",
+                      "description": "significance"
+                    }
+                  },
+                  "required": [
+                    "competency",
+                    "self_score",
+                    "others_average",
+                    "gap",
+                    "significance"
+                  ]
+                }
+              },
+              "top_strengths": {
+                "type": "array",
+                "description": "top strengths",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "development_areas": {
+                "type": "array",
+                "description": "development areas",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "qualitative_themes": {
+                "type": "array",
+                "description": "qualitative themes",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "development_plan": {
+                "type": "object",
+                "properties": {
+                  "focus_area_1": {
+                    "type": "object",
+                    "properties": {
+                      "competency": {
+                        "type": "string",
+                        "description": "competency"
+                      },
+                      "behavioral_commitment": {
+                        "type": "string",
+                        "description": "behavioral commitment"
+                      },
+                      "practice_opportunities": {
+                        "type": "array",
+                        "description": "practice opportunities",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "review_checkpoint": {
+                        "type": "string",
+                        "description": "review checkpoint"
+                      }
+                    },
+                    "required": [
+                      "competency",
+                      "behavioral_commitment",
+                      "practice_opportunities",
+                      "review_checkpoint"
+                    ]
+                  },
+                  "focus_area_2": {
+                    "type": "object",
+                    "properties": {
+                      "competency": {
+                        "type": "string",
+                        "description": "competency"
+                      },
+                      "behavioral_commitment": {
+                        "type": "string",
+                        "description": "behavioral commitment"
+                      },
+                      "practice_opportunities": {
+                        "type": "array",
+                        "description": "practice opportunities",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "review_checkpoint": {
+                        "type": "string",
+                        "description": "review checkpoint"
+                      }
+                    },
+                    "required": [
+                      "competency",
+                      "behavioral_commitment",
+                      "practice_opportunities",
+                      "review_checkpoint"
+                    ]
+                  }
+                },
+                "required": [
+                  "focus_area_1",
+                  "focus_area_2"
+                ]
+              }
+            },
+            "required": [
+              "ratee",
+              "role",
+              "ratings_by_source",
+              "self_to_others_gaps",
+              "top_strengths",
+              "development_areas",
+              "qualitative_themes",
+              "development_plan"
+            ]
+          }
+        },
+        "aggregate_heat_map": {
+          "type": "object",
+          "properties": {
+            "organization_wide_strengths": {
+              "type": "array",
+              "description": "organization wide strengths",
+              "items": {
+                "type": "string"
+              }
+            },
+            "systemic_development_needs": {
+              "type": "array",
+              "description": "systemic development needs",
+              "items": {
+                "type": "string"
+              }
+            },
+            "competency_distribution": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "organization_wide_strengths",
+            "systemic_development_needs",
+            "competency_distribution"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "competency_model",
+        "individual_reports",
+        "aggregate_heat_map",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

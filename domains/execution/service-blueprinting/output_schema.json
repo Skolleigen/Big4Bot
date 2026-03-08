@@ -1,0 +1,238 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Service Blueprinting Output",
+  "description": "Structured output schema for the Service Blueprinting consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "service-blueprinting",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "execution",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "service_scope": {
+          "type": "object",
+          "properties": {
+            "service_name": {
+              "type": "string",
+              "description": "service name"
+            },
+            "target_customer_segment": {
+              "type": "string",
+              "description": "target customer segment"
+            },
+            "start_stage": {
+              "type": "string",
+              "description": "start stage"
+            },
+            "end_stage": {
+              "type": "string",
+              "description": "end stage"
+            }
+          },
+          "required": [
+            "service_name",
+            "target_customer_segment",
+            "start_stage",
+            "end_stage"
+          ]
+        },
+        "blueprint_stages": {
+          "type": "array",
+          "description": "blueprint stages",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "stage"
+              },
+              "customer_actions": {
+                "type": "array",
+                "description": "customer actions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "frontstage_employee_actions": {
+                "type": "array",
+                "description": "frontstage employee actions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "backstage_employee_actions": {
+                "type": "array",
+                "description": "backstage employee actions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "support_processes_and_systems": {
+                "type": "array",
+                "description": "support processes and systems",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "physical_evidence": {
+                "type": "array",
+                "description": "physical evidence",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "stage",
+              "customer_actions",
+              "frontstage_employee_actions",
+              "backstage_employee_actions",
+              "support_processes_and_systems",
+              "physical_evidence"
+            ]
+          }
+        },
+        "lines_of_demarcation": {
+          "type": "object",
+          "properties": {
+            "line_of_interaction": {
+              "type": "string",
+              "description": "line of interaction"
+            },
+            "line_of_visibility": {
+              "type": "string",
+              "description": "line of visibility"
+            },
+            "line_of_internal_interaction": {
+              "type": "string",
+              "description": "line of internal interaction"
+            }
+          },
+          "required": [
+            "line_of_interaction",
+            "line_of_visibility",
+            "line_of_internal_interaction"
+          ]
+        },
+        "fail_points": {
+          "type": "array",
+          "description": "fail points",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "stage"
+              },
+              "layer": {
+                "type": "string",
+                "description": "layer"
+              },
+              "fail_point_description": {
+                "type": "string",
+                "description": "fail point description"
+              },
+              "failure_frequency": {
+                "type": "string",
+                "description": "failure frequency"
+              },
+              "customer_impact_severity": {
+                "type": "string",
+                "description": "customer impact severity"
+              },
+              "root_cause": {
+                "type": "string",
+                "description": "root cause"
+              }
+            },
+            "required": [
+              "stage",
+              "layer",
+              "fail_point_description",
+              "failure_frequency",
+              "customer_impact_severity",
+              "root_cause"
+            ]
+          }
+        },
+        "improvement_opportunities": {
+          "type": "array",
+          "description": "improvement opportunities",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fail_point_addressed": {
+                "type": "string",
+                "description": "fail point addressed"
+              },
+              "intervention_layer": {
+                "type": "string",
+                "description": "intervention layer"
+              },
+              "proposed_improvement": {
+                "type": "string",
+                "description": "proposed improvement"
+              },
+              "expected_impact": {
+                "type": "string",
+                "description": "expected impact"
+              },
+              "implementation_feasibility": {
+                "type": "string",
+                "description": "implementation feasibility"
+              },
+              "priority_rank": {
+                "type": "number",
+                "description": "priority rank"
+              }
+            },
+            "required": [
+              "fail_point_addressed",
+              "intervention_layer",
+              "proposed_improvement",
+              "expected_impact",
+              "implementation_feasibility",
+              "priority_rank"
+            ]
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "service_scope",
+        "blueprint_stages",
+        "lines_of_demarcation",
+        "fail_points",
+        "improvement_opportunities",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

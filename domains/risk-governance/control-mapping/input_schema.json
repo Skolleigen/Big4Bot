@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Control Mapping Input",
+  "description": "Required and optional inputs for executing the Control Mapping skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "documented_risk_universe": {
+      "type": "string",
+      "description": "Documented risk universe or risk register covering the scope of the assessment"
+    },
+    "inventory_existing_controls": {
+      "type": "array",
+      "description": "Inventory of existing controls, including control descriptions, control type (preventive, detective, corrective), and control owner",
+      "items": {
+        "type": "string"
+      }
+    },
+    "process_documentation_system": {
+      "type": "number",
+      "description": "Process documentation and system descriptions for the in-scope operational areas"
+    },
+    "relevant_regulatory_legal": {
+      "type": "string",
+      "description": "Relevant regulatory, legal, and internal policy requirements that controls must satisfy"
+    },
+    "prior_internal_audit": {
+      "type": "array",
+      "description": "Prior internal audit findings or external audit management letters identifying known control weaknesses",
+      "items": {
+        "type": "string"
+      }
+    },
+    "industry_control_frameworks": {
+      "type": "string",
+      "description": "Industry control frameworks (COSO, COBIT, NIST) to use as a reference overlay for gap identification"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "documented_risk_universe",
+    "inventory_existing_controls",
+    "process_documentation_system",
+    "relevant_regulatory_legal"
+  ]
+}

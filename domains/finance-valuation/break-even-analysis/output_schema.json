@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Break-Even Analysis Output",
+  "description": "Structured output schema for the Break-Even Analysis consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "break-even-analysis",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "finance-valuation",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "cost_classification": {
+          "type": "object",
+          "properties": {
+            "fixed_costs": {
+              "type": "array",
+              "description": "fixed costs",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "cost_item": {
+                    "type": "string",
+                    "description": "cost item"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "description": "amount"
+                  },
+                  "period": {
+                    "type": "string",
+                    "description": "period"
+                  }
+                },
+                "required": [
+                  "cost_item",
+                  "amount",
+                  "period"
+                ]
+              }
+            },
+            "variable_costs": {
+              "type": "array",
+              "description": "variable costs",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "cost_item": {
+                    "type": "string",
+                    "description": "cost item"
+                  },
+                  "amount_per_unit": {
+                    "type": "string",
+                    "description": "amount per unit"
+                  }
+                },
+                "required": [
+                  "cost_item",
+                  "amount_per_unit"
+                ]
+              }
+            },
+            "total_fixed_costs_per_period": {
+              "type": "string",
+              "description": "total fixed costs per period"
+            },
+            "total_variable_cost_per_unit": {
+              "type": "string",
+              "description": "total variable cost per unit"
+            }
+          },
+          "required": [
+            "fixed_costs",
+            "variable_costs",
+            "total_fixed_costs_per_period",
+            "total_variable_cost_per_unit"
+          ]
+        },
+        "selling_price_per_unit": {
+          "type": "string",
+          "description": "selling price per unit"
+        },
+        "contribution_margin": {
+          "type": "object",
+          "properties": {
+            "per_unit": {
+              "type": "string",
+              "description": "per unit"
+            },
+            "ratio": {
+              "type": "string",
+              "description": "ratio"
+            }
+          },
+          "required": [
+            "per_unit",
+            "ratio"
+          ]
+        },
+        "break_even_point": {
+          "type": "object",
+          "properties": {
+            "units": {
+              "type": "number",
+              "description": "units"
+            },
+            "revenue": {
+              "type": "string",
+              "description": "revenue"
+            }
+          },
+          "required": [
+            "units",
+            "revenue"
+          ]
+        },
+        "margin_of_safety": {
+          "type": "object",
+          "properties": {
+            "units": {
+              "type": "number",
+              "description": "units"
+            },
+            "percentage": {
+              "type": "string",
+              "description": "percentage"
+            }
+          },
+          "required": [
+            "units",
+            "percentage"
+          ]
+        },
+        "target_profit_analysis": {
+          "type": "object",
+          "properties": {
+            "target_profit": {
+              "type": "string",
+              "description": "target profit"
+            },
+            "required_volume": {
+              "type": "number",
+              "description": "required volume"
+            },
+            "required_revenue": {
+              "type": "string",
+              "description": "required revenue"
+            }
+          },
+          "required": [
+            "target_profit",
+            "required_volume",
+            "required_revenue"
+          ]
+        },
+        "sensitivity_analysis": {
+          "type": "array",
+          "description": "sensitivity analysis",
+          "items": {
+            "type": "object",
+            "properties": {
+              "variable_changed": {
+                "type": "string",
+                "description": "variable changed"
+              },
+              "change_amount": {
+                "type": "string",
+                "description": "change amount"
+              },
+              "revised_break_even_units": {
+                "type": "number",
+                "description": "revised break even units"
+              },
+              "revised_break_even_revenue": {
+                "type": "string",
+                "description": "revised break even revenue"
+              }
+            },
+            "required": [
+              "variable_changed",
+              "change_amount",
+              "revised_break_even_units",
+              "revised_break_even_revenue"
+            ]
+          }
+        },
+        "key_assumptions": {
+          "type": "array",
+          "description": "key assumptions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "cost_classification",
+        "selling_price_per_unit",
+        "contribution_margin",
+        "break_even_point",
+        "margin_of_safety",
+        "target_profit_analysis",
+        "sensitivity_analysis",
+        "key_assumptions",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

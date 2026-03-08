@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Market Segmentation Input",
+  "description": "Required and optional inputs for executing the Market Segmentation skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "definition_total_addressable": {
+      "type": "string",
+      "description": "Definition of the total addressable market (industry, geography, product category boundaries)"
+    },
+    "existing_customer_data": {
+      "type": "string",
+      "description": "Existing customer data including firmographic or demographic attributes, purchase history, and behavioral signals"
+    },
+    "revenue_margin_data": {
+      "type": "number",
+      "description": "Revenue and margin data by customer or customer cohort"
+    },
+    "sales_marketing_funnel": {
+      "type": "string",
+      "description": "Sales and marketing funnel data indicating where different customer types convert or drop off"
+    },
+    "third": {
+      "type": "string",
+      "description": "Third-party market research or industry reports on market size and segment structure"
+    },
+    "customer_survey_data": {
+      "type": "string",
+      "description": "Customer survey data including stated needs, preferences, and pain points"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "definition_total_addressable",
+    "existing_customer_data",
+    "revenue_margin_data",
+    "sales_marketing_funnel"
+  ]
+}

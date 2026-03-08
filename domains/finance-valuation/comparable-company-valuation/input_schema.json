@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Comparable Company Valuation Input",
+  "description": "Required and optional inputs for executing the Comparable Company Valuation skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "identified_peer_set": {
+      "type": "array",
+      "description": "Identified peer set of publicly traded comparable companies (minimum 5 peers)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_market_capitalization": {
+      "type": "number",
+      "description": "Current market capitalization, net debt, and enterprise value for each peer"
+    },
+    "ltm": {
+      "type": "array",
+      "description": "LTM (last twelve months) and forward financial metrics for each peer: revenue, EBITDA, EBIT, net income",
+      "items": {
+        "type": "string"
+      }
+    },
+    "subject_companys_corresponding": {
+      "type": "array",
+      "description": "Subject company's corresponding LTM and forward financial metrics",
+      "items": {
+        "type": "string"
+      }
+    },
+    "growth_rates_margins": {
+      "type": "number",
+      "description": "Growth rates and margins for each peer (to support multiple regression or quartile selection)"
+    },
+    "transaction_comps_data": {
+      "type": "string",
+      "description": "Transaction comps data for cross-reference against trading comps"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "identified_peer_set",
+    "current_market_capitalization",
+    "ltm",
+    "subject_companys_corresponding"
+  ]
+}

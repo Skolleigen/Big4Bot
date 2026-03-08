@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OKR Design Output",
+  "description": "Structured output schema for the OKR Design consulting skill.",
+  "type": "object",
+  "properties": {
+    "skill_id": {
+      "type": "string",
+      "const": "okr-design",
+      "description": "Unique identifier for this skill."
+    },
+    "domain": {
+      "type": "string",
+      "const": "strategy",
+      "description": "The consulting domain this skill belongs to."
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "analysis_summary": {
+          "type": "string",
+          "description": "analysis summary"
+        },
+        "company_okrs": {
+          "type": "array",
+          "description": "company okrs",
+          "items": {
+            "type": "object",
+            "properties": {
+              "objective": {
+                "type": "string",
+                "description": "objective"
+              },
+              "key_results": {
+                "type": "array",
+                "description": "key results",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key_result": {
+                      "type": "string",
+                      "description": "key result"
+                    },
+                    "baseline": {
+                      "type": "string",
+                      "description": "baseline"
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "target"
+                    },
+                    "measurement_method": {
+                      "type": "string",
+                      "description": "measurement method"
+                    },
+                    "okr_type": {
+                      "type": "string",
+                      "description": "okr type"
+                    }
+                  },
+                  "required": [
+                    "key_result",
+                    "baseline",
+                    "target",
+                    "measurement_method",
+                    "okr_type"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "objective",
+              "key_results"
+            ]
+          }
+        },
+        "team_okrs": {
+          "type": "array",
+          "description": "team okrs",
+          "items": {
+            "type": "object",
+            "properties": {
+              "team": {
+                "type": "string",
+                "description": "team"
+              },
+              "parent_company_okr": {
+                "type": "string",
+                "description": "parent company okr"
+              },
+              "objective": {
+                "type": "string",
+                "description": "objective"
+              },
+              "key_results": {
+                "type": "array",
+                "description": "key results",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key_result": {
+                      "type": "string",
+                      "description": "key result"
+                    },
+                    "baseline": {
+                      "type": "string",
+                      "description": "baseline"
+                    },
+                    "target": {
+                      "type": "string",
+                      "description": "target"
+                    },
+                    "measurement_method": {
+                      "type": "string",
+                      "description": "measurement method"
+                    }
+                  },
+                  "required": [
+                    "key_result",
+                    "baseline",
+                    "target",
+                    "measurement_method"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "team",
+              "parent_company_okr",
+              "objective",
+              "key_results"
+            ]
+          }
+        },
+        "dependency_map": {
+          "type": "array",
+          "description": "dependency map",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dependent_team": {
+                "type": "string",
+                "description": "dependent team"
+              },
+              "dependent_key_result": {
+                "type": "string",
+                "description": "dependent key result"
+              },
+              "provider_team": {
+                "type": "string",
+                "description": "provider team"
+              },
+              "dependency_type": {
+                "type": "string",
+                "description": "dependency type"
+              }
+            },
+            "required": [
+              "dependent_team",
+              "dependent_key_result",
+              "provider_team",
+              "dependency_type"
+            ]
+          }
+        },
+        "scoring_framework": {
+          "type": "object",
+          "properties": {
+            "scale": {
+              "type": "string",
+              "description": "scale"
+            },
+            "expected_attainment": {
+              "type": "string",
+              "description": "expected attainment"
+            },
+            "review_cadence": {
+              "type": "string",
+              "description": "review cadence"
+            }
+          },
+          "required": [
+            "scale",
+            "expected_attainment",
+            "review_cadence"
+          ]
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "confidence level",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "analysis_summary",
+        "company_okrs",
+        "team_okrs",
+        "dependency_map",
+        "scoring_framework",
+        "confidence_level"
+      ],
+      "description": "Output"
+    }
+  },
+  "required": [
+    "skill_id",
+    "domain",
+    "output"
+  ]
+}

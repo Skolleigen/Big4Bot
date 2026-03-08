@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Break-Even Analysis Input",
+  "description": "Required and optional inputs for executing the Break-Even Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "total_fixed_costs": {
+      "type": "number",
+      "description": "Total fixed costs per period (rent, salaries, depreciation, SG&A overheads)"
+    },
+    "variable_cost_per": {
+      "type": "number",
+      "description": "Variable cost per unit (materials, direct labor, commissions, shipping)"
+    },
+    "selling_price_per": {
+      "type": "number",
+      "description": "Selling price per unit or average revenue per unit"
+    },
+    "projection_period": {
+      "type": "string",
+      "description": "Projection period (monthly, quarterly, or annual basis)"
+    },
+    "target_profit_ebitda": {
+      "type": "string",
+      "description": "Target profit or EBITDA for target-profit break-even extension"
+    },
+    "current_projected_sales": {
+      "type": "number",
+      "description": "Current or projected sales volume (to calculate margin of safety)"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "total_fixed_costs",
+    "variable_cost_per",
+    "selling_price_per",
+    "projection_period"
+  ]
+}

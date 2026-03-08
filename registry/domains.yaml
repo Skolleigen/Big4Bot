@@ -1,0 +1,36 @@
+domains:
+  - name: "Strategy"
+    id: strategy
+    path: domains/strategy/
+    description: "Strategic planning, goal-setting, and long-term vision frameworks."
+
+  - name: "Product & Innovation"
+    id: product-innovation
+    path: domains/product-innovation/
+    description: "Product development, innovation methodologies, and business model design."
+
+  - name: "Market & Customer"
+    id: market-customer
+    path: domains/market-customer/
+    description: "Market analysis, customer understanding, and go-to-market strategies."
+
+  - name: "Execution"
+    id: execution
+    path: domains/execution/
+    description: "Operational excellence, project delivery, and process optimization."
+
+  - name: "Organization & Culture"
+    id: organization-culture
+    path: domains/organization-culture/
+    description: "Organizational design, culture assessment, and people strategies."
+
+  - name: "Finance & Valuation"
+    id: finance-valuation
+    path: domains/finance-valuation/
+    description: "Financial analysis, valuation methodologies, and economic modeling."
+
+  - name: "Risk & Governance"
+    id: risk-governance
+    path: domains/risk-governance/
+    description: "Risk management, compliance, and governance frameworks."
+

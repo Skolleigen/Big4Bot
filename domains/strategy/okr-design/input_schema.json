@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OKR Design Input",
+  "description": "Required and optional inputs for executing the OKR Design skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "documented_organizational_mission": {
+      "type": "number",
+      "description": "Documented organizational mission and strategy (including strategic priorities for the planning period)"
+    },
+    "current_performance_data": {
+      "type": "string",
+      "description": "Current performance data establishing the baseline for each key result candidate"
+    },
+    "resource_capacity_constraints": {
+      "type": "string",
+      "description": "Resource and capacity constraints at company and team level"
+    },
+    "list_strategic_initiatives": {
+      "type": "array",
+      "description": "List of strategic initiatives already committed or under consideration",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prior_okr_cycle": {
+      "type": "string",
+      "description": "Prior OKR cycle results and scoring data"
+    },
+    "employee_team": {
+      "type": "string",
+      "description": "Employee or team-level goal inputs from bottom-up contribution process"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "documented_organizational_mission",
+    "current_performance_data",
+    "resource_capacity_constraints",
+    "list_strategic_initiatives"
+  ]
+}

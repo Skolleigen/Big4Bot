@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Big4Bot Output Envelope Base",
+    "description": "A baseline structural envelope that all framework outputs should inherit to ensure metadata consistency.",
+    "type": "object",
+    "properties": {
+        "execution_metadata": {
+            "type": "object",
+            "properties": {
+                "skill_id": {
+                    "type": "string",
+                    "description": "The explicit ID of the framework executed."
+                },
+                "confidence_score": {
+                    "type": "string",
+                    "enum": [
+                        "High",
+                        "Medium",
+                        "Low"
+                    ],
+                    "description": "Agent's self-assessed confidence based on the quality of inputs provided."
+                },
+                "missing_inputs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Any requested parameters from the input_schema that were omitted or inferred."
+                }
+            },
+            "required": [
+                "skill_id",
+                "confidence_score",
+                "missing_inputs"
+            ]
+        },
+        "framework_payload": {
+            "type": "object",
+            "description": "The bespoke analytical output specific to the SKILL.md methodology."
+        }
+    },
+    "required": [
+        "execution_metadata",
+        "framework_payload"
+    ]
+}

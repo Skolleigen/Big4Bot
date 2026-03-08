@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pulse Surveys Input",
+  "description": "Required and optional inputs for executing the Pulse Surveys skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "defined_measurement_dimensions": {
+      "type": "string",
+      "description": "Defined measurement dimensions aligned to organizational priorities: engagement, well-being, manager effectiveness, belonging, role clarity, or others"
+    },
+    "survey_instrument_510": {
+      "type": "string",
+      "description": "Survey instrument of 5\u201310 questions maximum using a consistent Likert scale (typically 1\u20135 or 1\u201310) enabling trend comparison across time periods"
+    },
+    "sampling_approach_frequency": {
+      "type": "string",
+      "description": "Sampling approach and frequency decision: full population monthly, rotating sample weekly, or triggered post-event pulse for specific cohorts"
+    },
+    "anonymity_architecture_confirmed": {
+      "type": "string",
+      "description": "Anonymity architecture with confirmed minimum reporting threshold (5 responses per manager before manager-level data is surfaced)"
+    },
+    "benchmark_data_prior": {
+      "type": "string",
+      "description": "Benchmark data from prior annual engagement surveys to provide a baseline for trend comparison"
+    },
+    "external_benchmark_norms": {
+      "type": "string",
+      "description": "External benchmark norms from the survey platform provider's industry database"
+    },
+    "segmentation_variables_manager": {
+      "type": "string",
+      "description": "Segmentation variables: manager, team, level, location, function, and tenure to enable targeted analysis of high-risk sub-populations"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "defined_measurement_dimensions",
+    "survey_instrument_510",
+    "sampling_approach_frequency",
+    "anonymity_architecture_confirmed"
+  ]
+}

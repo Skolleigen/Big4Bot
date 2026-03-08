@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DCF Valuation Input",
+  "description": "Required and optional inputs for executing the DCF Valuation skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "historical_financials": {
+      "type": "string",
+      "description": "Historical income statements, balance sheets, and cash flow statements (minimum 3 years)"
+    },
+    "revenue_growth_assumptions": {
+      "type": "number",
+      "description": "Revenue growth assumptions for the explicit projection period (typically 5-10 years)"
+    },
+    "operating_margin_tax": {
+      "type": "number",
+      "description": "Operating margin and tax rate assumptions for the projection period"
+    },
+    "capex_forecasts": {
+      "type": "number",
+      "description": "Capital expenditure and depreciation/amortization forecasts"
+    },
+    "working_capital_change": {
+      "type": "string",
+      "description": "Working capital change assumptions"
+    },
+    "weighted_average_cost": {
+      "type": "number",
+      "description": "Weighted Average Cost of Capital (WACC) or discount rate"
+    },
+    "terminal_growth_rate": {
+      "type": "number",
+      "description": "Terminal growth rate or exit multiple for terminal value calculation"
+    },
+    "current_net_debt": {
+      "type": "number",
+      "description": "Current net debt position (debt minus cash) to bridge from enterprise value to equity value"
+    },
+    "segment": {
+      "type": "number",
+      "description": "Segment-level revenue and margin projections (for multi-segment businesses)"
+    },
+    "management_guidance_analyst": {
+      "type": "string",
+      "description": "Management guidance or analyst consensus forecasts as cross-checks on projection assumptions"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "historical_financials",
+    "revenue_growth_assumptions",
+    "operating_margin_tax",
+    "capex_forecasts",
+    "working_capital_change",
+    "weighted_average_cost",
+    "terminal_growth_rate",
+    "current_net_debt"
+  ]
+}

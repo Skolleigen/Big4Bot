@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Organizational Network Analysis Input",
+  "description": "Required and optional inputs for executing the Organizational Network Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "network_survey_responses": {
+      "type": "string",
+      "description": "Network survey responses: structured questions asking each respondent who they go to for (a) advice or expertise, (b) information or project updates, and (c) energy or motivation when facing challenges"
+    },
+    "complete_roster_target": {
+      "type": "string",
+      "description": "Complete roster of the target population so that non-respondents can be identified and follow-up conducted to maximize coverage"
+    },
+    "organizational_segmentation_data": {
+      "type": "string",
+      "description": "Organizational segmentation data: function, team, level, location, and tenure for each node in the network"
+    },
+    "minimum_response_rate": {
+      "type": "number",
+      "description": "Minimum response rate of 70% to produce a sufficiently complete network map for reliable centrality calculations"
+    },
+    "communication_metadata_collaboration": {
+      "type": "number",
+      "description": "Communication metadata from collaboration platforms (email volume, Slack message patterns, meeting attendance) to triangulate with survey-based network data"
+    },
+    "prior_ona_results": {
+      "type": "string",
+      "description": "Prior ONA results for the same population to track network changes over time following an intervention"
+    },
+    "formal_organizational_chart": {
+      "type": "string",
+      "description": "Formal organizational chart for comparison between the official reporting structure and the informal network map"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "network_survey_responses",
+    "complete_roster_target",
+    "organizational_segmentation_data",
+    "minimum_response_rate"
+  ]
+}

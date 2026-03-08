@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scenario and Sensitivity Analysis Input",
+  "description": "Required and optional inputs for executing the Scenario and Sensitivity Analysis skill.",
+  "type": "object",
+  "properties": {
+    "problem_statement": {
+      "type": "string",
+      "description": "The business problem or diagnostic question to be analyzed."
+    },
+    "company_context": {
+      "type": "string",
+      "description": "Company background, industry, size, and relevant business context."
+    },
+    "base_case_financial": {
+      "type": "string",
+      "description": "Base case financial model with all key assumptions explicitly labeled"
+    },
+    "identified_set_key": {
+      "type": "number",
+      "description": "Identified set of key value drivers and sensitivity variables (revenue growth rate, EBITDA margin, churn rate, WACC, capex intensity)"
+    },
+    "range_definitions_each": {
+      "type": "number",
+      "description": "Range definitions for each variable: bear case (pessimistic), base case, and bull case values"
+    },
+    "target_output_metric": {
+      "type": "number",
+      "description": "Target output metric (NPV, equity value, IRR, EBITDA, free cash flow, or payback period)"
+    },
+    "probability_weights_each": {
+      "type": "string",
+      "description": "Probability weights for each scenario (bear / base / bull) to support probability-weighted valuation"
+    },
+    "correlated_variable_pairs": {
+      "type": "number",
+      "description": "Correlated variable pairs where joint movement is economically meaningful (e.g., revenue growth and gross margin)"
+    }
+  },
+  "required": [
+    "problem_statement",
+    "company_context",
+    "base_case_financial",
+    "identified_set_key",
+    "range_definitions_each",
+    "target_output_metric"
+  ]
+}
