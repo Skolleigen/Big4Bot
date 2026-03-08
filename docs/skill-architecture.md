@@ -27,3 +27,11 @@ There are no generic textual responses allowed. If a tool mandates an `analysis_
 These sub-directories encode the professional standards required to combat LLM degradation and hallucination.
 - **`examples/example.md`:** Provides a synthetic business scenario and a human-readable analytical walkthrough demonstrating how the framework is logically applied, teaching the agent the required reasoning progression (without strictly defining the final JSON payload).
 - **`references/references.md`:** A list of academic citations, canonical industry textbooks, or whitepapers that ground the framework in recognized real-world management consulting standards (e.g., *McKinsey*, *Harvard Business Review*, *WorldatWork*).
+
+## 5. Global Standards and Integration
+While each skill is atomic, they are governed by global standards located in the `shared/` directory:
+- **`shared/schemas/base_envelope.json`:** Every skill's output is wrapped or validated against this baseline to ensure consistency across the library.
+- **`shared/evaluation/rubric.md`:** A universal set of criteria for assessing whether an agent's application of a methodology was successful.
+- **`shared/taxonomies/`:** Centralized lists (like Industry Sectors) that skills reference to ensure data interoperability.
+
+This decoupling allows individual skills to remain lightweight while still benefiting from a rigorous, centralized governance structure.

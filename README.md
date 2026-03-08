@@ -25,14 +25,15 @@ By encoding these methodologies as machine-readable skills, AI agents gain:
 
 ## Documentation
 
-Big4Bot provides a comprehensive [documentation library](docs/introduction.md) detailing the system's architecture and usage. 
+Big4Bot provides a comprehensive documentation library detailing the system's architecture and usage:
 
-Agents interact with the 46-skill library through three primary **Usage Modes**:
-1. **Targeted Execution:** Running a specific user-requested framework.
-2. **Framework Advisory:** Suggesting starting frameworks based on problem classification.
-3. **Guided Analysis:** Proposing downstream frameworks natively using the dependency graph.
-
-For a 5-minute implementation guide, see the [Quickstart Guide](docs/quickstart.md).
+*   **[Introduction](docs/introduction.md)** — Core philosophy and system overview.
+*   **[Quickstart Guide](docs/quickstart.md)** — Go from zero to consulting in 5 minutes.
+*   **[Skill Architecture](docs/skill-architecture.md)** — The 5-component anatomy of a Big4Bot framework.
+*   **[Platform Adapters](docs/adapters.md)** — Using Big4Bot with OpenAI, Anthropic, Gemini, and MCP.
+*   **[Shared Standards](docs/shared-standards.md)** — Evaluation rubrics, taxonomies, and base envelopes.
+*   **[Reasoning Graph](docs/reasoning-graph.md)** — Understanding framework dependencies and triggers.
+*   **[Examples](docs/examples.md)** — Walkthrough of the consulting reasoning loop.
 
 ## Repository Structure
 
@@ -47,15 +48,15 @@ big4bot/
 │   ├── finance-valuation/
 │   └── risk-governance/
 ├── shared/             # Shared schemas, taxonomies, and evaluation rubrics
-│   ├── schemas/
-│   ├── taxonomies/
-│   ├── evaluation/
-│   └── references/
+│   ├── schemas/        # Base JSON envelopes used across skills
+│   ├── taxonomies/     # Standardized data classifications (e.g., industry sectors)
+│   └── evaluation/     # Universal rubrics for evaluating agent outputs
 ├── adapters/           # Platform-specific integration adapters
-│   ├── openai/
-│   ├── anthropic/
-│   ├── gemini/
-│   └── mcp/
+│   ├── openai/         # OpenAI SDK wrappers
+│   ├── anthropic/      # Anthropic SDK wrappers
+│   ├── gemini/         # Google Gemini SDK wrappers
+│   ├── mcp/            # FastMCP Server (Tools and Prompts)
+│   └── shared/         # Common loader and schema utilities
 └── registry/           # Skill index, domain catalog, and dependency maps
     ├── skills-index.yaml
     ├── domains.yaml
@@ -110,16 +111,26 @@ Two standardized schemas enabling:
 
 ## Platform Compatibility
 
-Big4Bot is designed to be **model-agnostic** and compatible with:
+Big4Bot is designed to be **model-agnostic** and provides native wrappers for:
 
 | Platform | Adapter | Status |
 |----------|---------|--------|
-| OpenAI Agents | `adapters/openai/` | Planned |
-| Anthropic Claude | `adapters/anthropic/` | Planned |
-| Google Gemini | `adapters/gemini/` | Planned |
-| Model Context Protocol | `adapters/mcp/` | Planned |
+| OpenAI Agents | `adapters/openai/` | Available |
+| Anthropic Claude | `adapters/anthropic/` | Available |
+| Google Gemini | `adapters/gemini/` | Available |
+| Model Context Protocol | `adapters/mcp/` | Available |
 
-Platform-specific logic lives in adapters, while the core reasoning remains platform-neutral.
+Platform-specific logic lives in adapters, while the core reasoning remains platform-neutral. All adapters share a common runtime loader (`adapters/shared/big4bot_loader.py`) ensuring behavioral consistency across LLMs.
+
+## Installation
+
+Big4Bot can be installed as a global Python package, making it easily accessible to arbitrary agent scripts.
+
+```bash
+pip install big4bot
+```
+
+When installed via pip, the system utilizes the `BIG4BOT_HOME` environment variable to locate the methodology files (`domains/`, `registry/`, `shared/`). Set this variable to the absolute path of your Big4Bot repository root.
 
 ## How to Contribute
 
@@ -142,15 +153,11 @@ We welcome contributions! Here's how you can help:
 
 ## Future Roadmap
 
-- [ ] Complete all 46 skill diagnostic processes with detailed reasoning workflows
-- [ ] Build adapter implementations for OpenAI, Anthropic, Gemini, and MCP
-- [ ] Create shared evaluation rubrics for skill output quality
-- [ ] Implement skill chaining and dependency resolution
-- [ ] Add consulting taxonomy and terminology standards
-- [ ] Build a skill discovery and recommendation engine
-- [ ] Create interactive example walkthroughs
-- [ ] Develop automated testing for skill outputs
-- [ ] Community-contributed skills and extensions
+- [ ] Complete all 46 skill diagnostic processes with detailed reasoning workflows.
+- [ ] Add explicit taxonomy and terminology standards.
+- [ ] Create interactive GUI example walkthroughs.
+- [ ] Develop automated testing CI/CD for skill outputs.
+- [ ] Community-contributed skills and extensions.
 
 ## Consulting Reasoning Graph
 

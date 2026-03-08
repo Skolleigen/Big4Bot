@@ -24,15 +24,27 @@ The core of this layer is the `registry/dependencies.yaml` file. It operates as 
 
 *Note: The metadata regarding available skills and domain configurations is managed by `registry/skills-index.yaml` and `registry/domains.yaml` respectively.*
 
-## 3. The Execution Policy (Usage Policy)
+- Agents are permitted to suggest upstream frameworks to gather missing data, but are explicitly forbidden from making upstream execution a hard, blocking requirement.
 
-The Execution Policy dictates the behavioral interface between the external agent framework and the Big4Bot repository. It answers the question: *"How strictly should an agent enforce the Reasoning Layer?"*
+## 4. The Adapter Layer (Platform Integration)
+
+The Adapter Layer translates Big4Bot's platform-neutral methodology into the specific formats required by LLM providers.
 
 **Components:**
-The `registry/usage_policy.yaml` file natively encodes these behavioral constraints. It explicitly defines the system as **"skills first, graph advisory,"** meaning:
-- Agents may follow the dependency graph deeply if the user relies on them for guidance.
-- Agents **must** break from the graph to execute targeted, single-framework commands if the user requests them.
-- Agents are permitted to suggest upstream frameworks to gather missing data, but are explicitly forbidden from making upstream execution a hard, blocking requirement.
+The `adapters/` directory provides native Python wrappers for:
+- **OpenAI & Anthropic:** Tool/Function calling integration.
+- **Google Gemini:** `FunctionDeclaration` support.
+- **MCP:** A FastMCP server exposing the entire library to agents via the Model Context Protocol.
+
+## 5. The Shared Layer (Global Governance)
+
+The Shared Layer enforces consistency across the entire repository, ensuring that different skills speak the same data language and meet the same quality bars.
+
+**Components:**
+The `shared/` directory contains:
+- **Evaluation Rubrics:** Universal standards for grading agent outputs.
+- **Base Envelopes:** Mandatory JSON wrappers for all analytical responses.
+- **Taxonomies:** Common data classifications (e.g., industry sectors) to facilitate skill-to-skill data chaining.
 
 ## Interaction Flow
 

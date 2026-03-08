@@ -8,6 +8,7 @@ The core philosophy is simple: **Agents bring the intelligence; Big4Bot provides
 - **A Skill Library:** A collection of 46 distinct consulting frameworks (e.g., SWOT Analysis, DCF Valuation, Balanced Scorecard) encoded as machine-readable skills.
 - **A Structural Guide:** A set of strict JSON input and output schemas ensuring that an AI agent gathers the correct data and returns a formalized, actionable diagnostic output.
 - **An Advisory Graph:** A defined reasoning network that links upstream and downstream frameworks, allowing an agent to suggest the best path forward without forcing a rigid workflow prison.
+- **A Native Adapter Suite:** Native Python implementation wrappers for OpenAI, Anthropic, Gemini, and MCP, allowing Big4Bot to be integrated into existing agent pipelines with a single line of code.
 
 ## What Big4Bot Is Not
 - **Not an Agent Framework:** It does not manage memory, handle API routing, or execute code. You use Big4Bot *inside* LangChain, AutoGen, CrewAI, MCP servers, or custom software.

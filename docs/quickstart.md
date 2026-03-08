@@ -4,6 +4,15 @@ Big4Bot allows you to equip your AI agent with professional consulting methodolo
 
 You do not need to install complex libraries or adopt a new orchestration engine. Big4Bot is fundamentally a repository of instructions and JSON schemas that you feed to your existing LLM setup.
 
+## Installation
+
+For the fastest implementation, install the Big4Bot runtime:
+
+```bash
+pip install big4bot
+export BIG4BOT_HOME="/path/to/your/big4bot/repo"
+```
+
 ## Start Consulting in 6 Steps
 
 ### Step 1: Understand the Concept
